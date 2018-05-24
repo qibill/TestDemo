@@ -1,0 +1,12 @@
+<?xml version="1.1"  encoding="utf-8"?>
+<root>
+	<head>
+		<parameter>
+			<!-- 系统识别码 -->
+			<hashKey>16a839ed-b5f1-XXXX-b9a3-XXXXXXX72e4</hashKey>
+			<!-- 就诊卡号 -->
+			<CardNo>135403000800151</CardNo>
+		</parameter>
+	</head>
+	<body />
+</root>

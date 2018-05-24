@@ -1,0 +1,46 @@
+<root>
+	<head>
+		<parameter>
+			<hashKey>16a839ed-b5f1-XXXX-b9a3-XXXXXXX72e4</hashKey>
+			<CardNo>135403000800151</CardNo>
+		</parameter>
+	</head>
+	<body>
+		<!-- 调用结果标识（OK 调用成功，err 系统级错误） -->
+		<result>OK</result>
+		<DataTable>
+			<row>
+				<!-- 患者唯一标识 -->
+				<Patid>1000000108</Patid>
+				<!-- 门诊号 -->
+				<OutPatiNo>YL00800151</OutPatiNo>
+				<!-- 姓名 -->
+				<PatName>测试151</PatName>
+				<!-- 性别 -->
+				<SexName>女</SexName>
+				<!-- 末次月经 -->
+				<LastMense>2017-12-01</LastMense>
+				<!-- 年龄 -->
+				<Age>8</Age>
+				<!-- 身份证号码 -->
+				<IdCardNo>310103XXXXXXXX5610</IdCardNo>
+				<!-- 联系方式 -->
+				<Tel />
+				<!-- 手机号 -->
+				<Mobile>13111111111</Mobile>
+				<!-- 身高 -->
+				<Height />
+				<!-- 体重 -->
+				<Weight />
+				<!-- 生育史 -->
+				<ChildHistory />
+				<!-- 过去史 -->
+				<MedicalHistory />
+				<!-- 查询结果标识（0 无数据返回，1 有数据返回 ） -->
+				<Flag>1</Flag>
+				<!-- 结果说明（数据返回成功为空，否则为错误提示） -->
+				<Msg />
+			</row>
+		</DataTable>
+	</body>
+</root>

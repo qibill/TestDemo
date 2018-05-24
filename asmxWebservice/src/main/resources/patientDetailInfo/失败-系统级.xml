@@ -1,0 +1,12 @@
+<root>
+	<head>
+		<parameter>
+			<hashKey>16a839ed-b5f1-XXXX-b9a3-XXXXXXX72e4</hashKey>
+			<CardNo>500360912</CardNo>
+		</parameter>
+	</head>
+	<body>
+		<result>err</result>
+		<errMsg>hashKey密钥有误!</errMsg>
+	</body>
+</root>

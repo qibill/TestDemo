@@ -1,0 +1,17 @@
+<root>
+	<head>
+		<parameter>
+			<hashKey>16a839ed-b5f1-XXXX-b9a3-XXXXXXX72e4</hashKey>
+			<CardNo>500360912</CardNo>
+		</parameter>
+	</head>
+	<body>
+		<result>OK</result>
+		<DataTable>
+			<row>
+				<Flag>0</Flag>
+				<Msg>未查询到相关卡信息</Msg>
+			</row>
+		</DataTable>
+	</body>
+</root>
