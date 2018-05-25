@@ -4,9 +4,9 @@ import java.util.List;
 
 public class PlatFormTSSCServiceRequest {
 
-	private String hashKey;
-	private String invoketype;
-	private String ReportType;
+	private String hashKey = "c2d442a2-d458-434a-a650-e19ea1f35a79";
+	private String invoketype = "01";
+	private String ReportType = "1";
 	private String Patid;
 	private String PatNo;
 	private String CardNo;
@@ -67,7 +67,7 @@ public class PlatFormTSSCServiceRequest {
 	private String REQNO;
 	private String BGDMC;
 	
-	private List<ContentITEM> contentITEMS;
+	private List<ContentItem> contentITEMS;
 
 	
 	private String FCD;
@@ -426,10 +426,10 @@ public class PlatFormTSSCServiceRequest {
 	public void setBGDMC(String bGDMC) {
 		BGDMC = bGDMC;
 	}
-	public List<ContentITEM> getContentITEMS() {
+	public List<ContentItem> getContentITEMS() {
 		return contentITEMS;
 	}
-	public void setContentITEMS(List<ContentITEM> contentITEMS) {
+	public void setContentITEMS(List<ContentItem> contentITEMS) {
 		this.contentITEMS = contentITEMS;
 	}
 	public String getFCD() {
@@ -554,7 +554,7 @@ public class PlatFormTSSCServiceRequest {
 									"<BGDMC>" + getBGDMC() +"</BGDMC>" + 
 								"</ROW>" + 
 							"<ITEMS>"; 
-		for(ContentITEM contentITEM : getContentITEMS()) {
+		for(ContentItem contentITEM : getContentITEMS()) {
 			xml += contentITEM.toXml();			
 		}
 				

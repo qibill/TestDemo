@@ -1,23 +1,40 @@
 package com.qibill.pojo;
 
-public class ContentITEM {
+public class ContentItem {
 
+	/** 医院收费代码 */
 	private String YYSFDM;
+	/** 医保收费代码 */
 	private String YBSFDM;
+	/** 检查指标代码 */
 	private String JCZBDM;
+	/** 检查方法 */
 	private String JCFF;
+	/** 检查指标名称 */
 	private String JCZBMC;
+	/** 检查指标结果 */
 	private String JCZBJG;
+	/** 参考值 */
 	private String CKZ;
+	/** 记录参考值单位 */
 	private String JLCKZDW;
+	/** 异常提示 */
 	private String YCTS;
+	/** 设备编码 */
 	private String SBBM;
+	/** 仪器编码 */
 	private String YQBM;
+	/** 仪器名称 */
 	private String YQMC;
+	/** 检验日期 */
 	private String JYRQ;
+	/** 报告单号 */
 	private String BGDH;
+	/** 序列号 */
 	private String REQNO;
+	/** 项目序号  */
 	private String SEQNO;
+	
 	public String getYYSFDM() {
 		return YYSFDM;
 	}
