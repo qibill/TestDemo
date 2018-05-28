@@ -2,20 +2,36 @@ package com.qibill.pojo;
 
 public class Patient {
 
+	/** 患者唯一标识 */
 	private String Patid;
+	/** 门诊号 */
 	private String OutPatiNo;
+	/** 姓名 */
 	private String PatName;
+	/** 性别 */
 	private String SexName;
+	/** 末次月经 */
 	private String LastMense;
+	/** 年龄 */
 	private String Age;
+	/** 身份证号码 */
 	private String IdCardNo;
+	/** 联系方式 */
 	private String Tel;
+	/** 手机号 */
 	private String Mobile;
+	/** 身高 */
 	private String Height;
+	/** 体重 */
 	private String Weight;
+	/** 生育史 */
 	private String ChildHistory;
+	/** 过去史 */
 	private String MedicalHistory;
+	/** 查询结果标识（0 无数据返回，1 有数据返回 ） */
 	private String Flag;
+	/** 结果说明（数据返回成功为空，否则为错误提示） */
+	private String Msg;
 	
 	public String getPatid() {
 		return Patid;
@@ -100,5 +116,11 @@ public class Patient {
 	}
 	public void setFlag(String flag) {
 		Flag = flag;
+	}
+	public String getMsg() {
+		return Msg;
+	}
+	public void setMsg(String msg) {
+		Msg = msg;
 	}
 }

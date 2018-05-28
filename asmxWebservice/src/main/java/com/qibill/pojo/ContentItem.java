@@ -1,5 +1,10 @@
 package com.qibill.pojo;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+import com.qibill.utils.XMLUtil;
+
 public class ContentItem {
 
 	/** 医院收费代码 */
@@ -133,24 +138,13 @@ public class ContentItem {
 	}
 	
 	public String toXml() {
-		String xml = "<ROWS>" + 
-					"<YYSFDM>" + getYYSFDM() + "</YYSFDM>" + 
-					"<YBSFDM />" + 
-					"<JCZBDM>" + getJCZBDM() + "</JCZBDM>" + 
-					"<JCFF />" + 
-					"<JCZBMC>" + getJCZBMC() + "</JCZBMC>" + 
-					"<JCZBJG>" + getJCZBJG() + "</JCZBJG>" + 
-					"<CKZ />" + 
-					"<JLCKZDW>" + getJLCKZDW() + "</JLCKZDW>" + 
-					"<YCTS />" + 
-					"<SBBM>" + getSBBM() + "</SBBM>" + 
-					"<YQBM>" + getYQBM() + "</YQBM>" + 
-					"<YQMC>" + getYQMC() + "</YQMC>" + 
-					"<JYRQ>" + getJYRQ() + "</JYRQ>" + 
-					"<BGDH>" + getBGDH() + "</BGDH>" + 
-					"<REQNO>" + getREQNO() + "</REQNO>" + 
-					"<SEQNO>" + getSEQNO() + "</SEQNO>" + 
-				"</ROWS>";
-		return xml;
+		StringBuffer xml = new StringBuffer("<ROWS>");
+		Field[] fields = getClass().getDeclaredFields();
+		for (Field field : fields) {
+			xml.append(XMLUtil.addElement(field.getName(), getClass(), this));
+		}
+		xml.append("</ROWS>");
+		return xml.toString();
 	}
+	
 }
