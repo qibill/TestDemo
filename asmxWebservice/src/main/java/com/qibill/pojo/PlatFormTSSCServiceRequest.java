@@ -6,27 +6,42 @@ import com.qibill.utils.XMLUtil;
 
 public class PlatFormTSSCServiceRequest {
 
+	/** 平台内部编码* 固定值 */
 	private String hashKey = "c2d442a2-d458-434a-a650-e19ea1f35a79";
+	/** 01 添加一条检验报告记录* 固定值 */
 	private String invoketype = "01";
+	/** 报告类型 * 固定值 */
 	private String ReportType = "1";
+	/** 患者ID * */
 	private String Patid;
 	private String PatNo;
+	/** 就诊卡号 * */
 	private String CardNo;
 	private String Mpi;
+	/** 院区编码 (0 西院,1 南院,2 东院) * */
 	private String HospDiv;
+	/** 就诊类型 (1 门诊 2 住院)* */
 	private String VistType;
 	private String RecordID;
+	/** 发布时间/报告时间* */
 	private String PublishDate;
+	/** 检查时间* */
 	private String CheckDate;
 	private String DoctorAdvID;
+	/** 报告唯一编号* */
 	private String ReportNo;
 		
+	/** 报告内容* */
 	private Content content;
 	
+	/** 当期操作时间* */
 	private String FCD;
+	/** 报告唯一编号* */
 	private String Reqno;
 	private String BarCode;
+	/** 操作编码（1 新增 3 撤销）* */
 	private String czqf;
+	/** 患者姓名* */
 	private String PatName;
 	private String PY;
 	private String PrintDatetime;

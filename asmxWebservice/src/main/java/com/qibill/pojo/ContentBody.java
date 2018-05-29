@@ -8,33 +8,49 @@ import com.qibill.utils.XMLUtil;
 
 public class ContentBody {
 
+	/** 门诊住院标志 (1 门诊 2 住院，同VistType)* */
 	private String MZZYBZ;
 	private String BRANCHNO;
+	/** 患者ID* */
 	private String PATID;
 	private String BLH;
+	/** 报告单号（若无则使用 报告唯一编号）* */
 	private String BGDH;
+	/** 报告日期* */
 	private String BGRQ;
 	private String ADVID;
+	/** 卡号* */
 	private String KH;
+	/** 患者姓名* */
 	private String BRXM;
 	private String BRXB;
 	private String BRNL;
 	private String NLDW;
 	private String SQRGH;
 	private String SQRXM;
+	/** 报告人工号* */
 	private String BGRGH;
+	/** 报告人姓名* */
 	private String BGRXM;
+	/** 审核人工号* */
 	private String SHRGH;
+	/** 审核人姓名* */
 	private String SHRXM;
 	private String SQKS;
 	private String BQ;
 	private String CH;
 	private String DYRQ;
+	/** 申请日期* */
 	private String SQRQ;
+	/** 创建日期* */
 	private String CJRQ;
+	/** 检验日期* */
 	private String JYRQ;
+	/** 核实日期* */
 	private String HSRQ;
+	/** 标本代码* */
 	private String BBDM;
+	/** 标本名称* */
 	private String BBMC;
 	private String JZBZ;
 	private String JYMD;
@@ -43,6 +59,7 @@ public class ContentBody {
 	private String REMARK_INFO;
 	private String JGZT;
 	private String REQNO;
+	/** 报告单名称* */
 	private String BGDMC;
 	
 	private List<ContentItem> contentItems;

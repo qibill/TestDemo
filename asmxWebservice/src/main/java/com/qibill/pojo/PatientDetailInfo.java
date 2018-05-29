@@ -1,6 +1,12 @@
 package com.qibill.pojo;
 
-public class Patient {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)   
+@XmlRootElement(name = "row")    
+public class PatientDetailInfo {
 
 	/** 患者唯一标识 */
 	private String Patid;
@@ -123,4 +129,6 @@ public class Patient {
 	public void setMsg(String msg) {
 		Msg = msg;
 	}
+	
+	
 }

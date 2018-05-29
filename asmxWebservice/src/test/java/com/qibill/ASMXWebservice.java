@@ -1,10 +1,14 @@
 package com.qibill;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.xml.namespace.QName;
 import javax.xml.rpc.ParameterMode;
 
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
+import org.junit.Test;
 
 public class ASMXWebservice {
 	private String url = "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";// 提供接口的地址
@@ -37,8 +41,24 @@ public class ASMXWebservice {
 		}
 	}
 
-	public static void main(String args[]) {
-		ASMXWebservice serivce = new ASMXWebservice();
-		serivce.GetAdmOrgUnitByUpdateTime();
+	@Test
+	public void test() {
+		Webservice webservice = new Webservice();
+		String Method = "getSupportCity";
+		Map<String, Object> parameter = new HashMap<>();
+		parameter.put("byProvinceName", "浙江");
+		String[] strings = webservice.doAxisWebservice(url, soapaction, Method, parameter, String[].class);
+
+		if (strings != null) {
+			for (String string : strings) {
+				System.out.println(string);
+			}			
+		}
+	}
+	
+	@Test
+	public void test1() {
+		ASMXWebservice webservice = new ASMXWebservice();
+		webservice.GetAdmOrgUnitByUpdateTime();
 	}
 }
