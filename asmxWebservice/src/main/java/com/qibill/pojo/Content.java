@@ -19,7 +19,7 @@ public class Content {
 	}
 	
 	public String toXml() {
-		StringBuffer xml = new StringBuffer("<Content>");
+		StringBuilder xml = new StringBuilder("<Content>");
 		xml.append("<root>");
 		xml.append(contentHead.toXml());
 		xml.append(contentBody.toXml());

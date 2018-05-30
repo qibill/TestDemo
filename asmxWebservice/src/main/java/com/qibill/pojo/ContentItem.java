@@ -1,7 +1,6 @@
 package com.qibill.pojo;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 import com.qibill.utils.XMLUtil;
 
@@ -138,10 +137,10 @@ public class ContentItem {
 	}
 	
 	public String toXml() {
-		StringBuffer xml = new StringBuffer("<ROWS>");
+		StringBuilder xml = new StringBuilder("<ROWS>");
 		Field[] fields = getClass().getDeclaredFields();
 		for (Field field : fields) {
-			xml.append(XMLUtil.addElement(field.getName(), getClass(), this));
+			xml.append(XMLUtil.addElement(field.getName(), this));
 		}
 		xml.append("</ROWS>");
 		return xml.toString();

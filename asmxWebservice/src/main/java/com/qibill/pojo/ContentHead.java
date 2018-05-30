@@ -58,11 +58,11 @@ public class ContentHead {
 	}
 	
 	public String toXml() {
-		StringBuffer xml = new StringBuffer("<head>");
+		StringBuilder xml = new StringBuilder("<head>");
 		xml.append("<parameter>");
 		Field[] fields = getClass().getDeclaredFields();
 		for (Field field : fields) {
-			xml.append(XMLUtil.addElement(field.getName(), getClass(), this));
+			xml.append(XMLUtil.addElement(field.getName(), this));
 		}
 		xml.append("</parameter>");
 		xml.append("</head>");

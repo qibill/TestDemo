@@ -361,7 +361,7 @@ public class ContentBody {
 	}
 	
 	public String toXml() {
-		StringBuffer xml = new StringBuffer("<body>");
+		StringBuilder xml = new StringBuilder("<body>");
 		xml.append("<result>OK</result>");
 		xml.append("<DataTable>");
 		xml.append("<ROW>");
@@ -370,7 +370,7 @@ public class ContentBody {
 			if ("contentItems".equals(field.getName())) {
 				continue;
 			}
-			xml.append(XMLUtil.addElement(field.getName(), getClass(), this));
+			xml.append(XMLUtil.addElement(field.getName(), this));
 		}
 		xml.append("</ROW>");
 		if (getContentItems().size() > 0) {

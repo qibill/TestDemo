@@ -1,10 +1,11 @@
 package com.biosan.dao;
 
 import java.sql.Connection;
+import java.util.List;
 
 import com.biosan.pojo.Patient;
 
 public interface PatientDao {
 
-	Patient getPatientByIdentitycard(String identitycard, Connection connection);
+	List<Patient> getPatientByPatientid(Integer patientid, Connection connection);
 }

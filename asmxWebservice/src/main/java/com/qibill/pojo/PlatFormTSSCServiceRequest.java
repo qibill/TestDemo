@@ -185,7 +185,7 @@ public class PlatFormTSSCServiceRequest {
 		this.content = content;
 	}
 	public String toXml() {
-		StringBuffer xml = new StringBuffer("<root>");
+		StringBuilder xml = new StringBuilder("<root>");
 		xml.append("<head>");
 		xml.append("<parameter>");
 		Field[] fields = getClass().getDeclaredFields();
@@ -194,7 +194,7 @@ public class PlatFormTSSCServiceRequest {
 				xml.append(getContent().toXml());
 				continue;
 			}
-			xml.append(XMLUtil.addElement(field.getName(), getClass(), this));
+			xml.append(XMLUtil.addElement(field.getName(), this));
 		}
 		xml.append("</parameter>");
 		xml.append("</head>");

@@ -3,8 +3,8 @@ package com.biosan.pojo;
 import java.util.Date;
 
 public class Patient {
-	
-    private Integer patientid;
+
+	private Integer patientid;
 
     private String identitycard;
 
@@ -17,6 +17,10 @@ public class Patient {
     private Integer addressid;
 
     private String address;
+    
+    private byte[] telephone;
+    
+    private byte[] mobile;
 
     private String postalcode;
 
@@ -223,4 +227,33 @@ public class Patient {
     public void setAbmark(Integer abmark) {
         this.abmark = abmark;
     }
+	public byte[] getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(byte[] telephone) {
+		this.telephone = telephone;
+	}
+
+	public byte[] getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(byte[] mobile) {
+		this.mobile = mobile;
+	}
+
+	@Override
+	public String toString() {
+		return "Patient [patientid=" + patientid + ", identitycard=" + identitycard
+				+ ", patientname=" + patientname + ", birthday=" + birthday + ", race=" + race
+				+ ", addressid=" + addressid + ", address=" + address + ", telephone=" + telephone
+				+ ", mobile=" + mobile + ", postalcode=" + postalcode + ", domicile=" + domicile
+				+ ", domicileid=" + domicileid + ", domicileplace=" + domicileplace
+				+ ", pregnancynum=" + pregnancynum + ", operator=" + operator + ", operattime="
+				+ operattime + ", lmpdate=" + lmpdate + ", isregular=" + isregular + ", lmpfrom="
+				+ lmpfrom + ", lmpto=" + lmpto + ", cardnum=" + cardnum + ", fdomicileid="
+				+ fdomicileid + ", openid=" + openid + ", abmark=" + abmark + "]";
+	}
+
 }

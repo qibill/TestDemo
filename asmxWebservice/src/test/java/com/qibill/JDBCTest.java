@@ -6,8 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.junit.Test;
+
 public class JDBCTest {
-    public static void main(String[] args) {
+	
+	@Test
+    public void jdbctest() {
     	String driverClass = "com.mysql.jdbc.Driver";
     	String jdbcUrl = "jdbc:mysql://172.16.0.73:33066/tower?characterEncoding=utf-8";
     	String user = "root";
