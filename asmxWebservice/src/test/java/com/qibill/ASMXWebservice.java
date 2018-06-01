@@ -10,6 +10,8 @@ import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
 import org.junit.Test;
 
+import com.biosan.utils.Webservice;
+
 public class ASMXWebservice {
 	private String url = "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";// 提供接口的地址
 	private String soapaction = "http://WebXml.com.cn/"; // 域名，这是在server定义的

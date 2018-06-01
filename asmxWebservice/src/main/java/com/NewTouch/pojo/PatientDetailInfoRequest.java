@@ -1,4 +1,4 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 public class PatientDetailInfoRequest {
 
@@ -7,6 +7,11 @@ public class PatientDetailInfoRequest {
 	/** 卡号 */
 	private String CardNo;
 
+	public PatientDetailInfoRequest() {}
+	public PatientDetailInfoRequest(String CardNo) {
+		this.CardNo = CardNo;
+	}
+	
 	public String getHashKey() {
 		return hashKey;
 	}
@@ -23,7 +28,7 @@ public class PatientDetailInfoRequest {
 		CardNo = cardNo;
 	}
 
-	public String toXML() {
+	public String toXml() {
 		String xml = "<?xml version=\"1.1\"  encoding=\"utf-8\"?>" + 
 				"<root>" + 
 				"<head>" + 

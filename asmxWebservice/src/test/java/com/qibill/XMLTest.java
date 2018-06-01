@@ -2,16 +2,17 @@ package com.qibill;
 
 import org.junit.Test;
 
-import com.qibill.pojo.ContentBody;
+import com.NewTouch.pojo.PlatFormTSSCServiceRequest;
+import com.biosan.webservice.NewTouchSerivce;
 
 public class XMLTest {
 
 	@Test
 	public void xmlTOString() throws Exception {
-		ContentBody object = new ContentBody();
-
+		NewTouchSerivce serivce = new NewTouchSerivce();
+		PlatFormTSSCServiceRequest request = serivce.creatPlatFormTSSCServiceRequest(74795, "1");
 		
-		System.out.println(object.toXml());
+		System.out.println(request.toXml());
 /*		Class clazz = contentItem.getClass();
 		Field[] fields = clazz.getDeclaredFields();
 		for (Field field : fields) {

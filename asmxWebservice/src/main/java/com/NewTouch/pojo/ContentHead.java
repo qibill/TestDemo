@@ -1,17 +1,22 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 import java.lang.reflect.Field;
 
-import com.qibill.utils.XMLUtil;
+import com.biosan.utils.XMLUtil;
 
 public class ContentHead {
 
-	private String hashKey;
-	private String yqqf;
+	/** 平台内部编码* 固定值 */
+	private String hashKey ="c2d442a2-d458-434a-a650-e19ea1f35a79";
+	/** 院区编码 (0 西院,1 南院,2 东院) * */
+	private String yqqf = "0";
 	private String yzlb;
+	/** 操作编码（1 新增 3 撤销）* */
 	private String czqf;
 	private String bglx;
+	/** 检验日期* */
 	private String jyrq;
+	/** 报告单号（若无则使用 报告唯一编号）* */
 	private String bgdh;
 	
 	public String getHashKey() {

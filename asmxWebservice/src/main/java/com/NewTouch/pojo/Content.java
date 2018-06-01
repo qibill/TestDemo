@@ -1,9 +1,15 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 public class Content {
 
 	private ContentHead contentHead;
 	private ContentBody contentBody;
+	
+	public Content() {}
+	public Content(ContentHead contentHead, ContentBody contentBody) {
+		this.contentHead = contentHead;
+		this.contentBody = contentBody;
+	}
 	
 	public ContentHead getContentHead() {
 		return contentHead;

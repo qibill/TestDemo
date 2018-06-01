@@ -1,15 +1,15 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.qibill.utils.XMLUtil;
+import com.biosan.utils.XMLUtil;
 
 public class ContentBody {
 
 	/** 门诊住院标志 (1 门诊 2 住院，同VistType)* */
-	private String MZZYBZ;
+	private String MZZYBZ = "1";
 	private String BRANCHNO;
 	/** 患者ID* */
 	private String PATID;
@@ -25,7 +25,7 @@ public class ContentBody {
 	private String BRXM;
 	private String BRXB;
 	private String BRNL;
-	private String NLDW;
+	private String NLDW = "岁";
 	private String SQRGH;
 	private String SQRXM;
 	/** 报告人工号* */
@@ -49,9 +49,9 @@ public class ContentBody {
 	/** 核实日期* */
 	private String HSRQ;
 	/** 标本代码* */
-	private String BBDM;
+	private String BBDM = "血清";
 	/** 标本名称* */
-	private String BBMC;
+	private String BBMC = "血清";
 	private String JZBZ;
 	private String JYMD;
 	private String ZXKS;
@@ -60,10 +60,10 @@ public class ContentBody {
 	private String JGZT;
 	private String REQNO;
 	/** 报告单名称* */
-	private String BGDMC;
+	private String BGDMC = "唐氏筛查单";
 	
 	private List<ContentItem> contentItems;
-
+	
 	public String getMZZYBZ() {
 		return MZZYBZ;
 	}
@@ -356,7 +356,7 @@ public class ContentBody {
 		return contentItems == null ? new ArrayList<ContentItem>() : contentItems;
 	}
 
-	public void setContentITEMS(List<ContentItem> contentItems) {
+	public void setContentItems(List<ContentItem> contentItems) {
 		this.contentItems = contentItems;
 	}
 	

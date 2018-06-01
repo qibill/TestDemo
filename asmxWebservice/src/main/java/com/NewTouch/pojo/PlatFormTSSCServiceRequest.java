@@ -1,8 +1,8 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 import java.lang.reflect.Field;
 
-import com.qibill.utils.XMLUtil;
+import com.biosan.utils.XMLUtil;
 
 public class PlatFormTSSCServiceRequest {
 
@@ -19,9 +19,9 @@ public class PlatFormTSSCServiceRequest {
 	private String CardNo;
 	private String Mpi;
 	/** 院区编码 (0 西院,1 南院,2 东院) * */
-	private String HospDiv;
+	private String HospDiv = "0";
 	/** 就诊类型 (1 门诊 2 住院)* */
-	private String VistType;
+	private String VistType = "1";
 	private String RecordID;
 	/** 发布时间/报告时间* */
 	private String PublishDate;
@@ -46,6 +46,11 @@ public class PlatFormTSSCServiceRequest {
 	private String PY;
 	private String PrintDatetime;
 	private String isPrint;
+	
+	public PlatFormTSSCServiceRequest() {}
+	public PlatFormTSSCServiceRequest(Content content) {
+		this.content = content;
+	}
 	public String getHashKey() {
 		return hashKey;
 	}

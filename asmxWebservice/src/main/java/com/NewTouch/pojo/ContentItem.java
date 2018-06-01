@@ -1,8 +1,9 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 import java.lang.reflect.Field;
+import java.util.Date;
 
-import com.qibill.utils.XMLUtil;
+import com.biosan.utils.XMLUtil;
 
 public class ContentItem {
 
@@ -17,7 +18,7 @@ public class ContentItem {
 	/** 检查指标名称 */
 	private String JCZBMC;
 	/** 检查指标结果 */
-	private String JCZBJG;
+	private Object JCZBJG;
 	/** 参考值 */
 	private String CKZ;
 	/** 记录参考值单位 */
@@ -31,7 +32,7 @@ public class ContentItem {
 	/** 仪器名称 */
 	private String YQMC;
 	/** 检验日期 */
-	private String JYRQ;
+	private Date JYRQ;
 	/** 报告单号 */
 	private String BGDH;
 	/** 序列号 */
@@ -69,11 +70,11 @@ public class ContentItem {
 	public void setJCZBMC(String jCZBMC) {
 		JCZBMC = jCZBMC;
 	}
-	public String getJCZBJG() {
+	public Object getJCZBJG() {
 		return JCZBJG;
 	}
-	public void setJCZBJG(String jCZBJG) {
-		JCZBJG = jCZBJG;
+	public void setJCZBJG(Object object) {
+		JCZBJG = object;
 	}
 	public String getCKZ() {
 		return CKZ;
@@ -111,10 +112,10 @@ public class ContentItem {
 	public void setYQMC(String yQMC) {
 		YQMC = yQMC;
 	}
-	public String getJYRQ() {
+	public Date getJYRQ() {
 		return JYRQ;
 	}
-	public void setJYRQ(String jYRQ) {
+	public void setJYRQ(Date jYRQ) {
 		JYRQ = jYRQ;
 	}
 	public String getBGDH() {
