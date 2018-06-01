@@ -1,15 +1,18 @@
-package com.qibill.utils;
+package com.biosan.utils;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
+/**
+ * Jdbc工具封装的接口
+ * 
+ * @author qibill
+ */
 public interface JdbcOperation {
 
 	/**
@@ -72,24 +75,26 @@ public interface JdbcOperation {
 
 	/**
 	 * select功能
+	 * @param <T>
 	 * 
 	 * @param sql
 	 * @param params
 	 * @return List<?>数据集合
 	 * @throws SQLException
 	 */
-//	List<?> queryForBean(String sql, Object[] params, RowMapper<?> mapper)
-//			throws SQLException;
+	<T> List<T> queryForBean(String sql, Object[] params, ResultSetMapper<T> mapper)
+			throws SQLException;
 
 	/**
 	 * select功能
+	 * @param <T>
 	 * 
 	 * @param sql
 	 * @param params
 	 * @return List<?>数据集合
 	 * @throws SQLException
 	 */
-//	List<?> queryForBean(String sql, RowMapper<?> mapper) throws SQLException;
+	<T> List<T> queryForBean(String sql, ResultSetMapper<T> mapper) throws SQLException;
 
 	/**
 	 * select功能
@@ -119,7 +124,7 @@ public interface JdbcOperation {
 	 * @return 统计单列记录数
 	 * @throws SQLException
 	 */
-	int queryForInt(String sql, Object[] params) throws SQLException;
+//	int queryForInt(String sql, Object[] params) throws SQLException;
 
 	/**
 	 * select功能
@@ -128,35 +133,7 @@ public interface JdbcOperation {
 	 * @return 统计单列记录数
 	 * @throws SQLException
 	 */
-	int queryForInt(String sql) throws SQLException;
-
-	/**
-	 * 释放Connection资源
-	 * 
-	 * @param connection
-	 */
-	void free(Connection connection);
-
-	/**
-	 * 释放Statement资源
-	 * 
-	 * @param statement
-	 */
-	void free(Statement statement);
-
-	/**
-	 * 释放PreparedStatement资源
-	 * 
-	 * @param preparedStatement
-	 */
-	void free(PreparedStatement preparedStatement);
-
-	/**
-	 * 释放ResultSet资源
-	 * 
-	 * @param resultSet
-	 */
-	void free(ResultSet resultSet);
+//	int queryForInt(String sql) throws SQLException;
 
 	/**
 	 * 设置数据源

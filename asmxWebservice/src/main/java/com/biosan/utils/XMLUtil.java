@@ -1,4 +1,4 @@
-package com.qibill.utils;
+package com.biosan.utils;
 
 import java.lang.reflect.Method;
 
@@ -6,6 +6,7 @@ public class XMLUtil {
 
 	/**
 	 * 添加对应属性的xml标签。
+	 * 
 	 * @param field 属性名
 	 * @param object 调用方法的对象 
 	 * @return xml类型的字符串String

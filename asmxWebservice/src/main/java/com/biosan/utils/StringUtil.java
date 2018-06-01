@@ -1,9 +1,10 @@
-package com.qibill.utils;
+package com.biosan.utils;
 
 public class StringUtil {
 
 	/**
 	 * 将字符串的首字母大写
+	 * 
 	 * @param string
 	 * @return
 	 * 

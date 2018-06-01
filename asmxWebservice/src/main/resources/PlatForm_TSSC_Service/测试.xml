@@ -1,0 +1,179 @@
+<root>
+	<head>
+		<parameter>
+			<hashKey>c2d442a2-d458-434a-a650-e19ea1f35a79</hashKey>
+			<invoketype>01</invoketype>
+			<ReportType>1</ReportType>
+			<Patid>15883</Patid>
+			<PatNo />
+			<CardNo />
+			<Mpi />
+			<HospDiv>0</HospDiv>
+			<VistType>1</VistType>
+			<RecordID />
+			<PublishDate>2016-09-13</PublishDate>
+			<CheckDate>2015-01-26</CheckDate>
+			<DoctorAdvID />
+			<ReportNo>15883</ReportNo>
+			<Content>
+				<root>
+					<head>
+						<parameter>
+							<hashKey>c2d442a2-d458-434a-a650-e19ea1f35a79</hashKey>
+							<yqqf>0</yqqf>
+							<yzlb />
+							<czqf>1</czqf>
+							<bglx />
+							<jyrq>2015-01-26</jyrq>
+							<bgdh>15883</bgdh>
+						</parameter>
+					</head>
+					<body>
+						<result>OK</result>
+						<DataTable>
+							<ROW>
+								<MZZYBZ>1</MZZYBZ>
+								<BRANCHNO />
+								<PATID>15883</PATID>
+								<BLH />
+								<BGDH>15883</BGDH>
+								<BGRQ>2016-09-13</BGRQ>
+								<ADVID />
+								<KH />
+								<BRXM>余爱云</BRXM>
+								<BRXB />
+								<BRNL />
+								<NLDW>岁</NLDW>
+								<SQRGH />
+								<SQRXM />
+								<BGRGH>9</BGRGH>
+								<BGRXM>10</BGRXM>
+								<SHRGH>9</SHRGH>
+								<SHRXM>9</SHRXM>
+								<SQKS />
+								<BQ />
+								<CH />
+								<DYRQ />
+								<SQRQ>2015-01-26 08:11:09.0</SQRQ>
+								<CJRQ>2015-01-26 08:11:09.0</CJRQ>
+								<JYRQ>2015-01-26</JYRQ>
+								<HSRQ>2016-09-13</HSRQ>
+								<BBDM>血清</BBDM>
+								<BBMC>血清</BBMC>
+								<JZBZ />
+								<JYMD />
+								<ZXKS />
+								<LCZD />
+								<REMARK_INFO />
+								<JGZT />
+								<REQNO>15883</REQNO>
+								<BGDMC>唐氏筛查单</BGDMC>
+							</ROW>
+							<ITEMS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>体重</JCZBDM>
+									<JCFF />
+									<JCZBMC>体重</JCZBMC>
+									<JCZBJG>55.6</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO />
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>采样日期</JCZBDM>
+									<JCFF />
+									<JCZBMC>采样日期</JCZBMC>
+									<JCZBJG>2010-11-18</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO />
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>送检日期</JCZBDM>
+									<JCFF />
+									<JCZBMC>送检日期</JCZBMC>
+									<JCZBJG />
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO />
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>样品编号</JCZBDM>
+									<JCFF />
+									<JCZBMC>样品编号</JCZBMC>
+									<JCZBJG>15883</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO />
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>采样时孕周</JCZBDM>
+									<JCFF />
+									<JCZBMC>采样时孕周</JCZBMC>
+									<JCZBJG>lmpcycle</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO />
+									<SEQNO />
+								</ROWS>
+							</ITEMS>
+						</DataTable>
+					</body>
+				</root>
+			</Content>
+			<FCD>2016-09-13</FCD>
+			<Reqno />
+			<BarCode />
+			<czqf>1</czqf>
+			<PatName>余爱云</PatName>
+			<PY />
+			<PrintDatetime />
+			<isPrint />
+		</parameter>
+	</head>
+	<body />
+</root>

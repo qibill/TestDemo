@@ -8,7 +8,7 @@ import javax.xml.bind.Unmarshaller;
 
 import org.junit.Test;
 
-import com.qibill.pojo.PatientDetailInfo;
+import com.NewTouch.pojo.PatientDetailInfo;
 
 public class GetReponseTest {
 
@@ -66,7 +66,7 @@ public class GetReponseTest {
 		try {
 			jc = JAXBContext.newInstance(PatientDetailInfo.class);
 			Unmarshaller unmarshaller=jc.createUnmarshaller();
-			patientDetailInfo = (com.qibill.pojo.PatientDetailInfo) unmarshaller.unmarshal(new StringReader(dataTable));
+			patientDetailInfo = (com.NewTouch.pojo.PatientDetailInfo) unmarshaller.unmarshal(new StringReader(dataTable));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}

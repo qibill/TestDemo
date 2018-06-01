@@ -1,4 +1,4 @@
-package com.qibill.pojo;
+package com.NewTouch.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

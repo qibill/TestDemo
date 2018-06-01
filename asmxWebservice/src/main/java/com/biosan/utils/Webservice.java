@@ -1,4 +1,4 @@
-package com.qibill;
+package com.biosan.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,11 @@ import javax.xml.rpc.ParameterMode;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
 
+/**
+ * Webservice的工具实现类
+ * 
+ * @author qibill
+ */
 public class Webservice {
 
 	/**
