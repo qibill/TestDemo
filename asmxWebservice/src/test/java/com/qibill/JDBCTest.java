@@ -20,7 +20,7 @@ public class JDBCTest {
 	public void  jdbcUtilTest() {
 		JdbcUtil jdbcUtil = new JdbcUtil();
 		String sql = "select * from patient where patientid = ?";
-		Object[] params = {78408};
+		Object[] params = {74734};
 		List<Patient> patients = new ArrayList<>();
 		ResultSetMapper<Patient> mapper = new ResultSetMapper<Patient>() {};
 		try {

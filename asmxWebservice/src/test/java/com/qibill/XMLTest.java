@@ -3,14 +3,14 @@ package com.qibill;
 import org.junit.Test;
 
 import com.NewTouch.pojo.PlatFormTSSCServiceRequest;
-import com.biosan.webservice.NewTouchSerivce;
+import com.biosan.webservice.impl.NewTouchWebSerivceImpl;
 
 public class XMLTest {
 
 	@Test
 	public void xmlTOString() throws Exception {
-		NewTouchSerivce serivce = new NewTouchSerivce();
-		PlatFormTSSCServiceRequest request = serivce.creatPlatFormTSSCServiceRequest(74795, "1");
+		NewTouchWebSerivceImpl serivce = new NewTouchWebSerivceImpl();
+		PlatFormTSSCServiceRequest request = serivce.creatPlatFormTSSCServiceRequest(74734, "1");
 		
 		System.out.println(request.toXml());
 /*		Class clazz = contentItem.getClass();

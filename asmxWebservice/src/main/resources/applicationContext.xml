@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="   
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd 
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- 数据库连接池 -->
+	<!-- 加载配置文件 -->
+	<context:property-placeholder
+		location="classpath:jdbc.properties" />
+	<!-- 数据库连接池 -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="maxActive" value="10" />
+		<property name="minIdle" value="5" />
+	</bean>
+	<!-- <jaxws:server发布SOAP协议的服务 ，对JaxWsServerFactoryBean类封装 -->
+	<jaxws:server address="/biosan"
+		serviceClass="com.biosan.webservice.NewTouchWebSerivce">
+		<jaxws:serviceBean>
+			<ref bean="newTouchWebSerivce" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+	<!-- 配置服务实现类 -->
+
+	<bean id="jdbcUtil" class="com.biosan.utils.JdbcUtil">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean id="newTouchWebSerivce"
+		class="com.biosan.webservice.impl.NewTouchWebSerivceImpl">
+		<property name="jdbcOperation" ref="jdbcUtil"></property>
+	</bean>
+
+	<!-- import CXF configuration files -->
+	<import resource="classpath:/META-INF/cxf/cxf.xml" />
+	<import
+		resource="classpath:/META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:/META-INF/cxf/cxf-servlet.xml" />
+</beans>

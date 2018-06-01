@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import javax.sql.DataSource;
-
 /**
  * Jdbc工具封装的接口
  * 
@@ -134,13 +132,6 @@ public interface JdbcOperation {
 	 * @throws SQLException
 	 */
 //	int queryForInt(String sql) throws SQLException;
-
-	/**
-	 * 设置数据源
-	 * 
-	 * @param dataSource
-	 */
-	void setDataSource(DataSource dataSource);
 
 	/**
 	 * 获取数据库链接

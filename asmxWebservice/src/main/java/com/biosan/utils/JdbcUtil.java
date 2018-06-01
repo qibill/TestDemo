@@ -1,6 +1,5 @@
 package com.biosan.utils;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,8 +13,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import com.biosan.utils.GetDataSource;
-
 /**
  * Jdbc的工具封装实现类
  * 
@@ -23,15 +20,8 @@ import com.biosan.utils.GetDataSource;
  */
 public class JdbcUtil implements JdbcOperation {
 
-	private DataSource dataSource = null;
+	private DataSource dataSource;
 
-	{
-		try {
-			dataSource = GetDataSource.dbcpSources();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	@Override
 	public ResultSet queryForResultSet(String sql, Object[] params) throws SQLException {
@@ -71,7 +61,7 @@ public class JdbcUtil implements JdbcOperation {
 			while (rs.next()) {
 				map = new HashMap<String, Object>(columnCount);
 				for (int i = 1; i <= columnCount; i++) {
-					map.put(rsd.getColumnName(i), rs.getObject(i));
+					map.put(rsd.getColumnLabel(i), rs.getObject(i));
 				}
 				list.add(map);
 			}
@@ -100,8 +90,11 @@ public class JdbcUtil implements JdbcOperation {
 	public int queryForInt(String sql) throws SQLException {
 		return 0;
 	}*/
+	
+	public DataSource getDataSource() {
+		return dataSource;
+	}
 
-	@Override
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}

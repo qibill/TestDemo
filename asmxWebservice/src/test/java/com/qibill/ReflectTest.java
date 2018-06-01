@@ -10,7 +10,7 @@ import com.biosan.utils.ResultSetMapper;
 
 public class ReflectTest {
 
-	@Test
+	/*	@Test
 	@SuppressWarnings("unchecked")
 	public void test() {
 		Patient patient = new Patient();
@@ -21,7 +21,7 @@ public class ReflectTest {
 			System.out.println("there is not");
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	@Test
 	public void getTclass() {

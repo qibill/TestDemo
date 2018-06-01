@@ -40,9 +40,9 @@ public abstract class ResultSetMapper<T> {
 				for (int i = 1; i <= count; i++) {
 
 					// 给对象的某个属性赋值
-					String name = metaData.getColumnName(i);
+					String name = metaData.getColumnLabel(i);
 					name = toJavaField(name);// 改变列名格式成java命名格式
-					Class<?> type = clazz.getDeclaredField(metaData.getColumnName(i)).getType();// 获取字段类型
+					Class<?> type = clazz.getDeclaredField(metaData.getColumnLabel(i)).getType();// 获取字段类型
 					Method method = clazz.getMethod("set" + StringUtil.toUpperCaseFirstOne(name),
 							type);
 
