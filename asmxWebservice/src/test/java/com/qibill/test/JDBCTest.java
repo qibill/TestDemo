@@ -11,8 +11,8 @@ import java.util.List;
 import org.junit.Test;
 
 import com.biosan.pojo.Patient;
-import com.biosan.utils.JdbcUtil;
 import com.biosan.utils.ResultSetMapper;
+import com.biosan.webservice.JdbcUtil;
 
 public class JDBCTest {
 	

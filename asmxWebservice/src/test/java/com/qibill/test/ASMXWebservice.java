@@ -49,7 +49,7 @@ public class ASMXWebservice {
 		String Method = "getSupportCity";
 		Map<String, Object> parameter = new HashMap<>();
 		parameter.put("byProvinceName", "浙江");
-		String[] strings = webservice.doAxisWebservice(url, soapaction, Method, parameter, String[].class);
+		String[] strings = webservice.doWebservice(url, soapaction, Method, parameter, String[].class);
 
 		if (strings != null) {
 			for (String string : strings) {

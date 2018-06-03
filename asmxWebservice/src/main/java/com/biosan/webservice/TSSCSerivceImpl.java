@@ -8,7 +8,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import com.biosan.utils.JdbcOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.biosan.utils.ResultSetMapper;
 import com.newtouch.pojo.Content;
 import com.newtouch.pojo.ContentBody;
@@ -16,9 +18,10 @@ import com.newtouch.pojo.ContentHead;
 import com.newtouch.pojo.ContentItem;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
-
+@Service
 public class TSSCSerivceImpl implements TSSCService {
 
+    @Autowired
     private JdbcOperation jdbcOperation;
 
     @Override

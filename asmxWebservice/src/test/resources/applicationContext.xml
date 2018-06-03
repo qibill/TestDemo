@@ -36,7 +36,7 @@
 	<context:component-scan base-package="com.biosan.webservice"></context:component-scan>
 	
 	<!-- <jaxws:server发布SOAP协议的服务 ，对JaxWsServerFactoryBean类封装 -->
-	<jaxws:server address="/biosanWebSerivce"
+	<jaxws:server address="/biosan"
 		serviceClass="com.biosan.webservice.BiosanWebSerivce">
 		<jaxws:serviceBean>
 			<ref bean="biosanWebSerivce" />
@@ -47,14 +47,10 @@
 	<bean id="biosanWebSerivce" class="com.biosan.webservice.BiosanWebSerivceImpl">
 	</bean>
 	
-	<!-- TODO wsdl2java后 修改 -->
 	<!-- <jaxws:client实现客户端 ，对JaxWsProxyFactoryBean类封装 -->
-	<jaxws:client id="patientBasicInfo"
-		address="http://172.20.1.35/WebService/PatientBasicInfo.asmx"
-		serviceClass="com.newtouch.webservice.PatientBasicInfoSoap" />
-	<jaxws:client id="testReportRelease"
-		address="http://172.20.1.35/WebService/TestReportRelease.asmx"
-		serviceClass="com.newtouch.webservice.TestReportReleaseSoap" />
+	<jaxws:client id="weatherClient"
+		address="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"
+		serviceClass="com.weather.WeatherWebServiceSoap" />
 
 
 </beans>

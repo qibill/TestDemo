@@ -1,8 +1,7 @@
 package com.newtouch.webservice;
 
 
-public interface NewTouchWebServiceSoap {
+public interface TestReportReleaseSoap {
 
-    String patientDetailInfo(String request);
     String PlatForm_TSSC_Service(String request);
 }

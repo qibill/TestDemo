@@ -41,9 +41,9 @@ public class AxisWebservice implements NewTouchService{
      * @param <T>
      */
 	@SuppressWarnings("unchecked")
-	private <T> T doWebservice(String url, String soapaction, String Method,
+	public <T> T doWebservice(String url, String soapaction, String Method,
 			Map<String, Object> parameter, Class<T> clazz) {
-		Service service = new Service();
+/*		Service service = new Service();
 		List<Object> objects = new ArrayList<>();
 		try {
 			Call call = (Call) service.createCall();
@@ -68,8 +68,8 @@ public class AxisWebservice implements NewTouchService{
 			return (T)call.invoke(objects.toArray());
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return null;
-		}
+		}*/
+	return null;
 	}
 
 }

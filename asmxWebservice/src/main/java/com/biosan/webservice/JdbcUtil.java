@@ -1,4 +1,4 @@
-package com.biosan.utils;
+package com.biosan.webservice;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,13 +13,20 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.biosan.utils.ResultSetMapper;
+
 /**
  * Jdbc的工具封装实现类
  * 
  * @author qibill
  */
+@Component
 public class JdbcUtil implements JdbcOperation {
 
+    @Autowired
 	private DataSource dataSource;
 
 
