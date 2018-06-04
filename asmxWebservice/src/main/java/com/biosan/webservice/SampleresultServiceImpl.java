@@ -10,11 +10,12 @@ import com.newtouch.mapper.SampleresultMapper;
 @Service
 public class SampleresultServiceImpl implements SampleresultService {
 
-	@Autowired
-	private SampleresultMapper sampleresultMapper;
-	@Override
-	public List<Integer> selectEmployeename() {
-		return sampleresultMapper.selectDaysSampleid(1);
-	}
+    @Autowired
+    private SampleresultMapper sampleresultMapper;
+
+    @Override
+    public List<Integer> selectDaysSampleid(Integer days) {
+        return sampleresultMapper.selectDaysSampleid(days);
+    }
 
 }

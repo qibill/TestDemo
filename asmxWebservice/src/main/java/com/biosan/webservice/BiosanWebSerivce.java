@@ -23,6 +23,6 @@ public interface BiosanWebSerivce {
 	 */
 	@WebMethod(action = "http://webservice.biosan.com/sendPlatFormTSSCService")
 	String sendPlatFormTSSCService(
-			@WebParam(name = "sampleid", targetNamespace = "http://webservice.biosan.com/") int sampleid,
-			@WebParam(name = "czqf", targetNamespace = "http://webservice.biosan.com/") String czqf);
+			@WebParam(name = "sampleid", targetNamespace = "http://webservice.biosan.com/") Integer sampleid,
+			@WebParam(name = "czqf", targetNamespace = "http://webservice.biosan.com/") Integer czqf);
 }

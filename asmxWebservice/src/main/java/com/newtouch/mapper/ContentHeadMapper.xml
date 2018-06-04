@@ -6,7 +6,7 @@
 		<id column="hashKey" jdbcType="CHAR" property="hashKey" />
 		<result column="yqqf" jdbcType="CHAR" property="yqqf" />
 		<result column="yzlb" jdbcType="CHAR" property="yzlb" />
-		<result column="czqf" jdbcType="CHAR" property="czqf" />
+		<result column="czqf" jdbcType="INTEGER" property="czqf" />
 		<result column="bglx" jdbcType="CHAR" property="bglx" />
 		<result column="jyrq" jdbcType="CHAR" property="jyrq" />
 		<result column="bgdh" jdbcType="CHAR" property="bgdh" />

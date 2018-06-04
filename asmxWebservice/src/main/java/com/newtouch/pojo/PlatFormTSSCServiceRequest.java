@@ -40,7 +40,7 @@ public class PlatFormTSSCServiceRequest {
 	private String Reqno;
 	private String BarCode;
 	/** 操作编码（1 新增 3 撤销）* */
-	private String czqf;
+	private Integer czqf;
 	/** 患者姓名* */
 	private String PatName;
 	private String PY;
@@ -153,10 +153,10 @@ public class PlatFormTSSCServiceRequest {
 	public void setBarCode(String barCode) {
 		BarCode = barCode;
 	}
-	public String getCzqf() {
+	public Integer getCzqf() {
 		return czqf;
 	}
-	public void setCzqf(String czqf) {
+	public void setCzqf(Integer czqf) {
 		this.czqf = czqf;
 	}
 	public String getPatName() {

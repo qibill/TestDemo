@@ -12,7 +12,7 @@ public class ContentHead {
 	private String yqqf = "0";
 	private String yzlb;
 	/** 操作编码（1 新增 3 撤销）* */
-	private String czqf;
+	private Integer czqf;
 	private String bglx;
 	/** 检验日期* */
 	private String jyrq;
@@ -37,10 +37,10 @@ public class ContentHead {
 	public void setYzlb(String yzlb) {
 		this.yzlb = yzlb;
 	}
-	public String getCzqf() {
+	public Integer getCzqf() {
 		return czqf;
 	}
-	public void setCzqf(String czqf) {
+	public void setCzqf(Integer czqf) {
 		this.czqf = czqf;
 	}
 	public String getBglx() {

@@ -17,17 +17,17 @@
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
-				<ref bean="myJobTrigger" />
+				<ref bean="biosanJobTrigger" />
 			</list>
 		</property>
 	</bean>
 	<!-- 启动触发器的配置结束 -->
 
 	<!-- quartz-2.x的配置 -->
-	<bean id="myJobTrigger"
+	<bean id="biosanJobTrigger"
 		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail">
-			<ref bean="myJobDetail" />
+			<ref bean="biosanJobDetail" />
 		</property>
 		<property name="cronExpression">
 			<!--一分钟触发一次 -->
@@ -40,10 +40,10 @@
 	<!-- 调度的配置结束 -->
 
 	<!-- job的配置开始 -->
-	<bean id="myJobDetail"
+	<bean id="biosanJobDetail"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
-			<ref bean="myJob" />
+			<ref bean="biosanJob" />
 		</property>
 		<property name="targetMethod">
 			<value>execute</value>
@@ -52,8 +52,8 @@
 	<!-- job的配置结束 -->
 
 	<!-- 工作的bean -->
-	<bean id="myJob"
-		class="com.biosan.quartz.Job1Demo" />
+	<bean id="biosanJob"
+		class="com.biosan.webservice.biosanJob" />
 
 	<!--定时任务配置 end -->
 </beans>  

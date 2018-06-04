@@ -20,7 +20,7 @@
 		<result column="FCD" jdbcType="CHAR" property="FCD" />
 		<result column="Reqno" jdbcType="CHAR" property="Reqno" />
 		<result column="BarCode" jdbcType="CHAR" property="BarCode" />
-		<result column="czqf" jdbcType="CHAR" property="czqf" />
+		<result column="czqf" jdbcType="INTEGER" property="czqf" />
 		<result column="PatName" jdbcType="CHAR" property="PatName" />
 		<result column="PY" jdbcType="CHAR" property="PY" />
 		<result column="PrintDatetime" jdbcType="CHAR" property="PrintDatetime" />

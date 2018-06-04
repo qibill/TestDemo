@@ -38,7 +38,7 @@ public class TSSCSerivceImpl implements TSSCService {
 	private EmployeeMapper employeeMapper;
 
 	@Override
-	public PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest(int sampleid, String czqf) {
+	public PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest(Integer sampleid, Integer czqf) {
 		List<ContentItem> items = new ArrayList<>();
 		items.addAll(selectContentItemList(sampleid));
 		ContentBody body = selectContentBody(sampleid);
@@ -53,7 +53,7 @@ public class TSSCSerivceImpl implements TSSCService {
 		return request;
 	}
 
-	private Collection<ContentItem> selectContentItemList(int sampleid) {
+	private Collection<ContentItem> selectContentItemList(Integer sampleid) {
 		List<ContentItem> ContentItems = new ArrayList<>();
 		Map<String, Object> map = contentItemMapper.queryForMap(74734);
 		for (String key : map.keySet()) {
@@ -77,7 +77,7 @@ public class TSSCSerivceImpl implements TSSCService {
 		return ContentItems;
 	}
 
-	private ContentBody selectContentBody(int sampleid) {
+	private ContentBody selectContentBody(Integer sampleid) {
 
 		ContentBody contentBody = new ContentBody();
 		contentBody = contentBodyMapper.selectContentBody(sampleid).get(0);
@@ -92,12 +92,12 @@ public class TSSCSerivceImpl implements TSSCService {
 		return contentBody;
 	}
 
-	private ContentHead selectContentHead(int sampleid) {
+	private ContentHead selectContentHead(Integer sampleid) {
 		List<ContentHead> list = contentHeadMapper.selectContentHead(sampleid);
 		return list.get(0);
 	}
 
-	private PlatFormTSSCServiceRequest selectPlatFormTSSCServiceRequest(int sampleid) {
+	private PlatFormTSSCServiceRequest selectPlatFormTSSCServiceRequest(Integer sampleid) {
 
 		Object[] params = { sampleid };
 		PlatFormTSSCServiceRequest request = new PlatFormTSSCServiceRequest();
