@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.mapper.PlatFormTSSCServiceRequestMapper">
+	<resultMap id="BaseResultMap"
+		type="com.newtouch.pojo.PlatFormTSSCServiceRequest">
+		<id column="hashKey" jdbcType="CHAR" property="hashKey" />
+		<result column="invoketype" jdbcType="CHAR" property="invoketype" />
+		<result column="ReportType" jdbcType="CHAR" property="ReportType" />
+		<result column="Patid" jdbcType="CHAR" property="Patid" />
+		<result column="PatNo" jdbcType="CHAR" property="PatNo" />
+		<result column="CardNo" jdbcType="CHAR" property="CardNo" />
+		<result column="Mpi" jdbcType="CHAR" property="Mpi" />
+		<result column="HospDiv" jdbcType="CHAR" property="HospDiv" />
+		<result column="VistType" jdbcType="CHAR" property="VistType" />
+		<result column="RecordID" jdbcType="CHAR" property="RecordID" />
+		<result column="PublishDate" jdbcType="CHAR" property="PublishDate" />
+		<result column="CheckDate" jdbcType="CHAR" property="CheckDate" />
+		<result column="DoctorAdvID" jdbcType="DATE" property="DoctorAdvID" />
+		<result column="ReportNo" jdbcType="CHAR" property="ReportNo" />
+		<result column="FCD" jdbcType="CHAR" property="FCD" />
+		<result column="Reqno" jdbcType="CHAR" property="Reqno" />
+		<result column="BarCode" jdbcType="CHAR" property="BarCode" />
+		<result column="czqf" jdbcType="CHAR" property="czqf" />
+		<result column="PatName" jdbcType="CHAR" property="PatName" />
+		<result column="PY" jdbcType="CHAR" property="PY" />
+		<result column="PrintDatetime" jdbcType="CHAR" property="PrintDatetime" />
+		<result column="isPrint" jdbcType="CHAR" property="isPrint" />
+	</resultMap>
+	<select id="selectPlatFormTSSCServiceRequest"
+		parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		SELECT s.samplestring Patid, 
+		p.identitycard PatNo,
+		s.backfillnum CardNo,
+		s.pdfdate PublishDate,
+		s.labdate CheckDate,
+		s.samplestring ReportNo,
+		p.patientname PatName
+		 FROM sample s,patient p
+		 WHERE s.patientid = p.patientid
+		 AND s.sampleid = #{sampleid};
+	</select>
+</mapper>

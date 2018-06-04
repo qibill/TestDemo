@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.mapper.ContentBodyMapper">
+	<resultMap id="BaseResultMap"
+		type="com.newtouch.pojo.ContentBody">
+		<id column="MZZYBZ" jdbcType="CHAR" property="MZZYBZ" />
+		<result column="BRANCHNO" jdbcType="CHAR" property="BRANCHNO" />
+		<result column="PATID" jdbcType="CHAR" property="PATID" />
+		<result column="BLH" jdbcType="CHAR" property="BLH" />
+		<result column="BGDH" jdbcType="CHAR" property="BGDH" />
+		<result column="BGRQ" jdbcType="CHAR" property="BGRQ" />
+		<result column="ADVID" jdbcType="CHAR" property="ADVID" />
+		<result column="KH" jdbcType="CHAR" property="KH" />
+		<result column="BRXM" jdbcType="CHAR" property="BRXM" />
+		<result column="BRXB" jdbcType="CHAR" property="BRXB" />
+		<result column="BRNL" jdbcType="CHAR" property="BRNL" />
+		<result column="NLDW" jdbcType="CHAR" property="NLDW" />
+		<result column="SQRGH" jdbcType="DATE" property="SQRGH" />
+		<result column="SQRXM" jdbcType="CHAR" property="SQRXM" />
+		<result column="BGRGH" jdbcType="INTEGER" property="BGRGH" />
+		<result column="SHRGH" jdbcType="INTEGER" property="SHRGH" />
+		<result column="SQKS" jdbcType="CHAR" property="SQKS" />
+		<result column="BQ" jdbcType="CHAR" property="BQ" />
+		<result column="CH" jdbcType="CHAR" property="CH" />
+		<result column="DYRQ" jdbcType="CHAR" property="DYRQ" />
+		<result column="SQRQ" jdbcType="CHAR" property="SQRQ" />
+		<result column="CJRQ" jdbcType="CHAR" property="CJRQ" />
+		<result column="JYRQ" jdbcType="CHAR" property="JYRQ" />
+		<result column="HSRQ" jdbcType="CHAR" property="HSRQ" />
+		<result column="BBDM" jdbcType="CHAR" property="BBDM" />
+		<result column="BBMC" jdbcType="CHAR" property="BBMC" />
+		<result column="JZBZ" jdbcType="CHAR" property="JZBZ" />
+		<result column="JYMD" jdbcType="CHAR" property="JYMD" />
+		<result column="ZXKS" jdbcType="CHAR" property="ZXKS" />
+		<result column="LCZD" jdbcType="CHAR" property="LCZD" />
+		<result column="REMARK_INFO" jdbcType="CHAR" property="REMARK_INFO" />
+		<result column="JGZT" jdbcType="CHAR" property="JGZT" />
+		<result column="REQNO" jdbcType="CHAR" property="REQNO" />
+	</resultMap>
+	<select id="selectContentBody"
+		parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		SELECT s.pdfdate BGRQ,
+		s.samplestring BGDH,
+		s.samplestring PATID,
+		s.samplestring REQNO,
+		s.backfillnum KH,
+		p.patientname BRXM,
+		s.laboperator BGRGH,
+		s.pdfchecktor SHRGH,
+		s.addtime SQRQ,
+		s.addtime CJRQ,
+		s.labdate JYRQ,
+		s.pdfdate HSRQ
+		 FROM sample s,patient p
+		 WHERE s.patientid = p.patientid
+		 AND s.sampleid = #{sampleid};
+	</select>
+</mapper>

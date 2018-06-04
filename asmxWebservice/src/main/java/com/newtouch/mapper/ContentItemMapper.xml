@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.mapper.ContentItemMapper">
+	<resultMap id="BaseResultMap"
+		type="com.newtouch.pojo.ContentItem">
+		<id column="YYSFDM" jdbcType="CHAR" property="YYSFDM" />
+		<result column="YBSFDM" jdbcType="CHAR" property="YBSFDM" />
+		<result column="JCZBDM" jdbcType="CHAR" property="JCZBDM" />
+		<result column="JCFF" jdbcType="CHAR" property="JCFF" />
+		<result column="JCZBMC" jdbcType="CHAR" property="JCZBMC" />
+		<result column="JCZBJG" jdbcType="CHAR" property="JCZBJG" />
+		<result column="CKZ" jdbcType="CHAR" property="CKZ" />
+		<result column="JLCKZDW" jdbcType="CHAR" property="JLCKZDW" />
+		<result column="YCTS" jdbcType="CHAR" property="YCTS" />
+		<result column="SBBM" jdbcType="CHAR" property="SBBM" />
+		<result column="YQBM" jdbcType="CHAR" property="YQBM" />
+		<result column="YQMC" jdbcType="CHAR" property="YQMC" />
+		<result column="JYRQ" jdbcType="DATE" property="JYRQ" />
+		<result column="BGDH" jdbcType="CHAR" property="BGDH" />
+		<result column="REQNO" jdbcType="CHAR" property="REQNO" />
+		<result column="SEQNO" jdbcType="CHAR" property="SEQNO" />
+	</resultMap>
+	<select id="queryForMap"
+		parameterType="java.lang.Integer"
+		resultType="java.util.Map">
+		SELECT p.patientname 姓名,
+        p.lmpdate 末次月经,
+        p.birthday 出生日期,
+        s.cycletype 孕周计算基于,
+        s.preg_age 预产年龄,
+        s.samplestring 样品编号,
+        s.collectdate 采样日期,
+        s.senddate 送检日期,
+        s.weight 体重,
+        CONCAT(s.cycle_week,'周',s.cycle_day,'天') 采样时孕周,
+        r.target_afpmom AFP,
+        r.target_hcgbmom hCGb,
+        r.target_ue3mom uE3,
+        r.age_t21 '21-三体年龄风险',
+        r.analysis_t21 '21-三体风险值',
+        r.result_t21 '21-三体风险结果',
+        r.age_t18 '18-三体年龄风险',
+        r.analysis_t18 '18-三体风险值',
+        r.result_t18 '18-三体风险结果',
+        R.result_ntd NTD,
+        s.labdate JYRQ,
+        s.samplestring BGDH,
+        s.samplestring REQNO,
+        s.pdfdate 报告日期,
+        s.pdfchecktor 审核者
+        FROM sample s, sampleresult r,patient p
+        WHERE s.sampleid = r.sampleid
+        AND s.patientid = p.patientid
+        AND s.sampleid = #{sampleid}
+        ORDER BY r.operattime DESC 
+        LIMIT 1;
+	</select>
+</mapper>

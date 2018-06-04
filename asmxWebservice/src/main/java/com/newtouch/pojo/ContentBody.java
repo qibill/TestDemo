@@ -29,11 +29,11 @@ public class ContentBody {
 	private String SQRGH;
 	private String SQRXM;
 	/** 报告人工号* */
-	private String BGRGH;
+	private Integer BGRGH;
 	/** 报告人姓名* */
 	private String BGRXM;
 	/** 审核人工号* */
-	private String SHRGH;
+	private Integer SHRGH;
 	/** 审核人姓名* */
 	private String SHRXM;
 	private String SQKS;
@@ -176,11 +176,11 @@ public class ContentBody {
 		SQRXM = sQRXM;
 	}
 
-	public String getBGRGH() {
+	public Integer getBGRGH() {
 		return BGRGH;
 	}
 
-	public void setBGRGH(String bGRGH) {
+	public void setBGRGH(Integer bGRGH) {
 		BGRGH = bGRGH;
 	}
 
@@ -192,11 +192,11 @@ public class ContentBody {
 		BGRXM = bGRXM;
 	}
 
-	public String getSHRGH() {
+	public Integer getSHRGH() {
 		return SHRGH;
 	}
 
-	public void setSHRGH(String sHRGH) {
+	public void setSHRGH(Integer sHRGH) {
 		SHRGH = sHRGH;
 	}
 

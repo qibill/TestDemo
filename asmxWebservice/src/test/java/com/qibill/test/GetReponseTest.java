@@ -8,12 +8,15 @@ import javax.xml.bind.Unmarshaller;
 
 import org.junit.Test;
 
+import com.biosan.utils.BiosanResult;
+import com.biosan.utils.JsonUtils;
 import com.newtouch.pojo.PatientDetailInfo;
 
 public class GetReponseTest {
 
 	@Test
 	public void xmltoString() {
+		BiosanResult biosanResult = new BiosanResult();
 		String reponse ="<root>" + 
 				"<head>" + 
 				"<parameter>" + 
@@ -49,18 +52,21 @@ public class GetReponseTest {
 		//失败-系统级
 		if ("err".equals(result)) {
 			String errMsg = reponsebody.substring(reponsebody.indexOf("<errMsg>") + 8, reponsebody.indexOf("</errMsg>"));
-			System.out.println(errMsg); 
+			biosanResult.setStatus(3);
+			biosanResult.setMsg(errMsg);
+			System.out.println(JsonUtils.objectToJson(biosanResult));
 		}
 		
 		String Flag = reponsebody.substring(reponsebody.indexOf("<Flag>") + 6, reponsebody.indexOf("</Flag>"));		
 		//失败
 		if ("0".equals(Flag)) {
 			String Msg = reponsebody.substring(reponsebody.indexOf("<Msg>") + 5, reponsebody.indexOf("</Msg>"));
-			System.out.println(Msg);
+			biosanResult.setStatus(2);
+			biosanResult.setMsg(Msg);
+			System.out.println(JsonUtils.objectToJson(biosanResult));
 		}
 		
 		String dataTable = reponsebody.substring(reponsebody.indexOf("<DataTable>") + 11, reponsebody.indexOf("</DataTable>"));
-		System.out.println(dataTable);
 		JAXBContext jc;
 		PatientDetailInfo patientDetailInfo = new PatientDetailInfo();
 		try {
@@ -70,6 +76,8 @@ public class GetReponseTest {
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
-		System.out.println(patientDetailInfo.toString());
+		biosanResult.setStatus(1);
+		biosanResult.setData(patientDetailInfo);
+		System.out.println(JsonUtils.objectToJson(biosanResult));
 	}
 }

@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.namespace.QName;
-import javax.xml.rpc.ParameterMode;
+/*import javax.xml.rpc.ParameterMode;
 
 import org.apache.axis.client.Call;
-import org.apache.axis.client.Service;
+import org.apache.axis.client.Service;*/
 
 /**
  * Webservice的工具实现类

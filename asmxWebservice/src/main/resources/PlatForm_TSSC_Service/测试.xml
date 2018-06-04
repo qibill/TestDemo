@@ -46,10 +46,10 @@
 								<NLDW>岁</NLDW>
 								<SQRGH />
 								<SQRXM />
-								<BGRGH>9</BGRGH>
-								<BGRXM>10</BGRXM>
+								<BGRGH>10</BGRGH>
+								<BGRXM>范向群</BGRXM>
 								<SHRGH>9</SHRGH>
-								<SHRXM>9</SHRXM>
+								<SHRXM>徐两蒲</SHRXM>
 								<SQKS />
 								<BQ />
 								<CH />
@@ -73,189 +73,9 @@
 								<ROWS>
 									<YYSFDM />
 									<YBSFDM />
-									<JCZBDM>uE3</JCZBDM>
+									<JCZBDM>NTD</JCZBDM>
 									<JCFF />
-									<JCZBMC>uE3</JCZBMC>
-									<JCZBJG>1.12</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>AFP</JCZBDM>
-									<JCFF />
-									<JCZBMC>AFP</JCZBMC>
-									<JCZBJG>0.99</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>审核者</JCZBDM>
-									<JCFF />
-									<JCZBMC>审核者</JCZBMC>
-									<JCZBJG>9</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>体重</JCZBDM>
-									<JCFF />
-									<JCZBMC>体重</JCZBMC>
-									<JCZBJG>55.6</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>姓名</JCZBDM>
-									<JCFF />
-									<JCZBMC>姓名</JCZBMC>
-									<JCZBJG>余爱云</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>孕周计算基于</JCZBDM>
-									<JCFF />
-									<JCZBMC>孕周计算基于</JCZBMC>
-									<JCZBJG>lmpcycle</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>21-三体年龄风险</JCZBDM>
-									<JCFF />
-									<JCZBMC>21-三体年龄风险</JCZBMC>
-									<JCZBJG>1500</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>21-三体风险值</JCZBDM>
-									<JCFF />
-									<JCZBMC>21-三体风险值</JCZBMC>
-									<JCZBJG>900</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>末次月经</JCZBDM>
-									<JCFF />
-									<JCZBMC>末次月经</JCZBMC>
-									<JCZBJG>2010-07-22</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>18-三体年龄风险</JCZBDM>
-									<JCFF />
-									<JCZBMC>18-三体年龄风险</JCZBMC>
-									<JCZBJG>13000</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>21-三体风险结果</JCZBDM>
-									<JCFF />
-									<JCZBMC>21-三体风险结果</JCZBMC>
+									<JCZBMC>NTD</JCZBMC>
 									<JCZBJG>低风险</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
@@ -289,82 +109,10 @@
 								<ROWS>
 									<YYSFDM />
 									<YBSFDM />
-									<JCZBDM>hCGb</JCZBDM>
+									<JCZBDM>21-三体年龄风险</JCZBDM>
 									<JCFF />
-									<JCZBMC>hCGb</JCZBMC>
-									<JCZBJG />
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>18-三体风险结果</JCZBDM>
-									<JCFF />
-									<JCZBMC>18-三体风险结果</JCZBMC>
-									<JCZBJG>低风险</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>采样日期</JCZBDM>
-									<JCFF />
-									<JCZBMC>采样日期</JCZBMC>
-									<JCZBJG>2010-11-18</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>送检日期</JCZBDM>
-									<JCFF />
-									<JCZBMC>送检日期</JCZBMC>
-									<JCZBJG />
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2015-01-26</JYRQ>
-									<BGDH>15883</BGDH>
-									<REQNO>15883</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>预产年龄</JCZBDM>
-									<JCFF />
-									<JCZBMC>预产年龄</JCZBMC>
-									<JCZBJG>22.21</JCZBJG>
+									<JCZBMC>21-三体年龄风险</JCZBMC>
+									<JCZBJG>1500</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
 									<YCTS />
@@ -397,10 +145,136 @@
 								<ROWS>
 									<YYSFDM />
 									<YBSFDM />
-									<JCZBDM>出生日期</JCZBDM>
+									<JCZBDM>姓名</JCZBDM>
 									<JCFF />
-									<JCZBMC>出生日期</JCZBMC>
-									<JCZBJG>1989-02-11</JCZBJG>
+									<JCZBMC>姓名</JCZBMC>
+									<JCZBJG>余爱云</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>18-三体风险结果</JCZBDM>
+									<JCFF />
+									<JCZBMC>18-三体风险结果</JCZBMC>
+									<JCZBJG>低风险</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>体重</JCZBDM>
+									<JCFF />
+									<JCZBMC>体重</JCZBMC>
+									<JCZBJG>55.6</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>21-三体风险结果</JCZBDM>
+									<JCFF />
+									<JCZBMC>21-三体风险结果</JCZBMC>
+									<JCZBJG>低风险</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>审核者</JCZBDM>
+									<JCFF />
+									<JCZBMC>审核者</JCZBMC>
+									<JCZBJG>徐两蒲</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>18-三体年龄风险</JCZBDM>
+									<JCFF />
+									<JCZBMC>18-三体年龄风险</JCZBMC>
+									<JCZBJG>13000</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>AFP</JCZBDM>
+									<JCFF />
+									<JCZBMC>AFP</JCZBMC>
+									<JCZBJG>0.99</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>孕周计算基于</JCZBDM>
+									<JCFF />
+									<JCZBMC>孕周计算基于</JCZBMC>
+									<JCZBJG>lmpcycle</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
 									<YCTS />
@@ -433,10 +307,10 @@
 								<ROWS>
 									<YYSFDM />
 									<YBSFDM />
-									<JCZBDM>NTD</JCZBDM>
+									<JCZBDM>末次月经</JCZBDM>
 									<JCFF />
-									<JCZBMC>NTD</JCZBMC>
-									<JCZBJG>低风险</JCZBJG>
+									<JCZBMC>末次月经</JCZBMC>
+									<JCZBJG>2010-07-22</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
 									<YCTS />
@@ -466,12 +340,102 @@
 									<REQNO>15883</REQNO>
 									<SEQNO />
 								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>uE3</JCZBDM>
+									<JCFF />
+									<JCZBMC>uE3</JCZBMC>
+									<JCZBJG>1.12</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>预产年龄</JCZBDM>
+									<JCFF />
+									<JCZBMC>预产年龄</JCZBMC>
+									<JCZBJG>22.21</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>采样日期</JCZBDM>
+									<JCFF />
+									<JCZBMC>采样日期</JCZBMC>
+									<JCZBJG>2010-11-18</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>21-三体风险值</JCZBDM>
+									<JCFF />
+									<JCZBMC>21-三体风险值</JCZBMC>
+									<JCZBJG>900</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>出生日期</JCZBDM>
+									<JCFF />
+									<JCZBMC>出生日期</JCZBMC>
+									<JCZBJG>1989-02-11</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2015-01-26</JYRQ>
+									<BGDH>15883</BGDH>
+									<REQNO>15883</REQNO>
+									<SEQNO />
+								</ROWS>
 							</ITEMS>
 						</DataTable>
 					</body>
 				</root>
 			</Content>
-			<FCD>2016-09-13</FCD>
+			<FCD>2018-06-04 17:25:56</FCD>
 			<Reqno />
 			<BarCode />
 			<czqf>1</czqf>

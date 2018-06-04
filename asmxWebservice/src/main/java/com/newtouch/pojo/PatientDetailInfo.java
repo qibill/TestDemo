@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @XmlAccessorType(XmlAccessType.FIELD)   
 @XmlRootElement(name = "row")    
 public class PatientDetailInfo {
@@ -51,6 +53,7 @@ public class PatientDetailInfo {
 	public void setOutPatiNo(String outPatiNo) {
 		OutPatiNo = outPatiNo;
 	}
+	@JsonProperty("patientname")
 	public String getPatName() {
 		return PatName;
 	}
@@ -63,6 +66,7 @@ public class PatientDetailInfo {
 	public void setSexName(String sexName) {
 		SexName = sexName;
 	}
+	@JsonProperty("lmpdate")
 	public String getLastMense() {
 		return LastMense;
 	}
@@ -75,6 +79,7 @@ public class PatientDetailInfo {
 	public void setAge(String age) {
 		Age = age;
 	}
+	@JsonProperty("identitycard")
 	public String getIdCardNo() {
 		return IdCardNo;
 	}
@@ -87,6 +92,7 @@ public class PatientDetailInfo {
 	public void setTel(String tel) {
 		Tel = tel;
 	}
+	@JsonProperty("mobile")
 	public String getMobile() {
 		return Mobile;
 	}

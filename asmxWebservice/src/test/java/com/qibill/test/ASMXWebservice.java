@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.namespace.QName;
-import javax.xml.rpc.ParameterMode;
+/*import javax.xml.rpc.ParameterMode;
 
 import org.apache.axis.client.Call;
-import org.apache.axis.client.Service;
+import org.apache.axis.client.Service;*/
 import org.junit.Test;
 
 import com.biosan.webservice.AxisWebservice;
@@ -17,7 +17,7 @@ public class ASMXWebservice {
 	private String soapaction = "http://WebXml.com.cn/"; // 域名，这是在server定义的
 
 	public void GetAdmOrgUnitByUpdateTime() {
-		Service service = new Service();
+/*		Service service = new Service();
 		String Method = "getSupportCity";
 		Object[] objects = {"浙江"};
 		try {
@@ -40,7 +40,7 @@ public class ASMXWebservice {
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
-		}
+		}*/
 	}
 
 	@Test
