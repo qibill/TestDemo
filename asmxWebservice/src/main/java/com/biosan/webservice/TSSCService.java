@@ -12,5 +12,5 @@ public interface TSSCService {
      * @return
      * @author qibill 2018年5月31日上午10:05:55
      */
-    PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest(Integer sampleid, Integer czqf);
+    PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf);
 }

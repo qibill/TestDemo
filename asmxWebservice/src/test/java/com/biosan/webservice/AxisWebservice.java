@@ -19,13 +19,11 @@ public class AxisWebservice implements NewTouchService{
 
     @Override
     public String patientDetailInfo(String request) {
-        // TODO Auto-generated method stub
         return null;
     }
     
     @Override
     public String PlatForm_TSSC_Service(String request) {
-        // TODO Auto-generated method stub
         return null;
     }
 

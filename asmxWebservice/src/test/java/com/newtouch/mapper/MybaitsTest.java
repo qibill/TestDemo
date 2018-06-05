@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.biosan.pojo.Newtouchtsscresult;
 import com.biosan.utils.JsonUtils;
 import com.biosan.webservice.TSSCService;
 import com.newtouch.pojo.ContentBody;
@@ -28,7 +29,7 @@ public class MybaitsTest {
 	@Autowired
 	private PlatFormTSSCServiceRequestMapper tSSCServiceRequestMapper;
 	@Autowired
-	private SampleresultMapper sampleresultMapper;
+	private NewtouchtsscresultMapper newtouchtsscresultMapper;
 	
 	@Autowired
 	private TSSCService service;
@@ -40,17 +41,18 @@ public class MybaitsTest {
 		String selectEmployeename = employeeMapper.selectEmployeename(10).get(0);
 		System.out.println(selectEmployeename);
 	}
+	
 	@Test
 	public void sampleresultMapperTest() {
-		List<Integer> list = sampleresultMapper.selectDaysSampleid(154);
-		for (Integer integer : list) {
-			System.out.println(integer);
+		List<Newtouchtsscresult> list = newtouchtsscresultMapper.selectDaysSampleid(160);
+		for (Newtouchtsscresult sample : list) {
+			System.out.println(sample.getSampleid());
 			
 		}
 	}
 	@Test
 	public void serviceTest() {
-		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creatPlatFormTSSCServiceRequest(74734, "1");
+		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(74734, 1);
 		System.out.println(creatPlatFormTSSCServiceRequest.toXml());
 	}
 

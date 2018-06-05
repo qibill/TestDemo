@@ -32,6 +32,7 @@
 		<property name="cronExpression">
 			<!--一分钟触发一次 -->
 			<!--<value>0 0/1 * * * ?</value> -->
+			<!--五秒钟触发一次 -->
 			<value>0/5 * * * * ?</value> 
 			<!--每天12点触发 -->
 			<!--<value>0 0 12 * * ?</value> -->

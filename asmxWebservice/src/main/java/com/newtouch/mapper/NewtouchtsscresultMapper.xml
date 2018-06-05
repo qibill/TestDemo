@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.newtouch.mapper.NewtouchtsscresultMapper" >
+  <resultMap id="BaseResultMap" type="com.biosan.pojo.Newtouchtsscresult" >
+    <id column="tsscresultid" property="tsscresultid" jdbcType="INTEGER" />
+    <result column="sampleid" property="sampleid" jdbcType="INTEGER" />
+    <result column="tsscresult" property="tsscresult" jdbcType="INTEGER" />
+    <result column="pdfdate" property="pdfdate" jdbcType="TIMESTAMP" />
+    <result column="sendattime" property="sendattime" jdbcType="TIMESTAMP" />
+  </resultMap>
+	<select id="selectDaysSampleid"
+		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		s.sampleid,
+		s.pdfdate,
+		n.tsscresult
+		FROM sample s
+		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
+		WHERE DATEDIFF(s.pdfdate,NOW())>-#{days}
+		;
+	</select>
+	<insert id="insert" parameterType="com.biosan.pojo.Newtouchtsscresult" >
+	   insert into newtouchtsscresult (tsscresultid, sampleid,  
+	     tsscresult, pdfdate, sendattime
+	     )
+	   values (#{tsscresultid,jdbcType=INTEGER}, #{sampleid,jdbcType=INTEGER}, 
+	     #{tsscresult,jdbcType=INTEGER}, #{pdfdate,jdbcType=TIMESTAMP}, #{sendattime,jdbcType=TIMESTAMP}
+	     )
+	</insert>
+	<update id="updateByBean" parameterType="com.biosan.pojo.Newtouchtsscresult" >
+    update newtouchtsscresult
+    set sampleid = #{sampleid,jdbcType=INTEGER},
+      tsscresult = #{tsscresult,jdbcType=INTEGER},
+      pdfdate = #{pdfdate,jdbcType=TIMESTAMP},
+      sendattime = #{sendattime,jdbcType=TIMESTAMP}
+    where tsscresultid = #{tsscresultid,jdbcType=INTEGER}
+	</update>
+		<select id="selectErr"
+		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		n.tsscresultid,
+		n.sampleid,
+		n.pdfdate
+		FROM newtouchtsscresult n
+		WHERE n.tsscresult != 1
+		;
+	</select>
+</mapper>

@@ -33,26 +33,23 @@
         s.senddate 送检日期,
         s.weight 体重,
         CONCAT(s.cycle_week,'周',s.cycle_day,'天') 采样时孕周,
-        r.target_afpmom AFP,
-        r.target_hcgbmom hCGb,
-        r.target_ue3mom uE3,
-        r.age_t21 '21-三体年龄风险',
-        r.analysis_t21 '21-三体风险值',
-        r.result_t21 '21-三体风险结果',
-        r.age_t18 '18-三体年龄风险',
-        r.analysis_t18 '18-三体风险值',
-        r.result_t18 '18-三体风险结果',
-        R.result_ntd NTD,
+        s.target_afpmom AFP,
+        s.target_hcgbmom hCGb,
+        s.target_ue3mom uE3,
+        s.age_t21 '21-三体年龄风险',
+        s.analysis_t21 '21-三体风险值',
+        s.result_t21 '21-三体风险结果',
+        s.age_t18 '18-三体年龄风险',
+        s.analysis_t18 '18-三体风险值',
+        s.result_t18 '18-三体风险结果',
+        s.result_ntd NTD,
         s.labdate JYRQ,
         s.samplestring BGDH,
         s.samplestring REQNO,
         s.pdfdate 报告日期,
         s.pdfchecktor 审核者
-        FROM sample s, sampleresult r,patient p
-        WHERE s.sampleid = r.sampleid
-        AND s.patientid = p.patientid
-        AND s.sampleid = #{sampleid}
-        ORDER BY r.operattime DESC 
-        LIMIT 1;
+        FROM sample s,patient p
+        WHERE s.patientid = p.patientid
+        AND s.sampleid = #{sampleid};
 	</select>
 </mapper>

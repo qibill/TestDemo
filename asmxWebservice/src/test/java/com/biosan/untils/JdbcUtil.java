@@ -1,4 +1,4 @@
-package com.biosan.webservice;
+package com.biosan.untils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,8 +15,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.biosan.utils.ResultSetMapper;
 
 /**
  * Jdbc的工具封装实现类

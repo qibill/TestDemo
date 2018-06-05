@@ -1,4 +1,4 @@
-package com.biosan.utils;
+package com.biosan.untils;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.ArrayList;
 import java.util.Date;
+
+import com.biosan.utils.StringUtil;
 
 /**
  * 对jdbc回传的ResultSet进行转化，转化类的属性要与ResultSet的字段相同

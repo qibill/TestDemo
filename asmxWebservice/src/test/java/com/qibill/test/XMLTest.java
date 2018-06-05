@@ -2,15 +2,15 @@ package com.qibill.test;
 
 import org.junit.Test;
 
-import com.biosan.webservice.TSSCSerivceImpl;
+import com.biosan.webservice.TSSCServiceImpl;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
 public class XMLTest {
 
 	@Test
 	public void xmlTOString() throws Exception {
-	    TSSCSerivceImpl serivce = new TSSCSerivceImpl();
-		PlatFormTSSCServiceRequest request = serivce.creatPlatFormTSSCServiceRequest(74734, "1");
+	    TSSCServiceImpl serivce = new TSSCServiceImpl();
+		PlatFormTSSCServiceRequest request = serivce.creator(74734, 1);
 		
 		System.out.println(request.toXml());
 /*		Class clazz = contentItem.getClass();

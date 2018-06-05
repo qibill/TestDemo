@@ -1,12 +1,10 @@
-package com.biosan.webservice;
+package com.biosan.untils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
-
-import com.biosan.utils.ResultSetMapper;
 
 /**
  * Jdbc工具封装的接口

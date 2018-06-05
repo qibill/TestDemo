@@ -11,7 +11,7 @@ import com.newtouch.pojo.PatientDetailInfo;
 public class RequestUtil {
 
     public static BiosanResult getPatientDetailInfoRequest(String reponse) {
-        String reponsebody = reponse.substring(reponse.indexOf("<body>") + 6, reponse.indexOf("</body>"));
+        String reponsebody = reponse.substring(reponse.lastIndexOf("<body>") + 6, reponse.lastIndexOf("</body>"));
         BiosanResult biosanResult = getErrorRequest(reponsebody);
         if (biosanResult != null) {
             return biosanResult;
@@ -33,7 +33,7 @@ public class RequestUtil {
     }
     
     public static BiosanResult getTSSCRequest(String reponse) {
-        String reponsebody = reponse.substring(reponse.indexOf("<body>") + 6, reponse.indexOf("</body>"));
+        String reponsebody = reponse.substring(reponse.lastIndexOf("<body>") + 6, reponse.lastIndexOf("</body>"));
         BiosanResult biosanResult = getErrorRequest(reponsebody);
         if (biosanResult != null) {
             return biosanResult;
@@ -50,19 +50,20 @@ public class RequestUtil {
      */
     private static BiosanResult getErrorRequest(String reponsebody) {
         BiosanResult biosanResult = new BiosanResult();
-        String result = reponsebody.substring(reponsebody.indexOf("<result>") + 8, reponsebody.indexOf("</result>"));
+        //小写
+        reponsebody = reponsebody.toLowerCase();
+        String result = reponsebody.substring(reponsebody.lastIndexOf("<result>") + 8, reponsebody.lastIndexOf("</result>"));
         //失败-系统级
         if ("err".equals(result)) {
-            String errMsg = reponsebody.substring(reponsebody.indexOf("<errMsg>") + 8, reponsebody.indexOf("</errMsg>"));
-            biosanResult.setStatus(3);
+            String errMsg = reponsebody.substring(reponsebody.lastIndexOf("<errMsg>") + 8, reponsebody.lastIndexOf("</errMsg>"));
+            biosanResult.setStatus(2);
             biosanResult.setMsg(errMsg);
             return biosanResult;
         }
-        
-        String Flag = reponsebody.substring(reponsebody.indexOf("<Flag>") + 6, reponsebody.indexOf("</Flag>"));     
+        String Flag = reponsebody.substring(reponsebody.lastIndexOf("<flag>") + 6, reponsebody.lastIndexOf("</flag>")); 
         //失败
         if ("0".equals(Flag)) {
-            String Msg = reponsebody.substring(reponsebody.indexOf("<Msg>") + 5, reponsebody.indexOf("</Msg>"));
+            String Msg = reponsebody.substring(reponsebody.lastIndexOf("<msg>") + 5, reponsebody.lastIndexOf("</msg>"));
             biosanResult.setStatus(2);
             biosanResult.setMsg(Msg);
             return biosanResult;

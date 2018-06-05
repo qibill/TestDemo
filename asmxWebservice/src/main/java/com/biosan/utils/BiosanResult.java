@@ -2,7 +2,7 @@ package com.biosan.utils;
 
 public class BiosanResult {
 
-    // 响应业务状态   1.成功    2.失败    3.失败-系统级
+    // 响应业务状态   1.成功    2.失败
     private Integer status;
 
     // 响应消息
@@ -10,6 +10,16 @@ public class BiosanResult {
 
     // 响应中的数据
     private Object data;
+
+    
+	public BiosanResult() {
+		super();
+	}
+
+	public BiosanResult(Integer status) {
+		super();
+		this.status = status;
+	}
 
 	public Integer getStatus() {
 		return status;
@@ -35,5 +45,11 @@ public class BiosanResult {
 		this.data = data;
 	}
     
+    public static BiosanResult isOk() {
+    	return new BiosanResult(1);
+    } 
     
+    public static BiosanResult isErr() {
+    	return new BiosanResult(2);
+    } 
 }

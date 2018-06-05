@@ -22,10 +22,8 @@ import com.newtouch.pojo.ContentItem;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
 @Service
-public class TSSCSerivceImpl implements TSSCService {
+public class TSSCServiceImpl implements TSSCService {
 
-	@Autowired
-	private JdbcOperation jdbcOperation;
 	@Autowired
 	private ContentHeadMapper contentHeadMapper;
 	@Autowired
@@ -38,7 +36,7 @@ public class TSSCSerivceImpl implements TSSCService {
 	private EmployeeMapper employeeMapper;
 
 	@Override
-	public PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest(Integer sampleid, Integer czqf) {
+	public PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf) {
 		List<ContentItem> items = new ArrayList<>();
 		items.addAll(selectContentItemList(sampleid));
 		ContentBody body = selectContentBody(sampleid);
@@ -81,11 +79,11 @@ public class TSSCSerivceImpl implements TSSCService {
 
 		ContentBody contentBody = new ContentBody();
 		contentBody = contentBodyMapper.selectContentBody(sampleid).get(0);
-		if (contentBody.getBGRGH() != null || "".equals(contentBody.getBGRGH())) {
+		if (contentBody.getBGRGH() != null) {
 			contentBody.setBGRXM(employeeMapper.selectEmployeename(contentBody.getBGRGH()).get(0));
 			
 		}
-		if (contentBody.getSHRGH() != null || "".equals(contentBody.getSHRGH())) {
+		if (contentBody.getSHRGH() != null) {
 			contentBody.setSHRXM(employeeMapper.selectEmployeename(contentBody.getSHRGH()).get(0));
 			
 		}

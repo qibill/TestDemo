@@ -5,14 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.biosan.utils.JsonUtils;
 import com.biosan.utils.RequestUtil;
 import com.newtouch.pojo.PatientDetailInfoRequest;
-import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
 public class BiosanWebSerivceImpl implements BiosanWebSerivce{
 
     @Autowired
 	private NewTouchService newtouchservice;
-    @Autowired
-	private TSSCService tSSCSrevice;
+/*    @Autowired
+	private TSSCService tSSCSrevice;*/
 	
 	@Override
 	public String getPatientDetailInfo(String CardNo) {
@@ -22,11 +21,11 @@ public class BiosanWebSerivceImpl implements BiosanWebSerivce{
 		return JsonUtils.objectToJson(RequestUtil.getPatientDetailInfoRequest(patientDetailInfo));
 	}
 
-	@Override
+/*	@Override
 	public String sendPlatFormTSSCService(Integer sampleid, Integer czqf) {
-		PlatFormTSSCServiceRequest request = tSSCSrevice.creatPlatFormTSSCServiceRequest(sampleid, czqf);
+		PlatFormTSSCServiceRequest request = tSSCSrevice.creator(sampleid, czqf);
 		String platForm_TSSC_Service = newtouchservice.PlatForm_TSSC_Service(request.toXml());
 		return platForm_TSSC_Service;
-	}
+	}*/
 
 }

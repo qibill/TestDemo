@@ -6,7 +6,7 @@ import java.lang.reflect.Type;
 import org.junit.Test;
 
 import com.biosan.pojo.Patient;
-import com.biosan.utils.ResultSetMapper;
+import com.biosan.untils.ResultSetMapper;
 
 public class ReflectTest {
 
