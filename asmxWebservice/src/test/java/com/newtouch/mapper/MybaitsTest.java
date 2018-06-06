@@ -44,7 +44,7 @@ public class MybaitsTest {
 	
 	@Test
 	public void sampleresultMapperTest() {
-		List<Newtouchtsscresult> list = newtouchtsscresultMapper.selectDaysSampleid(160);
+		List<Newtouchtsscresult> list = newtouchtsscresultMapper.selectNewSampleid(160);
 		for (Newtouchtsscresult sample : list) {
 			System.out.println(sample.getSampleid());
 			

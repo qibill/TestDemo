@@ -6,23 +6,33 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.biosan.pojo.Newtouchtsscresult;
+import com.biosan.utils.BiosanResult;
+import com.biosan.utils.RequestUtil;
 import com.newtouch.mapper.ContentBodyMapper;
 import com.newtouch.mapper.ContentHeadMapper;
 import com.newtouch.mapper.ContentItemMapper;
 import com.newtouch.mapper.EmployeeMapper;
+import com.newtouch.mapper.NewtouchtsscresultMapper;
 import com.newtouch.mapper.PlatFormTSSCServiceRequestMapper;
 import com.newtouch.pojo.Content;
 import com.newtouch.pojo.ContentBody;
 import com.newtouch.pojo.ContentHead;
 import com.newtouch.pojo.ContentItem;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
+import com.newtouch.webservice.testreportrelease.TestReportReleaseSoap;
 
 @Service
 public class TSSCServiceImpl implements TSSCService {
+
+    private static final Logger logger = Logger.getLogger(TSSCServiceImpl.class);
 
 	@Autowired
 	private ContentHeadMapper contentHeadMapper;
@@ -34,7 +44,12 @@ public class TSSCServiceImpl implements TSSCService {
 	private PlatFormTSSCServiceRequestMapper tSSCServiceRequestMapper;
 	@Autowired
 	private EmployeeMapper employeeMapper;
-
+	@Autowired
+	private TestReportReleaseSoap testReportRelease;
+	@Autowired
+	private NewtouchtsscresultMapper newtouchtsscresultMapper;
+	@Value("${NUM}")
+	private Integer NUM;
 	@Override
 	public PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf) {
 		List<ContentItem> items = new ArrayList<>();
@@ -108,4 +123,92 @@ public class TSSCServiceImpl implements TSSCService {
 		return request;
 	}
 
+	@Override
+	public BiosanResult sendPlatFormTSSCService(Newtouchtsscresult newtouchtsscresult) {
+		BiosanResult result = new BiosanResult();
+		newtouchtsscresult.setSendattime(new Date());
+		logger.debug(newtouchtsscresult.toString());
+		// 未发过 表newtouchtsscresult没有数据
+		if (newtouchtsscresult.getTsscresult() == null) {
+			logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "未发送过报告");
+			result = doWebservice(newtouchtsscresult.getSampleid(), 1);
+			newtouchtsscresult.setTsscresult(result.getStatus());
+			newtouchtsscresultMapper.insert(newtouchtsscresult);
+		} else {
+			// 表newtouchtsscresult有数据
+			// 更新 pdfdate报告日期
+			// 成功发送过
+			if (newtouchtsscresult.getTsscresult() == 1) {
+				logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "重新风险计算了，发送撤销命令");
+				result = doWebservice(newtouchtsscresult.getSampleid(), 3);
+
+				if (result.getStatus() == 1) {
+					result = doWebservice(newtouchtsscresult.getSampleid(), 1);
+
+				}
+				newtouchtsscresult.setTsscresult(result.getStatus());
+				logger.debug(newtouchtsscresult.toString());
+				newtouchtsscresultMapper.updateByBean(newtouchtsscresult);
+			}
+			if (newtouchtsscresult.getTsscresult() == 2) {
+				// 发送失败的 pdfdate报告日期在一天之内
+				logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "之前发送报告失败");
+				result = doWebservice(newtouchtsscresult.getSampleid(), 1);
+				newtouchtsscresult.setTsscresult(result.getStatus());
+				newtouchtsscresultMapper.updateByBean(newtouchtsscresult);
+			} else {
+				logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "之前发送撤销命令失败");
+				result = doWebservice(newtouchtsscresult.getSampleid(), 3);
+
+				if (result.getStatus() == 1) {
+					result = doWebservice(newtouchtsscresult.getSampleid(), 1);
+
+				}
+				newtouchtsscresult.setTsscresult(result.getStatus());
+				logger.debug(newtouchtsscresult.toString());
+				newtouchtsscresultMapper.updateByBean(newtouchtsscresult);
+			}
+
+		}
+		return result;
+	}
+	
+	
+	private BiosanResult sendNum(Integer sampleid, Integer czqf) {
+		BiosanResult result = new BiosanResult();
+		for (int i = 0; i < NUM; i++) {
+			logger.info("第" + (i + 1) + "次发送");
+			result = doWebservice(sampleid, czqf);
+			if (result.getStatus() == 1) {
+				return result;
+			}
+		}
+		return result;
+	} 
+
+	public BiosanResult doWebservice(Integer sampleid, Integer czqf) {
+        String report = czqf == 1 ? "报告信息" : "撤销命令";
+        logger.info("样品ID为" + sampleid + "开始发送" + report);
+        //TODO
+//        PlatFormTSSCServiceRequest request = creator(sampleid, czqf);
+//        String tSSCReponse = testReportRelease.platFormTSSCService(request.toXml());
+//        BiosanResult biosanResult = RequestUtil.getTSSCRequest(tSSCReponse);
+        
+        
+        Random random = new Random(47);
+        BiosanResult biosanResult =new BiosanResult();
+        if (random.nextInt(5) < 4) {
+        		biosanResult.setStatus(czqf == 1 ? 2 : 3);
+		} else {
+			biosanResult = BiosanResult.isOk();
+		}
+        
+        
+        if (biosanResult.getStatus() == 1) {
+        	logger.info("样品ID为" + sampleid + report + "发送成功");
+		} else {
+	        logger.error("样品ID为" + sampleid + report + "发送失败");
+		}
+        return biosanResult;
+	}
 }

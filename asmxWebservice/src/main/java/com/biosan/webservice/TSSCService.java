@@ -1,5 +1,7 @@
 package com.biosan.webservice;
 
+import com.biosan.pojo.Newtouchtsscresult;
+import com.biosan.utils.BiosanResult;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
 public interface TSSCService {
@@ -13,4 +15,6 @@ public interface TSSCService {
      * @author qibill 2018年5月31日上午10:05:55
      */
     PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf);
+    
+    public BiosanResult sendPlatFormTSSCService(Newtouchtsscresult newtouchtsscresult);
 }

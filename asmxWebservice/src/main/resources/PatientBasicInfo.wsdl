@@ -1,0 +1,338 @@
+<wsdl:definitions
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://tempuri.org/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://tempuri.org/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified"
+			targetNamespace="http://tempuri.org/">
+			<s:element name="patientBasicInfo">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="xml"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="patientBasicInfoResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="patientBasicInfoResult" type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="patientBasicInfoOut">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="xml"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="patientBasicInfoOutResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="patientBasicInfoOutResult" type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="patientDetailInfo">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="xml"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="patientDetailInfoResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="patientDetailInfoResult" type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="string" nillable="true" type="s:string" />
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="patientBasicInfoSoapIn">
+		<wsdl:part name="parameters" element="tns:patientBasicInfo" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:patientBasicInfoResponse" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoOutSoapIn">
+		<wsdl:part name="parameters"
+			element="tns:patientBasicInfoOut" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoOutSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:patientBasicInfoOutResponse" />
+	</wsdl:message>
+	<wsdl:message name="patientDetailInfoSoapIn">
+		<wsdl:part name="parameters" element="tns:patientDetailInfo" />
+	</wsdl:message>
+	<wsdl:message name="patientDetailInfoSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:patientDetailInfoResponse" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoHttpGetIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoHttpGetOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoOutHttpGetIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoOutHttpGetOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="patientDetailInfoHttpGetIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="patientDetailInfoHttpGetOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoHttpPostIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoHttpPostOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoOutHttpPostIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="patientBasicInfoOutHttpPostOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="patientDetailInfoHttpPostIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="patientDetailInfoHttpPostOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:portType name="PatientBasicInfoSoap">
+		<wsdl:operation name="patientBasicInfo">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息</wsdl:documentation>
+			<wsdl:input message="tns:patientBasicInfoSoapIn" />
+			<wsdl:output message="tns:patientBasicInfoSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息(对外)</wsdl:documentation>
+			<wsdl:input message="tns:patientBasicInfoOutSoapIn" />
+			<wsdl:output message="tns:patientBasicInfoOutSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息(唐筛)</wsdl:documentation>
+			<wsdl:input message="tns:patientDetailInfoSoapIn" />
+			<wsdl:output message="tns:patientDetailInfoSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="PatientBasicInfoHttpGet">
+		<wsdl:operation name="patientBasicInfo">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息</wsdl:documentation>
+			<wsdl:input message="tns:patientBasicInfoHttpGetIn" />
+			<wsdl:output message="tns:patientBasicInfoHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息(对外)</wsdl:documentation>
+			<wsdl:input message="tns:patientBasicInfoOutHttpGetIn" />
+			<wsdl:output message="tns:patientBasicInfoOutHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息(唐筛)</wsdl:documentation>
+			<wsdl:input message="tns:patientDetailInfoHttpGetIn" />
+			<wsdl:output message="tns:patientDetailInfoHttpGetOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="PatientBasicInfoHttpPost">
+		<wsdl:operation name="patientBasicInfo">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息</wsdl:documentation>
+			<wsdl:input message="tns:patientBasicInfoHttpPostIn" />
+			<wsdl:output message="tns:patientBasicInfoHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息(对外)</wsdl:documentation>
+			<wsdl:input message="tns:patientBasicInfoOutHttpPostIn" />
+			<wsdl:output message="tns:patientBasicInfoOutHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">病人基本信息(唐筛)</wsdl:documentation>
+			<wsdl:input message="tns:patientDetailInfoHttpPostIn" />
+			<wsdl:output message="tns:patientDetailInfoHttpPostOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PatientBasicInfoSoap"
+		type="tns:PatientBasicInfoSoap">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="patientBasicInfo">
+			<soap:operation
+				soapAction="http://tempuri.org/patientBasicInfo" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<soap:operation
+				soapAction="http://tempuri.org/patientBasicInfoOut" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<soap:operation
+				soapAction="http://tempuri.org/patientDetailInfo" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="PatientBasicInfoSoap12"
+		type="tns:PatientBasicInfoSoap">
+		<soap12:binding
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="patientBasicInfo">
+			<soap12:operation
+				soapAction="http://tempuri.org/patientBasicInfo" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<soap12:operation
+				soapAction="http://tempuri.org/patientBasicInfoOut" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<soap12:operation
+				soapAction="http://tempuri.org/patientDetailInfo" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="PatientBasicInfoHttpGet"
+		type="tns:PatientBasicInfoHttpGet">
+		<http:binding verb="GET" />
+		<wsdl:operation name="patientBasicInfo">
+			<http:operation location="/patientBasicInfo" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<http:operation location="/patientBasicInfoOut" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<http:operation location="/patientDetailInfo" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="PatientBasicInfoHttpPost"
+		type="tns:PatientBasicInfoHttpPost">
+		<http:binding verb="POST" />
+		<wsdl:operation name="patientBasicInfo">
+			<http:operation location="/patientBasicInfo" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientBasicInfoOut">
+			<http:operation location="/patientBasicInfoOut" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="patientDetailInfo">
+			<http:operation location="/patientDetailInfo" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PatientBasicInfo">
+		<wsdl:port name="PatientBasicInfoSoap"
+			binding="tns:PatientBasicInfoSoap">
+			<soap:address
+				location="http://172.20.1.91/Webservice/PatientBasicInfo.asmx" />
+		</wsdl:port>
+		<wsdl:port name="PatientBasicInfoSoap12"
+			binding="tns:PatientBasicInfoSoap12">
+			<soap12:address
+				location="http://172.20.1.91/Webservice/PatientBasicInfo.asmx" />
+		</wsdl:port>
+		<wsdl:port name="PatientBasicInfoHttpGet"
+			binding="tns:PatientBasicInfoHttpGet">
+			<http:address
+				location="http://172.20.1.91/Webservice/PatientBasicInfo.asmx" />
+		</wsdl:port>
+		<wsdl:port name="PatientBasicInfoHttpPost"
+			binding="tns:PatientBasicInfoHttpPost">
+			<http:address
+				location="http://172.20.1.91/Webservice/PatientBasicInfo.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

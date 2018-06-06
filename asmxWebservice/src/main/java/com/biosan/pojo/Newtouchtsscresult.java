@@ -7,6 +7,7 @@ public class Newtouchtsscresult {
 
     private Integer sampleid;
 
+    //1.发送成功    2.发送失败	 3.发送撤销命令失败
     private Integer tsscresult;
 
     private Date pdfdate;
@@ -52,4 +53,12 @@ public class Newtouchtsscresult {
     public void setSendattime(Date sendattime) {
         this.sendattime = sendattime;
     }
+
+	@Override
+	public String toString() {
+		return "Newtouchtsscresult [tsscresultid=" + tsscresultid + ", sampleid=" + sampleid
+				+ ", tsscresult=" + tsscresult + ", pdfdate=" + pdfdate + ", sendattime="
+				+ sendattime + "]";
+	}
+    
 }

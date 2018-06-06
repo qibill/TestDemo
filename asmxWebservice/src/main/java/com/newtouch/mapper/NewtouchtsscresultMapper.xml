@@ -8,15 +8,18 @@
     <result column="pdfdate" property="pdfdate" jdbcType="TIMESTAMP" />
     <result column="sendattime" property="sendattime" jdbcType="TIMESTAMP" />
   </resultMap>
-	<select id="selectDaysSampleid"
+	<select id="selectNewSampleid"
 		parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		SELECT
+		n.tsscresultid,
 		s.sampleid,
 		s.pdfdate,
-		n.tsscresult
+		n.tsscresult,
+		n.sendattime
 		FROM sample s
 		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
 		WHERE DATEDIFF(s.pdfdate,NOW())>-#{days}
+		AND (s.pdfdate > n.pdfdate or n.pdfdate IS NULL)
 		;
 	</select>
 	<insert id="insert" parameterType="com.biosan.pojo.Newtouchtsscresult" >
@@ -29,20 +32,45 @@
 	</insert>
 	<update id="updateByBean" parameterType="com.biosan.pojo.Newtouchtsscresult" >
     update newtouchtsscresult
-    set sampleid = #{sampleid,jdbcType=INTEGER},
-      tsscresult = #{tsscresult,jdbcType=INTEGER},
-      pdfdate = #{pdfdate,jdbcType=TIMESTAMP},
-      sendattime = #{sendattime,jdbcType=TIMESTAMP}
-    where tsscresultid = #{tsscresultid,jdbcType=INTEGER}
+    <set >
+      <if test="sampleid != null" >
+        sampleid = #{sampleid,jdbcType=INTEGER},
+      </if>
+      <if test="tsscresult != null" >
+        tsscresult = #{tsscresult,jdbcType=INTEGER},
+      </if>
+      <if test="pdfdate != null" >
+        pdfdate = #{pdfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendattime != null" >
+        sendattime = #{sendattime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where sampleid = #{sampleid,jdbcType=INTEGER}
 	</update>
-		<select id="selectErr"
+	<select id="selectErr"
 		parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		SELECT
 		n.tsscresultid,
 		n.sampleid,
-		n.pdfdate
+		n.tsscresult,
+		n.pdfdate,
+		n.sendattime
 		FROM newtouchtsscresult n
-		WHERE n.tsscresult != 1
+		WHERE n.tsscresult > 1
+		;
+	</select>
+	<select id="selectBySampleid"
+		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT
+		n.tsscresultid,
+		s.sampleid,
+		s.pdfdate,
+		n.tsscresult,
+		n.sendattime,
+		FROM sample s
+		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
+		WHERE s.sampleid = #{sampleid}
 		;
 	</select>
 </mapper>

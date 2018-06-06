@@ -30,13 +30,12 @@
 	<bean id="biosanWebSerivce" class="com.biosan.webservice.BiosanWebSerivceImpl">
 	</bean>
 	
-	<!-- TODO wsdl2java后 修改 -->
 	<!-- <jaxws:client实现客户端 ，对JaxWsProxyFactoryBean类封装 -->
-	<!-- <jaxws:client id="patientBasicInfo"
-		address="http://172.20.1.35/WebService/PatientBasicInfo.asmx"
-		serviceClass="com.newtouch.webservice.PatientBasicInfoSoap" />
-	<jaxws:client id="testReportRelease"
-		address="http://172.20.1.35/WebService/TestReportRelease.asmx"
-		serviceClass="com.newtouch.webservice.TestReportReleaseSoap" />-->
+	<jaxws:client id="patientBasicInfoSoap"
+		address="http://172.20.1.91/Webservice/PatientBasicInfo.asmx"
+		serviceClass="com.newtouch.webservice.patientbasicinfo.PatientBasicInfoSoap" />
+	<jaxws:client id="testReportReleaseSoap"
+		address="http://172.20.1.91/WebService/TestReportRelease.asmx"
+		serviceClass="com.newtouch.webservice.testreportrelease.TestReportReleaseSoap" />
 		
 </beans>

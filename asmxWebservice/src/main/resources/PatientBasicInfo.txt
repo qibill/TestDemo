@@ -1,0 +1,1 @@
+wsdl2java -encoding utf-8 -p com.newtouch.webservice.patientbasicinfo -d D:\test\biosan D:\git\TestDemo\asmxWebservice\src\main\resources\PatientBasicInfo.wsdl

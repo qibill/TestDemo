@@ -57,7 +57,10 @@
 	<!-- <jaxws:client实现客户端 ，对JaxWsProxyFactoryBean类封装 -->
 	<jaxws:client id="patientBasicInfoSoap"
 		address="http://172.20.1.91/Webservice/PatientBasicInfo.asmx"
-		serviceClass="com.newtouch.webservice.PatientBasicInfoSoap" />
+		serviceClass="com.newtouch.webservice.patientbasicinfo.PatientBasicInfoSoap" />
+	<jaxws:client id="testReportReleaseSoap"
+		address="http://172.20.1.91/WebService/TestReportRelease.asmx"
+		serviceClass="com.newtouch.webservice.testreportrelease.TestReportReleaseSoap" />
 
 	<!-- 让spring管理sqlsessionfactory 使用mybatis和spring整合包中的 -->
 	<!--<bean id="sqlSessionFactory"

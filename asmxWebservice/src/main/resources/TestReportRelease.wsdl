@@ -1,0 +1,346 @@
+<wsdl:definitions
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://tempuri.org/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://tempuri.org/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified"
+			targetNamespace="http://tempuri.org/">
+			<s:element name="testReportRelease">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="xml"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="testReportReleaseResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="testReportReleaseResult" type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="PlatForm_ECG_Service">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="xml"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="PlatForm_ECG_ServiceResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="PlatForm_ECG_ServiceResult" type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="PlatForm_TSSC_Service">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="xml"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="PlatForm_TSSC_ServiceResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1"
+							name="PlatForm_TSSC_ServiceResult" type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="string" nillable="true" type="s:string" />
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="testReportReleaseSoapIn">
+		<wsdl:part name="parameters" element="tns:testReportRelease" />
+	</wsdl:message>
+	<wsdl:message name="testReportReleaseSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:testReportReleaseResponse" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_ECG_ServiceSoapIn">
+		<wsdl:part name="parameters"
+			element="tns:PlatForm_ECG_Service" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_ECG_ServiceSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:PlatForm_ECG_ServiceResponse" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_TSSC_ServiceSoapIn">
+		<wsdl:part name="parameters"
+			element="tns:PlatForm_TSSC_Service" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_TSSC_ServiceSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:PlatForm_TSSC_ServiceResponse" />
+	</wsdl:message>
+	<wsdl:message name="testReportReleaseHttpGetIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="testReportReleaseHttpGetOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_ECG_ServiceHttpGetIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_ECG_ServiceHttpGetOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_TSSC_ServiceHttpGetIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_TSSC_ServiceHttpGetOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="testReportReleaseHttpPostIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="testReportReleaseHttpPostOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_ECG_ServiceHttpPostIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_ECG_ServiceHttpPostOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_TSSC_ServiceHttpPostIn">
+		<wsdl:part name="xml" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="PlatForm_TSSC_ServiceHttpPostOut">
+		<wsdl:part name="Body" element="tns:string" />
+	</wsdl:message>
+	<wsdl:portType name="TestReportReleaseSoap">
+		<wsdl:operation name="testReportRelease">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验报告发布</wsdl:documentation>
+			<wsdl:input message="tns:testReportReleaseSoapIn" />
+			<wsdl:output message="tns:testReportReleaseSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">心电图相关接口</wsdl:documentation>
+			<wsdl:input message="tns:PlatForm_ECG_ServiceSoapIn" />
+			<wsdl:output message="tns:PlatForm_ECG_ServiceSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">唐氏筛查相关接口</wsdl:documentation>
+			<wsdl:input message="tns:PlatForm_TSSC_ServiceSoapIn" />
+			<wsdl:output message="tns:PlatForm_TSSC_ServiceSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="TestReportReleaseHttpGet">
+		<wsdl:operation name="testReportRelease">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验报告发布</wsdl:documentation>
+			<wsdl:input message="tns:testReportReleaseHttpGetIn" />
+			<wsdl:output message="tns:testReportReleaseHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">心电图相关接口</wsdl:documentation>
+			<wsdl:input message="tns:PlatForm_ECG_ServiceHttpGetIn" />
+			<wsdl:output message="tns:PlatForm_ECG_ServiceHttpGetOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">唐氏筛查相关接口</wsdl:documentation>
+			<wsdl:input message="tns:PlatForm_TSSC_ServiceHttpGetIn" />
+			<wsdl:output
+				message="tns:PlatForm_TSSC_ServiceHttpGetOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="TestReportReleaseHttpPost">
+		<wsdl:operation name="testReportRelease">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检验报告发布</wsdl:documentation>
+			<wsdl:input message="tns:testReportReleaseHttpPostIn" />
+			<wsdl:output message="tns:testReportReleaseHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">心电图相关接口</wsdl:documentation>
+			<wsdl:input message="tns:PlatForm_ECG_ServiceHttpPostIn" />
+			<wsdl:output
+				message="tns:PlatForm_ECG_ServiceHttpPostOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<wsdl:documentation
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">唐氏筛查相关接口</wsdl:documentation>
+			<wsdl:input message="tns:PlatForm_TSSC_ServiceHttpPostIn" />
+			<wsdl:output
+				message="tns:PlatForm_TSSC_ServiceHttpPostOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TestReportReleaseSoap"
+		type="tns:TestReportReleaseSoap">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="testReportRelease">
+			<soap:operation
+				soapAction="http://tempuri.org/testReportRelease" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<soap:operation
+				soapAction="http://tempuri.org/PlatForm_ECG_Service"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<soap:operation
+				soapAction="http://tempuri.org/PlatForm_TSSC_Service"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="TestReportReleaseSoap12"
+		type="tns:TestReportReleaseSoap">
+		<soap12:binding
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="testReportRelease">
+			<soap12:operation
+				soapAction="http://tempuri.org/testReportRelease" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<soap12:operation
+				soapAction="http://tempuri.org/PlatForm_ECG_Service"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<soap12:operation
+				soapAction="http://tempuri.org/PlatForm_TSSC_Service"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="TestReportReleaseHttpGet"
+		type="tns:TestReportReleaseHttpGet">
+		<http:binding verb="GET" />
+		<wsdl:operation name="testReportRelease">
+			<http:operation location="/testReportRelease" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<http:operation location="/PlatForm_ECG_Service" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<http:operation location="/PlatForm_TSSC_Service" />
+			<wsdl:input>
+				<http:urlEncoded />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="TestReportReleaseHttpPost"
+		type="tns:TestReportReleaseHttpPost">
+		<http:binding verb="POST" />
+		<wsdl:operation name="testReportRelease">
+			<http:operation location="/testReportRelease" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_ECG_Service">
+			<http:operation location="/PlatForm_ECG_Service" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PlatForm_TSSC_Service">
+			<http:operation location="/PlatForm_TSSC_Service" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="TestReportRelease">
+		<wsdl:port name="TestReportReleaseSoap"
+			binding="tns:TestReportReleaseSoap">
+			<soap:address
+				location="http://172.20.1.91/WebService/TestReportRelease.asmx" />
+		</wsdl:port>
+		<wsdl:port name="TestReportReleaseSoap12"
+			binding="tns:TestReportReleaseSoap12">
+			<soap12:address
+				location="http://172.20.1.91/WebService/TestReportRelease.asmx" />
+		</wsdl:port>
+		<wsdl:port name="TestReportReleaseHttpGet"
+			binding="tns:TestReportReleaseHttpGet">
+			<http:address
+				location="http://172.20.1.91/WebService/TestReportRelease.asmx" />
+		</wsdl:port>
+		<wsdl:port name="TestReportReleaseHttpPost"
+			binding="tns:TestReportReleaseHttpPost">
+			<http:address
+				location="http://172.20.1.91/WebService/TestReportRelease.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
