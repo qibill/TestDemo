@@ -47,7 +47,9 @@
         s.samplestring BGDH,
         s.samplestring REQNO,
         s.pdfdate 报告日期,
-        s.pdfchecktor 审核者
+        (SELECT e.employeename
+			FROM employee e
+			WHERE e.employeeid=s.pdfchecktor) 审核者
         FROM sample s,patient p
         WHERE s.patientid = p.patientid
         AND s.sampleid = #{sampleid};

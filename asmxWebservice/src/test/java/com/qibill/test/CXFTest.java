@@ -13,6 +13,7 @@ import com.newtouch.webservice.testreportrelease.TestReportReleaseSoap;
 @ContextConfiguration(locations = "classpath:CXF.xml")
 public class CXFTest {
 
+	
 	@Autowired
 	private PatientBasicInfoSoap patientBasicInfoSoap;
 	@Autowired
@@ -23,9 +24,7 @@ public class CXFTest {
     	String xml = "<root>" + 
     			"	<head>" + 
     			"		<parameter>" + 
-    			"			<!-- 系统识别码 -->" + 
-    			"			<hashKey>c2d442a2-d458-434a-a650-e19ea1f35a79</hashKey>" + 
-    			"			<!-- 就诊卡号 -->" + 
+    			"			<hashKey>16a839ed-b5f1-4148-b9a3-dab942a072e4</hashKey>" + 
     			"			<CardNo>135403000800151</CardNo>" + 
     			"		</parameter>" + 
     			"	</head>" + 
@@ -41,7 +40,7 @@ public class CXFTest {
     			"	<head>" + 
     			"		<parameter>" + 
     			"			<!-- 平台内部编码* -->" + 
-    			"			<hashKey>c2d442a2-d458-434a-a650-e19ea1f35a79</hashKey>" + 
+    			"			<hashKey>16a839ed-b5f1-4148-b9a3-dab942a072e4</hashKey>" + 
     			"			<!-- 01 添加一条检验报告记录* -->" + 
     			"			<invoketype>01</invoketype>" + 
     			"			<!-- 报告类型 -->" + 

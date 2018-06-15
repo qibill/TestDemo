@@ -1,4 +1,4 @@
-package com.newtouch.pojo;
+package com.biosan.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @XmlAccessorType(XmlAccessType.FIELD)   
 @XmlRootElement(name = "row")    
-public class PatientDetailInfo {
+public class PatientDetail {
 
 	/** 患者唯一标识 */
 	private String Patid;
@@ -120,5 +120,14 @@ public class PatientDetailInfo {
 	public void setMedicalHistory(String medicalHistory) {
 		MedicalHistory = medicalHistory;
 	}
+	@Override
+	public String toString() {
+		return "PatientDetail [Patid=" + Patid + ", OutPatiNo=" + OutPatiNo + ", PatName=" + PatName
+				+ ", SexName=" + SexName + ", LastMense=" + LastMense + ", Age=" + Age
+				+ ", IdCardNo=" + IdCardNo + ", Tel=" + Tel + ", Mobile=" + Mobile + ", Height="
+				+ Height + ", Weight=" + Weight + ", ChildHistory=" + ChildHistory
+				+ ", MedicalHistory=" + MedicalHistory + "]";
+	}
+	
 	
 }

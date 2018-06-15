@@ -7,7 +7,7 @@ import com.biosan.utils.XMLUtil;
 public class ContentHead {
 
 	/** 平台内部编码* 固定值 */
-	private String hashKey ="c2d442a2-d458-434a-a650-e19ea1f35a79";
+	private String hashKey ="16a839ed-b5f1-4148-b9a3-dab942a072e4";
 	/** 院区编码 (0 西院,1 南院,2 东院) * */
 	private String yqqf = "0";
 	private String yzlb;
@@ -72,6 +72,11 @@ public class ContentHead {
 		xml.append("</parameter>");
 		xml.append("</head>");
 		return xml.toString();
+	}
+	@Override
+	public String toString() {
+		return "ContentHead [hashKey=" + hashKey + ", yqqf=" + yqqf + ", yzlb=" + yzlb + ", czqf="
+				+ czqf + ", bglx=" + bglx + ", jyrq=" + jyrq + ", bgdh=" + bgdh + "]";
 	}
 
 }

@@ -386,5 +386,19 @@ public class ContentBody {
 		xml.append("</body>");
 		return xml.toString();
 	}
+
+	@Override
+	public String toString() {
+		return "ContentBody [MZZYBZ=" + MZZYBZ + ", BRANCHNO=" + BRANCHNO + ", PATID=" + PATID
+				+ ", BLH=" + BLH + ", BGDH=" + BGDH + ", BGRQ=" + BGRQ + ", ADVID=" + ADVID
+				+ ", KH=" + KH + ", BRXM=" + BRXM + ", BRXB=" + BRXB + ", BRNL=" + BRNL + ", NLDW="
+				+ NLDW + ", SQRGH=" + SQRGH + ", SQRXM=" + SQRXM + ", BGRGH=" + BGRGH + ", BGRXM="
+				+ BGRXM + ", SHRGH=" + SHRGH + ", SHRXM=" + SHRXM + ", SQKS=" + SQKS + ", BQ=" + BQ
+				+ ", CH=" + CH + ", DYRQ=" + DYRQ + ", SQRQ=" + SQRQ + ", CJRQ=" + CJRQ + ", JYRQ="
+				+ JYRQ + ", HSRQ=" + HSRQ + ", BBDM=" + BBDM + ", BBMC=" + BBMC + ", JZBZ=" + JZBZ
+				+ ", JYMD=" + JYMD + ", ZXKS=" + ZXKS + ", LCZD=" + LCZD + ", REMARK_INFO="
+				+ REMARK_INFO + ", JGZT=" + JGZT + ", REQNO=" + REQNO + ", BGDMC=" + BGDMC
+				+ ", contentItems=" + contentItems + "]";
+	}
 	
 }

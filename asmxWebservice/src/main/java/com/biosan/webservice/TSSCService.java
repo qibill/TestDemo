@@ -16,5 +16,14 @@ public interface TSSCService {
      */
     PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf);
     
+    /**
+     * 根据 发送记录 发送报告
+     * 
+     * @param newtouchtsscresult
+     * @return
+     * 
+     * @author qibill
+     * 2018年6月7日上午9:14:11
+     */
     public BiosanResult sendPlatFormTSSCService(Newtouchtsscresult newtouchtsscresult);
 }

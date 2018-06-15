@@ -9,7 +9,7 @@ import javax.xml.bind.Unmarshaller;
 import org.junit.Test;
 
 import com.biosan.utils.BiosanResult;
-import com.biosan.utils.JsonUtils;
+import com.biosan.utils.JsonUtil;
 import com.newtouch.pojo.PatientDetailInfo;
 
 public class GetReponseTest {
@@ -54,7 +54,7 @@ public class GetReponseTest {
 			String errMsg = reponsebody.substring(reponsebody.indexOf("<errMsg>") + 8, reponsebody.indexOf("</errMsg>"));
 			biosanResult.setStatus(3);
 			biosanResult.setMsg(errMsg);
-			System.out.println(JsonUtils.objectToJson(biosanResult));
+			System.out.println(JsonUtil.objectToJson(biosanResult));
 		}
 		
 		String Flag = reponsebody.substring(reponsebody.indexOf("<Flag>") + 6, reponsebody.indexOf("</Flag>"));		
@@ -63,7 +63,7 @@ public class GetReponseTest {
 			String Msg = reponsebody.substring(reponsebody.indexOf("<Msg>") + 5, reponsebody.indexOf("</Msg>"));
 			biosanResult.setStatus(2);
 			biosanResult.setMsg(Msg);
-			System.out.println(JsonUtils.objectToJson(biosanResult));
+			System.out.println(JsonUtil.objectToJson(biosanResult));
 		}
 		
 		String dataTable = reponsebody.substring(reponsebody.indexOf("<DataTable>") + 11, reponsebody.indexOf("</DataTable>"));
@@ -78,6 +78,6 @@ public class GetReponseTest {
 		}
 		biosanResult.setStatus(1);
 		biosanResult.setData(patientDetailInfo);
-		System.out.println(JsonUtils.objectToJson(biosanResult));
+		System.out.println(JsonUtil.objectToJson(biosanResult));
 	}
 }

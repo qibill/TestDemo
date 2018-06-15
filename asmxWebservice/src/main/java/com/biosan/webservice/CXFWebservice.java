@@ -1,14 +1,18 @@
 package com.biosan.webservice;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.biosan.utils.RequestUtil;
 import com.newtouch.webservice.patientbasicinfo.PatientBasicInfoSoap;
 import com.newtouch.webservice.testreportrelease.TestReportReleaseSoap;
 
 
 @Service
 public class CXFWebservice implements NewTouchService {
+	
+    private static final Logger logger = Logger.getLogger(CXFWebservice.class);
 
 	@Autowired
 	private PatientBasicInfoSoap patientBasicInfo;
@@ -22,9 +26,10 @@ public class CXFWebservice implements NewTouchService {
     }
 
 	@Override
-    public String PlatForm_TSSC_Service(String request) {
-        String platForm_TSSC_Service = testReportRelease.platFormTSSCService(request);
-        return platForm_TSSC_Service;
+    public String platFormTSSCService(String request) {
+        String platFormTSSCService = testReportRelease.platFormTSSCService(request);
+        logger.info(platFormTSSCService);
+        return platFormTSSCService;
     }
 
 }

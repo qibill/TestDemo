@@ -29,12 +29,13 @@
 	<select id="selectPlatFormTSSCServiceRequest"
 		parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
-		SELECT s.samplestring Patid, 
+		SELECT s.reserved2 Patid, 
 		p.identitycard PatNo,
 		s.backfillnum CardNo,
 		s.pdfdate PublishDate,
 		s.labdate CheckDate,
 		s.samplestring ReportNo,
+		s.samplestring Reqno,
 		p.patientname PatName
 		 FROM sample s,patient p
 		 WHERE s.patientid = p.patientid

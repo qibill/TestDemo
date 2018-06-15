@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.biosan.pojo.Newtouchtsscresult;
 import com.biosan.utils.BiosanResult;
-import com.biosan.utils.JsonUtils;
+import com.biosan.utils.JsonUtil;
 import com.biosan.utils.RequestUtil;
 import com.newtouch.pojo.PatientDetailInfoRequest;
 
-public class BiosanWebSerivceImpl implements BiosanWebSerivce {
+public class BiosanWebServiceImpl implements BiosanWebService {
 
-	private static final Logger logger = Logger.getLogger(BiosanWebSerivceImpl.class);
+	private static final Logger logger = Logger.getLogger(BiosanWebServiceImpl.class);
 
 	@Autowired
 	private NewTouchService newtouchservice;
@@ -28,7 +28,9 @@ public class BiosanWebSerivceImpl implements BiosanWebSerivce {
 	public String getPatientDetailInfo(String CardNo) {
 		logger.info("开始查找就诊卡号为" + CardNo + "病人基本信息(唐筛)");
 		PatientDetailInfoRequest request = new PatientDetailInfoRequest(CardNo);
+		logger.debug(request.toXml());
 		String patientDetailInfo = newtouchservice.patientDetailInfo(request.toXml());
+		logger.debug(patientDetailInfo);
 		BiosanResult biosanResult = RequestUtil.getPatientDetailInfoRequest(patientDetailInfo);
 		if (biosanResult.getStatus() == 1) {
 			logger.info("查询成功");
@@ -36,7 +38,7 @@ public class BiosanWebSerivceImpl implements BiosanWebSerivce {
 			logger.info("查询失败，失败信息：" + biosanResult.getMsg());
 		}
 		;
-		return JsonUtils.objectToJson(RequestUtil.getPatientDetailInfoRequest(patientDetailInfo));
+		return JsonUtil.objectToJson(biosanResult);
 	}
 
 	@Override
@@ -47,6 +49,11 @@ public class BiosanWebSerivceImpl implements BiosanWebSerivce {
 		for (String sampleid : sampleids) {
 			if (sampleid != null) {
 				Newtouchtsscresult newtouchtsscresult = newtouchtsscresultService.selectBySampleid(Integer.valueOf(sampleid)).get(0);
+				//放置输入没有报告的sampleid
+				if (newtouchtsscresult.getPdfdate() == null) {
+					map.put(sampleid, "报告未出");
+					continue;
+				}
 				result = tSSCSrevice.sendPlatFormTSSCService(newtouchtsscresult);
 				map.put(sampleid, result.getStatus() == 1 ? "发送成功":"发送失败");
 			}

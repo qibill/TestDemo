@@ -2,7 +2,7 @@ package com.biosan.utils;
 
 public class BiosanResult {
 
-    // 响应业务状态   1.发送成功    2.发送失败	 3.发送撤销命令失败
+    // 响应业务状态   1、成功    其他、失败
     private Integer status;
 
     // 响应消息

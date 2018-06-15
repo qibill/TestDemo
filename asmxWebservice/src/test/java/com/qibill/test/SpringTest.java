@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.biosan.utils.DESUtil;
+
 public class SpringTest {
 
 	@Test
@@ -14,7 +16,13 @@ public class SpringTest {
 //		bean.sendPlatFormTSSCService(74734, 1);
 //		System.out.println(bean.toString());
 	}
-	
+	@Test
+	public void decoder() {
+		String encrypt = DESUtil.encrypt("biosan#17","Bio-San#17");
+		System.out.println(encrypt);
+		String decrypt = DESUtil.decrypt("KeVBmJ8Oyhbb+tyHy7fEp1N7697kcJ7VwUEggLOgh2vGsriEbtoMMLu9Q9UB592e+QwNF7GCxtI=","Bio-San#17");
+		System.out.println(decrypt);
+	}
 	@Test
 	public void stringTest() {
 		String s = "<root>" + 

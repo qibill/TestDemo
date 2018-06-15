@@ -18,7 +18,9 @@
 		<result column="SQRGH" jdbcType="DATE" property="SQRGH" />
 		<result column="SQRXM" jdbcType="CHAR" property="SQRXM" />
 		<result column="BGRGH" jdbcType="INTEGER" property="BGRGH" />
+		<result column="BGRXM" jdbcType="CHAR" property="BGRXM" />
 		<result column="SHRGH" jdbcType="INTEGER" property="SHRGH" />
+		<result column="SHRXM" jdbcType="CHAR" property="SHRXM" />
 		<result column="SQKS" jdbcType="CHAR" property="SQKS" />
 		<result column="BQ" jdbcType="CHAR" property="BQ" />
 		<result column="CH" jdbcType="CHAR" property="CH" />
@@ -42,12 +44,18 @@
 		resultMap="BaseResultMap">
 		SELECT s.pdfdate BGRQ,
 		s.samplestring BGDH,
-		s.samplestring PATID,
+		s.reserved2 PATID,
 		s.samplestring REQNO,
 		s.backfillnum KH,
 		p.patientname BRXM,
 		s.laboperator BGRGH,
+		(SELECT e.employeename
+			FROM employee e
+			WHERE e.employeeid=s.laboperator) BGRGM,
 		s.pdfchecktor SHRGH,
+		(SELECT e.employeename
+			FROM employee e
+			WHERE e.employeeid=s.pdfchecktor) SHRGM,
 		s.addtime SQRQ,
 		s.addtime CJRQ,
 		s.labdate JYRQ,

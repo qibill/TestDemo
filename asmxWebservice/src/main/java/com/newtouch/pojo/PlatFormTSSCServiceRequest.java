@@ -6,8 +6,8 @@ import com.biosan.utils.XMLUtil;
 
 public class PlatFormTSSCServiceRequest {
 
-	/** 平台内部编码* 固定值 */
-	private String hashKey = "c2d442a2-d458-434a-a650-e19ea1f35a79";
+	/** 平台内部编码* 固定值  16a839ed-b5f1-4148-b9a3-dab942a072e4*/
+	private String hashKey = "16a839ed-b5f1-4148-b9a3-dab942a072e4";
 	/** 01 添加一条检验报告记录* 固定值 */
 	private String invoketype = "01";
 	/** 报告类型 * 固定值 */
@@ -206,6 +206,17 @@ public class PlatFormTSSCServiceRequest {
 		xml.append("<body />");
 		xml.append("</root>");
 		return xml.toString();				
+	}
+	@Override
+	public String toString() {
+		return "PlatFormTSSCServiceRequest [hashKey=" + hashKey + ", invoketype=" + invoketype
+				+ ", ReportType=" + ReportType + ", Patid=" + Patid + ", PatNo=" + PatNo
+				+ ", CardNo=" + CardNo + ", Mpi=" + Mpi + ", HospDiv=" + HospDiv + ", VistType="
+				+ VistType + ", RecordID=" + RecordID + ", PublishDate=" + PublishDate
+				+ ", CheckDate=" + CheckDate + ", DoctorAdvID=" + DoctorAdvID + ", ReportNo="
+				+ ReportNo + ", content=" + content + ", FCD=" + FCD + ", Reqno=" + Reqno
+				+ ", BarCode=" + BarCode + ", czqf=" + czqf + ", PatName=" + PatName + ", PY=" + PY
+				+ ", PrintDatetime=" + PrintDatetime + ", isPrint=" + isPrint + "]";
 	}
 
 }

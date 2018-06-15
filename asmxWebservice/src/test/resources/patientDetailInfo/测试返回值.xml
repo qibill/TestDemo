@@ -1,0 +1,30 @@
+<root>
+	<head>
+		<parameter>
+			<hashKey>16a839ed-b5f1-4148-b9a3-dab942a072e4</hashKey>
+			<CardNo>135403000800151</CardNo>
+		</parameter>
+	</head>
+	<body>
+		<result>OK</result>
+		<DataTable>
+			<row>
+				<Patid>1000000108</Patid>
+				<OutPatiNo>YL00800151</OutPatiNo>
+				<PatName>测试151</PatName>
+				<SexName>女</SexName>
+				<LastMense>2017-12-01</LastMense>
+				<Age>8</Age>
+				<IdCardNo>310103198601235610</IdCardNo>
+				<Tel>13482345508</Tel>
+				<Mobile>13482345508</Mobile>
+				<Height></Height>
+				<Weight></Weight>
+				<ChildHistory></ChildHistory>
+				<MedicalHistory></MedicalHistory>
+				<Flag>1</Flag>
+				<Msg></Msg>
+			</row>
+		</DataTable>
+	</body>
+</root>

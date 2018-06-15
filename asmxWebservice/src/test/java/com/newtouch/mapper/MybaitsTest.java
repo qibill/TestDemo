@@ -10,15 +10,17 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.biosan.pojo.Newtouchtsscresult;
-import com.biosan.utils.JsonUtils;
+import com.biosan.utils.JsonUtil;
 import com.biosan.webservice.TSSCService;
 import com.newtouch.pojo.ContentBody;
 import com.newtouch.pojo.ContentHead;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:mybaits.xml")
+@ContextConfiguration(locations = "classpath:spring/applicationContext-*.xml")
 public class MybaitsTest {
+	
 	
 	@Autowired
 	private ContentHeadMapper contentHeadMapper;
@@ -47,26 +49,27 @@ public class MybaitsTest {
 		List<Newtouchtsscresult> list = newtouchtsscresultMapper.selectNewSampleid(160);
 		for (Newtouchtsscresult sample : list) {
 			System.out.println(sample.getSampleid());
-			
 		}
 	}
+	
 	@Test
 	public void serviceTest() {
-		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(74734, 1);
+		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(1837566, 1);
 		System.out.println(creatPlatFormTSSCServiceRequest.toXml());
 	}
 
+	
 	@Test
 	public void contentHeadMapperTest() {
-		List<ContentHead> contentHead = contentHeadMapper.selectContentHead(74734);
+		List<ContentHead> contentHead = contentHeadMapper.selectContentHead(1837566);
 		for (ContentHead contentHead2 : contentHead) {
-			System.out.println(JsonUtils.objectToJson(contentHead2));
+			System.out.println(JsonUtil.objectToJson(contentHead2));
 		}
 	}
 	
 	@Test
 	public void contentItemMapperTest() {
-		Map<String, Object> queryForMap = contentItemMapper.queryForMap(74734);
+		Map<String, Object> queryForMap = contentItemMapper.queryForMap(1837566);
 		for (String key : queryForMap.keySet()) {
 			System.out.println(key + "=" + queryForMap.get(key));
 		}
@@ -76,14 +79,14 @@ public class MybaitsTest {
 	public void contentBodyMapperTest() {
 		List<ContentBody> list = contentBodyMapper.selectContentBody(74734);
 		for (ContentBody contentBody : list) {
-			System.out.println(JsonUtils.objectToJson(contentBody));
+			System.out.println(contentBody.toString());
 		}
 	}
 	@Test
 	public void tSSCServiceRequestMapperTest() {
 		List<PlatFormTSSCServiceRequest> list = tSSCServiceRequestMapper.selectPlatFormTSSCServiceRequest(74734);
 		for (PlatFormTSSCServiceRequest contentBody : list) {
-			System.out.println(JsonUtils.objectToJson(contentBody));
+			System.out.println(JsonUtil.objectToJson(contentBody));
 		}
 	}
 }

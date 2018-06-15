@@ -5,7 +5,7 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 @WebService(targetNamespace = "http://webservice.biosan.com/")
-public interface BiosanWebSerivce {
+public interface BiosanWebService {
 
 	/**
 	 * @param CardNo

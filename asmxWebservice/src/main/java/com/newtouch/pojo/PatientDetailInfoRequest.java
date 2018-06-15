@@ -29,13 +29,10 @@ public class PatientDetailInfoRequest {
 	}
 
 	public String toXml() {
-		String xml = "<?xml version=\"1.1\"  encoding=\"utf-8\"?>" + 
-				"<root>" + 
+		String xml = "<root>" + 
 				"<head>" + 
 				"<parameter>" + 
-				"<!-- 系统识别码 -->" + 
 				"<hashKey>" + getHashKey() + "</hashKey>" + 
-				"<!-- 就诊卡号 -->" + 
 				"<CardNo>" + getCardNo() + "</CardNo>" + 
 				"</parameter>" + 
 				"</head>" + 

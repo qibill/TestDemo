@@ -1,8 +1,16 @@
 package com.qibill.test;
 
+import java.io.StringReader;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
 import org.junit.Test;
 
+import com.biosan.pojo.PatientDetail;
 import com.biosan.webservice.TSSCServiceImpl;
+import com.newtouch.pojo.PatientDetailInfo;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
 public class XMLTest {
@@ -19,6 +27,34 @@ public class XMLTest {
 			System.out.println(field.getName());
 			
 		}*/
-		
+	}
+	
+	@Test
+	public void xmlToObject() throws JAXBException {
+		JAXBContext jc;
+		PatientDetail patientDetail = new PatientDetail();
+		String dataTable = "<row>" + 
+				"        <Patid>1000000108</Patid>" + 
+				"        <OutPatiNo>YL00800151</OutPatiNo>" + 
+				"        <PatName>测试151</PatName>" + 
+				"        <SexName>女</SexName>" + 
+				"        <LastMense>2017-12-01</LastMense>" + 
+				"        <Age>8</Age>" + 
+				"        <IdCardNo>310103XXXXXXXX5610</IdCardNo>" + 
+				"        <Tel />" + 
+				"        <Mobile>13111111111</Mobile>" + 
+				"        <Height />" + 
+				"        <Weight />" + 
+				"        <ChildHistory />" + 
+				"        <MedicalHistory />" + 
+				"        <Flag>1</Flag>" + 
+				"        <Msg />" + 
+				"      </row>" + 
+				"";
+		jc = JAXBContext.newInstance(PatientDetail.class);
+		Unmarshaller unmarshaller = jc.createUnmarshaller();
+		patientDetail = (PatientDetail) unmarshaller
+				.unmarshal(new StringReader(dataTable));
+		System.out.println(patientDetail.toString());
 	}
 }

@@ -30,12 +30,14 @@
 			<ref bean="biosanJobDetail" />
 		</property>
 		<property name="cronExpression">
-			<!--一分钟触发一次 -->
-			<value>0/30 * * * * ?</value>
+			<!-- 与resource.properties的DAYS相对应，每次发送的间隔时间不能大于DAYS -->
+			<!-- TODO 发送时间设置 -->
+			<!--30秒触发一次 -->
+			<!-- <value>0/10 * * * * ?</value> -->
 			<!--五秒钟触发一次 -->
 			<!-- <value>0/5 * * * * ?</value>  -->
 			<!--每天0点触发 -->
-			<!--<value>0 0 0 * * ?</value> -->
+			<value>0 0 0 * * ?</value>
 		</property>
 	</bean>
 	<!-- 调度的配置结束 -->
@@ -53,8 +55,7 @@
 	<!-- job的配置结束 -->
 
 	<!-- 工作的bean -->
-	<bean id="biosanJob"
-		class="com.biosan.webservice.biosanJob" />
+	<bean id="biosanJob" class="com.biosan.webservice.BiosanJob" />
 
 	<!--定时任务配置 end -->
 </beans>  

@@ -27,6 +27,7 @@ public class NewtouchtsscresultServiceImpl implements NewtouchtsscresultService 
 
 	@Override
 	public int updateByBean(Newtouchtsscresult record) {
+		
 		record.setSendattime(new Date());
 		logger.debug(record.toString());
 		return newtouchtsscresultMapper.updateByBean(record);
