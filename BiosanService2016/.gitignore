@@ -1,0 +1,10 @@
+/target/
+/.settings/
+/.idea/
+/.svn/
+/.classpath
+/.project
+/logs/
+/.mymetadata
+/WebRoot/WETA-INF
+/WebRoot/WEB-INF/classes

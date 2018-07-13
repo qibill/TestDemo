@@ -12,12 +12,10 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	<!-- 通过上下文参数指定spring配置文件的位置 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/applicationContext-*.xml</param-value>
 	</context-param>
-	<!-- 配置spring提供的上下文载入器监听器,当项目启动时加载spring配置文件,初始化spring工厂 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

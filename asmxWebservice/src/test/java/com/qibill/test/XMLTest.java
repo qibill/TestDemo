@@ -8,7 +8,7 @@ import javax.xml.bind.Unmarshaller;
 
 import org.junit.Test;
 
-import com.biosan.pojo.PatientDetail;
+import com.biosan.utils.JsonUtil;
 import com.biosan.webservice.TSSCServiceImpl;
 import com.newtouch.pojo.PatientDetailInfo;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
@@ -32,7 +32,7 @@ public class XMLTest {
 	@Test
 	public void xmlToObject() throws JAXBException {
 		JAXBContext jc;
-		PatientDetail patientDetail = new PatientDetail();
+		PatientDetailInfo patientDetail = new PatientDetailInfo();
 		String dataTable = "<row>" + 
 				"        <Patid>1000000108</Patid>" + 
 				"        <OutPatiNo>YL00800151</OutPatiNo>" + 
@@ -51,10 +51,10 @@ public class XMLTest {
 				"        <Msg />" + 
 				"      </row>" + 
 				"";
-		jc = JAXBContext.newInstance(PatientDetail.class);
+		jc = JAXBContext.newInstance(PatientDetailInfo.class);
 		Unmarshaller unmarshaller = jc.createUnmarshaller();
-		patientDetail = (PatientDetail) unmarshaller
+		patientDetail = (PatientDetailInfo) unmarshaller
 				.unmarshal(new StringReader(dataTable));
-		System.out.println(patientDetail.toString());
+		System.out.println(JsonUtil.objectToJson(patientDetail));
 	}
 }

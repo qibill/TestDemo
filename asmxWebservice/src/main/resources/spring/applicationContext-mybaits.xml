@@ -51,7 +51,6 @@
 		<property name="minIdle" value="5" />
 	</bean>
 	
-
 	<!-- 组件扫描，扫描含有注解的类 -->
 	<context:component-scan
 		base-package="com.biosan.webservice"></context:component-scan>

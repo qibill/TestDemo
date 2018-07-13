@@ -20,7 +20,7 @@ public class SpringTest {
 	public void decoder() {
 		String encrypt = DESUtil.encrypt("biosan#17","Bio-San#17");
 		System.out.println(encrypt);
-		String decrypt = DESUtil.decrypt("KeVBmJ8Oyhbb+tyHy7fEp1N7697kcJ7VwUEggLOgh2vGsriEbtoMMLu9Q9UB592e+QwNF7GCxtI=","Bio-San#17");
+		String decrypt = DESUtil.decrypt("x7H9YTCtBPmfCGE9yl8vSg==","Bio-San#17");
 		System.out.println(decrypt);
 	}
 	@Test

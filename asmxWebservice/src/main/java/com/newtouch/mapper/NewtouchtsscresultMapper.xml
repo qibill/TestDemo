@@ -8,6 +8,7 @@
     <result column="pdfdate" property="pdfdate" jdbcType="TIMESTAMP" />
     <result column="sendattime" property="sendattime" jdbcType="TIMESTAMP" />
   </resultMap>
+  <!-- TODO 只发送本院的报告，需添加关联 -->
 	<select id="selectNewSampleid"
 		parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		SELECT

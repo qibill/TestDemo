@@ -6,8 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlAccessorType(XmlAccessType.FIELD)   
-@XmlRootElement(name = "row")    
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "row")
 public class PatientDetailInfo {
 
 	/** 患者唯一标识 */
@@ -36,89 +36,125 @@ public class PatientDetailInfo {
 	private String ChildHistory;
 	/** 过去史 */
 	private String MedicalHistory;
-	
+
 	@JsonProperty("reserved2")
 	public String getPatid() {
 		return Patid;
 	}
+
 	public void setPatid(String patid) {
 		Patid = patid;
 	}
+	
+	@JsonProperty("cardnum")
 	public String getOutPatiNo() {
 		return OutPatiNo;
 	}
+
 	public void setOutPatiNo(String outPatiNo) {
 		OutPatiNo = outPatiNo;
 	}
+
 	@JsonProperty("patientname")
 	public String getPatName() {
 		return PatName;
 	}
+
 	public void setPatName(String patName) {
 		PatName = patName;
 	}
+
 	public String getSexName() {
 		return SexName;
 	}
+
 	public void setSexName(String sexName) {
 		SexName = sexName;
 	}
+
 	@JsonProperty("lmpdate")
 	public String getLastMense() {
 		return LastMense;
 	}
+
 	public void setLastMense(String lastMense) {
 		LastMense = lastMense;
 	}
+
 	public String getAge() {
 		return Age;
 	}
+
 	public void setAge(String age) {
 		Age = age;
 	}
+
 	@JsonProperty("identitycard")
 	public String getIdCardNo() {
 		return IdCardNo;
 	}
+
 	public void setIdCardNo(String idCardNo) {
 		IdCardNo = idCardNo;
 	}
+
 	public String getTel() {
 		return Tel;
 	}
+
 	public void setTel(String tel) {
 		Tel = tel;
 	}
+
 	@JsonProperty("mobile")
 	public String getMobile() {
 		return Mobile;
 	}
+
 	public void setMobile(String mobile) {
 		Mobile = mobile;
 	}
+
 	public String getHeight() {
 		return Height;
 	}
+
 	public void setHeight(String height) {
 		Height = height;
 	}
+
 	public String getWeight() {
 		return Weight;
 	}
+
 	public void setWeight(String weight) {
 		Weight = weight;
 	}
+
 	public String getChildHistory() {
 		return ChildHistory;
 	}
+
 	public void setChildHistory(String childHistory) {
 		ChildHistory = childHistory;
 	}
+
 	public String getMedicalHistory() {
 		return MedicalHistory;
 	}
+
 	public void setMedicalHistory(String medicalHistory) {
 		MedicalHistory = medicalHistory;
 	}
+
+	@Override
+	public String toString() {
+		return "PatientDetailInfo [Patid=" + Patid + ", OutPatiNo=" + OutPatiNo + ", PatName="
+				+ PatName + ", SexName=" + SexName + ", LastMense=" + LastMense + ", Age=" + Age
+				+ ", IdCardNo=" + IdCardNo + ", Tel=" + Tel + ", Mobile=" + Mobile + ", Height="
+				+ Height + ", Weight=" + Weight + ", ChildHistory=" + ChildHistory
+				+ ", MedicalHistory=" + MedicalHistory + "]";
+	}
+
 	
 }

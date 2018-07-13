@@ -45,7 +45,7 @@ public class BiosanResult {
 		this.data = data;
 	}
     
-    public static BiosanResult isOk() {
+    public static BiosanResult Ok() {
     	return new BiosanResult(1);
     } 
 }
