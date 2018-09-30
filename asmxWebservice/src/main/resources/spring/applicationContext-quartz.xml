@@ -32,7 +32,7 @@
 		<property name="cronExpression">
 			<!-- 与resource.properties的DAYS相对应，每次发送的间隔时间不能大于DAYS -->
 			<!-- TODO 发送时间设置 -->
-			<!--30秒触发一次 -->
+			<!--10秒触发一次 -->
 			<!-- <value>0/10 * * * * ?</value> -->
 			<!--五秒钟触发一次 -->
 			<!-- <value>0/5 * * * * ?</value>  -->

@@ -26,8 +26,15 @@ public class BiosanWebServiceImpl implements BiosanWebService {
 	
 	@Override
 	public String getPatientDetailInfo(String CardNo) {
-		logger.info("开始查找就诊卡号为" + CardNo + "病人基本信息(唐筛)");
-		PatientDetailInfoRequest request = new PatientDetailInfoRequest(CardNo);
+		PatientDetailInfoRequest request = new PatientDetailInfoRequest();
+		// 卡号判断
+		if (CardNo.length() == 18){
+			logger.info("开始查找就身份证号为" + CardNo + "病人基本信息(唐筛)");
+			request.setIDCard(CardNo);
+		}else {
+			logger.info("开始查找就诊卡号为" + CardNo + "病人基本信息(唐筛)");
+			request.setCardNo(CardNo);
+		}
 		logger.debug(request.toXml());
 		String patientDetailInfo = newtouchservice.patientDetailInfo(request.toXml());
 		logger.debug(patientDetailInfo);

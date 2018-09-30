@@ -52,9 +52,10 @@ public class MybaitsTest {
 		}
 	}
 	
+	
 	@Test
 	public void serviceTest() {
-		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(1837566, 1);
+		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(1336429, 1);
 		System.out.println(creatPlatFormTSSCServiceRequest.toXml());
 	}
 
@@ -82,6 +83,7 @@ public class MybaitsTest {
 			System.out.println(contentBody.toString());
 		}
 	}
+	
 	@Test
 	public void tSSCServiceRequestMapperTest() {
 		List<PlatFormTSSCServiceRequest> list = tSSCServiceRequestMapper.selectPlatFormTSSCServiceRequest(74734);

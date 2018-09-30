@@ -45,8 +45,10 @@
 		SELECT s.pdfdate BGRQ,
 		s.samplestring BGDH,
 		s.reserved2 PATID,
-		s.samplestring REQNO,
-		s.backfillnum KH,
+		CONCAT(left(s.samplestring,LENGTH(s.samplestring)-1),'ST',right(s.samplestring,1))
+		REQNO,
+		<!-- p.identitycard KH, -->
+		p.cardnum KH,
 		p.patientname BRXM,
 		s.laboperator BGRGH,
 		(SELECT e.employeename

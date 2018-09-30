@@ -9,7 +9,7 @@ public class ContentHead {
 	/** 平台内部编码* 固定值 */
 	private String hashKey ="16a839ed-b5f1-4148-b9a3-dab942a072e4";
 	/** 院区编码 (0 西院,1 南院,2 东院) * */
-	private String yqqf = "0";
+	private String yqqf;
 	private String yzlb;
 	/** 操作编码（1 新增 3 撤销）* */
 	private Integer czqf;

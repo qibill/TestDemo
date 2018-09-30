@@ -19,7 +19,7 @@ public class PlatFormTSSCServiceRequest {
 	private String CardNo;
 	private String Mpi;
 	/** 院区编码 (0 西院,1 南院,2 东院) * */
-	private String HospDiv = "0";
+	private String HospDiv;
 	/** 就诊类型 (1 门诊 2 住院)* */
 	private String VistType = "1";
 	private String RecordID;
@@ -144,7 +144,7 @@ public class PlatFormTSSCServiceRequest {
 	public String getReqno() {
 		return Reqno;
 	}
-	public void setReqno(String reqno) {
+	public void setReqno(String reqno){
 		Reqno = reqno;
 	}
 	public String getBarCode() {

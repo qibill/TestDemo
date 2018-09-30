@@ -3,8 +3,31 @@
 <mapper namespace="com.newtouch.mapper.EmployeeMapper">
 	<select id="selectEmployeename"
 		parameterType="java.lang.Integer" resultType="java.lang.String">
-		SELECT e.employeename
-		FROM employee e
-		WHERE e.employeeid=#{employeeid};
+		select
+		cd.key,ca.MEDICALRECORDNO,ca.CHILDNAME,
+		to_char(ca.DIAGNOSE_DATE,'yyyy-mm-dd') DIAGNOSE_DATE,
+		ca.DIAGNOSE_STATE,
+		pa.RACE,pa.ADMISSIONNUM,
+		base.patientid,base.family_info,base.personalinfo,ca.CID,ca.PERSON_STATE,ca.labitem,
+		cd.patientid,sa.samplestring,cd.preg_realcycle,pa.PREGCARENUM,pa.weight,pa.domicile,decrypt(pa.telephone,'Bio-San#17')
+		telephone,
+		to_char(sa.collectedate,'yyyy-mm-dd') collectedate,cd.reserved1,pa.housetype,pa.household,cd.reserved12,
+		cd.reserved13,
+		pa.patientname,cd.isfree,pa.remark,to_char(pa.birthday,'yyyy-mm-dd')
+		birthday,cd.reserved3,pa.language,pa.sex,pa.address,pa.illhisguid,
+		decrypt(pa.identitycard,'Bio-San#17')
+		identitycard,decrypt(pa.mobile,'Bio-San#17') mobile,cd.collectnum,
+		cd.hos,cd.experimentitem ,cd.samplebarcode,
+		cd.conclusion_phe,cd.conclusion_tsh,cd.conclusion_17_a_ohp,cd.conclusion_g6pd,cd.conclusion_gal,cd.conclusion_msms__result,
+		cd.experimentitem,cd.target_msms,cd.target_phe,cd.target_tsh,cd.target_17_a_ohp,
+		cd.target_g6pd,cd.target_gal,
+		cd.labitem_tsh__conclusion,cd.labitem_17_a_ohp__conclusion,cd.labitem_g6pd__conclusion,cd.labitem_phe__conclusion,
+		cd.labitem_msms__conclusion,cd.labitem_gal__conclusion,
+		to_char(cd.pdfdate,'yyyy-mm-dd') pdfdate
+		from ground_tp_create_data cd
+		left join ground_tb_sample sa on sa.sampleid=cd.sampleid
+		left join ground_tb_patient pa on pa.patientid=cd.patientid
+		left join dt_tb_case ca on ca.patientid=cd.patientid
+		left join dt_tb_case_base base on base.patientid=ca.patientid
 	</select>
 </mapper>

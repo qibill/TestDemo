@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.newtouch.mapper.PlatFormTSSCServiceRequestMapper">
+<mapper
+	namespace="com.newtouch.mapper.PlatFormTSSCServiceRequestMapper">
 	<resultMap id="BaseResultMap"
 		type="com.newtouch.pojo.PlatFormTSSCServiceRequest">
 		<id column="hashKey" jdbcType="CHAR" property="hashKey" />
-		<result column="invoketype" jdbcType="CHAR" property="invoketype" />
-		<result column="ReportType" jdbcType="CHAR" property="ReportType" />
+		<result column="invoketype" jdbcType="CHAR"
+			property="invoketype" />
+		<result column="ReportType" jdbcType="CHAR"
+			property="ReportType" />
 		<result column="Patid" jdbcType="CHAR" property="Patid" />
 		<result column="PatNo" jdbcType="CHAR" property="PatNo" />
 		<result column="CardNo" jdbcType="CHAR" property="CardNo" />
@@ -13,9 +16,11 @@
 		<result column="HospDiv" jdbcType="CHAR" property="HospDiv" />
 		<result column="VistType" jdbcType="CHAR" property="VistType" />
 		<result column="RecordID" jdbcType="CHAR" property="RecordID" />
-		<result column="PublishDate" jdbcType="CHAR" property="PublishDate" />
+		<result column="PublishDate" jdbcType="CHAR"
+			property="PublishDate" />
 		<result column="CheckDate" jdbcType="CHAR" property="CheckDate" />
-		<result column="DoctorAdvID" jdbcType="DATE" property="DoctorAdvID" />
+		<result column="DoctorAdvID" jdbcType="DATE"
+			property="DoctorAdvID" />
 		<result column="ReportNo" jdbcType="CHAR" property="ReportNo" />
 		<result column="FCD" jdbcType="CHAR" property="FCD" />
 		<result column="Reqno" jdbcType="CHAR" property="Reqno" />
@@ -23,22 +28,37 @@
 		<result column="czqf" jdbcType="INTEGER" property="czqf" />
 		<result column="PatName" jdbcType="CHAR" property="PatName" />
 		<result column="PY" jdbcType="CHAR" property="PY" />
-		<result column="PrintDatetime" jdbcType="CHAR" property="PrintDatetime" />
+		<result column="PrintDatetime" jdbcType="CHAR"
+			property="PrintDatetime" />
 		<result column="isPrint" jdbcType="CHAR" property="isPrint" />
 	</resultMap>
 	<select id="selectPlatFormTSSCServiceRequest"
-		parameterType="java.lang.Integer"
-		resultMap="BaseResultMap">
-		SELECT s.reserved2 Patid, 
+		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		SELECT s.reserved2 Patid,
 		p.identitycard PatNo,
-		s.backfillnum CardNo,
+		p.cardnum CardNo,
 		s.pdfdate PublishDate,
-		s.labdate CheckDate,
+		s.labdate
+		CheckDate,
 		s.samplestring ReportNo,
-		s.samplestring Reqno,
-		p.patientname PatName
-		 FROM sample s,patient p
-		 WHERE s.patientid = p.patientid
-		 AND s.sampleid = #{sampleid};
+		CONCAT(left(s.samplestring,LENGTH(s.samplestring)-1),'ST',right(s.samplestring,1))
+		REQNO,
+		p.patientname PatName,
+		(
+		CASE
+		WHEN departmentname = '上海市第一妇婴保健院西院'
+		THEN 0
+		WHEN departmentname = '上海市第一妇婴保健院南院'
+		THEN 1
+		WHEN departmentname = '上海市第一妇婴保健院东院'
+		THEN 2
+		END
+		) HospDiv
+		FROM sample s
+		LEFT JOIN patient p on s.patientid = p.patientid
+		LEFT JOIN employee e on s.doc = e.employeeid
+		LEFT JOIN department d on e.departmentid = d.departmentid
+		WHERE
+		s.sampleid = #{sampleid};
 	</select>
 </mapper>

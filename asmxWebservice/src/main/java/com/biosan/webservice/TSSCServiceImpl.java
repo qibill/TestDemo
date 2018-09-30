@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,6 @@ import com.biosan.utils.RequestUtil;
 import com.newtouch.mapper.ContentBodyMapper;
 import com.newtouch.mapper.ContentHeadMapper;
 import com.newtouch.mapper.ContentItemMapper;
-import com.newtouch.mapper.EmployeeMapper;
 import com.newtouch.mapper.NewtouchtsscresultMapper;
 import com.newtouch.mapper.PlatFormTSSCServiceRequestMapper;
 import com.newtouch.pojo.Content;
@@ -50,9 +50,8 @@ public class TSSCServiceImpl implements TSSCService {
 	
 	@Override
 	public PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf) {
-		List<ContentItem> items = new ArrayList<>();
 		logger.debug("生成ContentItem");
-		items.addAll(selectContentItemList(sampleid));
+		List<ContentItem> items = selectContentItemList(sampleid);
 		logger.debug("生成ContentBody");
 		ContentBody body = selectContentBody(sampleid);
 		body.setContentItems(items);
@@ -68,12 +67,22 @@ public class TSSCServiceImpl implements TSSCService {
 		return request;
 	}
 
-	private Collection<ContentItem> selectContentItemList(Integer sampleid) {
-		List<ContentItem> ContentItems = new ArrayList<>();
+	private List<ContentItem> selectContentItemList(Integer sampleid) {
+		List<ContentItem> ContentItems = new LinkedList<>();
 		logger.debug("搜索参数");
 		Map<String, Object> map = contentItemMapper.queryForMap(sampleid);
 		logger.debug(map.size());
 		logger.debug(map.toString());
+		ContentItem TSSC = new ContentItem();
+		
+		TSSC.setJCZBMC("唐氏筛查NO");
+		TSSC.setJCZBDM("TSSC_NO");
+		TSSC.setJYRQ((Date) map.get("JYRQ"));
+		TSSC.setBGDH((String) map.get("BGDH"));
+		TSSC.setREQNO((String) map.get("REQNO"));
+		TSSC.setJCZBJG("S" + map.get("BGDH"));
+		ContentItems.add(TSSC);
+		
 		for (String key : map.keySet()) {
 			if ("JYRQ".equals(key) || "BGDH".equals(key) || "REQNO".equals(key)) {
 				continue;
@@ -84,7 +93,7 @@ public class TSSCServiceImpl implements TSSCService {
 			item.setREQNO((String) map.get("REQNO"));
 			item.setJCZBMC(key);
 			item.setJCZBDM(key);
-			item.setJCZBJG(map.get(key));
+			item.setJCZBJG(map.get(key) == null ? "0" : map.get(key));
 			ContentItems.add(item);
 		}
 		return ContentItems;

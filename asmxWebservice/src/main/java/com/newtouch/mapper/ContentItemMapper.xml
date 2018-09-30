@@ -20,38 +20,40 @@
 		<result column="REQNO" jdbcType="CHAR" property="REQNO" />
 		<result column="SEQNO" jdbcType="CHAR" property="SEQNO" />
 	</resultMap>
-	<select id="queryForMap"
-		parameterType="java.lang.Integer"
+	<select id="queryForMap" parameterType="java.lang.Integer"
 		resultType="java.util.Map">
-		SELECT p.patientname 姓名,
-        p.lmpdate 末次月经,
-        p.birthday 出生日期,
-        s.cycletype 孕周计算基于,
-        s.preg_age 预产年龄,
-        s.samplestring 样品编号,
-        s.collectdate 采样日期,
-        s.senddate 送检日期,
-        s.weight 体重,
-        CONCAT(s.cycle_week,'周',s.cycle_day,'天') 采样时孕周,
-        s.target_afpmom AFP,
-        s.target_hcgbmom hCGb,
-        s.target_ue3mom uE3,
-        s.age_t21 '21-三体年龄风险',
-        s.analysis_t21 '21-三体风险值',
-        s.result_t21 '21-三体风险结果',
-        s.age_t18 '18-三体年龄风险',
-        s.analysis_t18 '18-三体风险值',
-        s.result_t18 '18-三体风险结果',
-        s.result_ntd NTD,
-        s.labdate JYRQ,
-        s.samplestring BGDH,
-        s.samplestring REQNO,
-        s.pdfdate 报告日期,
-        (SELECT e.employeename
-			FROM employee e
-			WHERE e.employeeid=s.pdfchecktor) 审核者
-        FROM sample s,patient p
-        WHERE s.patientid = p.patientid
-        AND s.sampleid = #{sampleid};
+		SELECT
+		p.lmpdate 末次月经,
+		p.birthday 生日,
+		'lifecycle' 风险计算基于项,
+		s.preg_age 预产年龄,
+		s.collectdate 采样日期,
+		s.senddate 送检日期,
+		s.weight 体重,
+		CONCAT(s.cycle_week,'周',s.cycle_day,'天') 孕周,
+		s.nt NT值,
+		s.ntmom NT校正MOM值,
+		s.target_afp AFP浓度,
+		s.target_afpmom AFP校正MOM值,
+		s.target_hcgbm HCGB浓度,
+		s.target_hcgbmmom HCGB校正MOM值,
+		s.target_ue3 UE3浓度,
+		s.target_ue3mom UE3校正MOM值,
+		s.target_pappa 'PAPP-A浓度',
+		s.target_pappamom 'PAPP-A校正MOM值',
+		s.age_t21 T21年龄风险,
+		s.analysis_t21 T21风险值,
+		s.result_t21 T21风险结果,
+		s.age_t18 T18年龄风险,
+		s.analysis_t18 T18风险值,
+		s.result_t18 T18风险结果,
+		s.result_ntd NTD风险结果,
+		s.labdate JYRQ,
+		s.samplestring BGDH,
+		CONCAT(left(s.samplestring,LENGTH(s.samplestring)-1),'ST',right(s.samplestring,1))
+		REQNO
+		FROM sample s,patient p
+		WHERE s.patientid = p.patientid
+		AND s.sampleid = #{sampleid};
 	</select>
 </mapper>

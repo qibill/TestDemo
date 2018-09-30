@@ -15,9 +15,21 @@
 		parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
 		select
+		(
+		CASE
+		WHEN departmentname = '上海市第一妇婴保健院西院'
+		THEN 0
+		WHEN departmentname = '上海市第一妇婴保健院南院'
+		THEN 1
+		WHEN departmentname = '上海市第一妇婴保健院东院'
+		THEN 2
+		END
+		) yqqf,
 		s.labdate jyrq,
 		s.samplestring bgdh
 		from sample s
+		LEFT JOIN employee e on s.doc = e.employeeid
+		LEFT JOIN department d on e.departmentid = d.departmentid
 		WHERE s.sampleid = #{sampleid};
 	</select>
 </mapper>

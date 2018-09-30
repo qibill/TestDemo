@@ -8,7 +8,7 @@
     <result column="pdfdate" property="pdfdate" jdbcType="TIMESTAMP" />
     <result column="sendattime" property="sendattime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <!-- TODO 只发送本院的报告，需添加关联 -->
+  <!-- 只发送本院的报告，需添加关联 -->
 	<select id="selectNewSampleid"
 		parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		SELECT
@@ -19,9 +19,11 @@
 		n.sendattime
 		FROM sample s
 		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
+		LEFT JOIN employee e on s.doc = e.employeeid
+		LEFT JOIN department d on e.departmentid = d.departmentid
 		WHERE DATEDIFF(s.pdfdate,NOW())>-#{days}
 		AND (s.pdfdate > n.pdfdate or n.pdfdate IS NULL)
-		;
+		AND departmentname in ('上海市第一妇婴保健院东院', '上海市第一妇婴保健院南院', '上海市第一妇婴保健院西院')
 	</select>
 	<insert id="insert" parameterType="com.biosan.pojo.Newtouchtsscresult" >
 	   insert into newtouchtsscresult (tsscresultid, sampleid,  
@@ -59,7 +61,6 @@
 		n.sendattime
 		FROM newtouchtsscresult n
 		WHERE n.tsscresult > 1
-		;
 	</select>
 	<select id="selectBySampleid"
 		parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -72,6 +73,5 @@
 		FROM sample s
 		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
 		WHERE s.sampleid = #{sampleid}
-		;
 	</select>
 </mapper>
