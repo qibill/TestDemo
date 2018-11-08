@@ -13,6 +13,10 @@ public class Newtouchtsscresult {
     private Date pdfdate;
 
     private Date sendattime;
+    
+    public void setPdfdate(Date pdfdate) {
+		this.pdfdate = pdfdate;
+	}
 
     public Integer getTsscresultid() {
         return tsscresultid;

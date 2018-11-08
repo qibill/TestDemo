@@ -26,7 +26,7 @@
 		END
 		) yqqf,
 		s.labdate jyrq,
-		s.samplestring bgdh
+		s.labstring bgdh
 		from sample s
 		LEFT JOIN employee e on s.doc = e.employeeid
 		LEFT JOIN department d on e.departmentid = d.departmentid

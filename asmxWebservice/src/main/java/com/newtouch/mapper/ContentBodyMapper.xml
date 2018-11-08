@@ -43,11 +43,8 @@
 		parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
 		SELECT s.pdfdate BGRQ,
-		s.samplestring BGDH,
+		s.labstring BGDH,
 		s.reserved2 PATID,
-		CONCAT(left(s.samplestring,LENGTH(s.samplestring)-1),'ST',right(s.samplestring,1))
-		REQNO,
-		<!-- p.identitycard KH, -->
 		p.cardnum KH,
 		p.patientname BRXM,
 		s.laboperator BGRGH,
@@ -59,11 +56,11 @@
 			FROM employee e
 			WHERE e.employeeid=s.pdfchecktor) SHRGM,
 		s.addtime SQRQ,
-		s.addtime CJRQ,
+		s.collectdate CJRQ,
 		s.labdate JYRQ,
 		s.pdfdate HSRQ
-		 FROM sample s,patient p
-		 WHERE s.patientid = p.patientid
-		 AND s.sampleid = #{sampleid};
+		 FROM sample s
+		 LEFT JOIN patient p on s.patientid = p.patientid
+		 WHERE s.sampleid = #{sampleid};
 	</select>
 </mapper>

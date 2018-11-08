@@ -38,7 +38,8 @@
 		s.target_hcgbm HCGB浓度,
 		s.target_hcgbmmom HCGB校正MOM值,
 		s.target_ue3 UE3浓度,
-		s.target_ue3mom UE3校正MOM值,
+		s.target_ue3mom
+		UE3校正MOM值,
 		s.target_pappa 'PAPP-A浓度',
 		s.target_pappamom 'PAPP-A校正MOM值',
 		s.age_t21 T21年龄风险,
@@ -49,11 +50,9 @@
 		s.result_t18 T18风险结果,
 		s.result_ntd NTD风险结果,
 		s.labdate JYRQ,
-		s.samplestring BGDH,
-		CONCAT(left(s.samplestring,LENGTH(s.samplestring)-1),'ST',right(s.samplestring,1))
-		REQNO
-		FROM sample s,patient p
-		WHERE s.patientid = p.patientid
-		AND s.sampleid = #{sampleid};
+		s.labstring BGDH
+		FROM sample s
+		LEFT JOIN patient p on s.patientid = p.patientid
+		WHERE s.sampleid = #{sampleid};
 	</select>
 </mapper>

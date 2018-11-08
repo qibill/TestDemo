@@ -12,8 +12,9 @@ public class PatientDetailInfo {
 
 	/** 患者唯一标识 */
 	private String Patid;
-	/** 门诊号 */
-	private String OutPatiNo;
+	/** 就诊卡号 */
+	private String CardNo;
+//	private String OutPatiNo;
 	/** 姓名 */
 	private String PatName;
 	/** 性别 */
@@ -47,18 +48,26 @@ public class PatientDetailInfo {
 	}
 	
 	@JsonProperty("cardnum")
-	public String getOutPatiNo() {
-		return OutPatiNo;
+	public String getCardNo() {
+		return CardNo;
 	}
 
-	public void setOutPatiNo(String outPatiNo) {
-		OutPatiNo = outPatiNo;
+	public void setCardNo(String cardNo) {
+		CardNo = cardNo;
 	}
 
 	@JsonProperty("patientname")
 	public String getPatName() {
 		return PatName;
 	}
+
+//	public String getOutPatiNo() {
+//		return OutPatiNo;
+//	}
+//
+//	public void setOutPatiNo(String outPatiNo) {
+//		OutPatiNo = outPatiNo;
+//	}
 
 	public void setPatName(String patName) {
 		PatName = patName;
@@ -146,15 +155,5 @@ public class PatientDetailInfo {
 	public void setMedicalHistory(String medicalHistory) {
 		MedicalHistory = medicalHistory;
 	}
-
-	@Override
-	public String toString() {
-		return "PatientDetailInfo [Patid=" + Patid + ", OutPatiNo=" + OutPatiNo + ", PatName="
-				+ PatName + ", SexName=" + SexName + ", LastMense=" + LastMense + ", Age=" + Age
-				+ ", IdCardNo=" + IdCardNo + ", Tel=" + Tel + ", Mobile=" + Mobile + ", Height="
-				+ Height + ", Weight=" + Weight + ", ChildHistory=" + ChildHistory
-				+ ", MedicalHistory=" + MedicalHistory + "]";
-	}
-
 	
 }

@@ -44,7 +44,6 @@ public class BiosanWebServiceImpl implements BiosanWebService {
 		} else {
 			logger.info("查询失败，失败信息：" + biosanResult.getMsg());
 		}
-		;
 		return JsonUtil.objectToJson(biosanResult);
 	}
 

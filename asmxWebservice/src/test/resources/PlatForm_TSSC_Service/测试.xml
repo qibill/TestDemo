@@ -4,17 +4,17 @@
 			<hashKey>16a839ed-b5f1-4148-b9a3-dab942a072e4</hashKey>
 			<invoketype>01</invoketype>
 			<ReportType>1</ReportType>
-			<Patid></Patid>
+			<Patid>1000142988</Patid>
 			<PatNo />
-			<CardNo>00020865</CardNo>
+			<CardNo>135403000000008</CardNo>
 			<Mpi />
 			<HospDiv>2</HospDiv>
 			<VistType>1</VistType>
 			<RecordID />
-			<PublishDate>2016-12-15</PublishDate>
-			<CheckDate>2016-12-15</CheckDate>
+			<PublishDate>2018-11-05</PublishDate>
+			<CheckDate>2018-07-16</CheckDate>
 			<DoctorAdvID />
-			<ReportNo>FA320160224</ReportNo>
+			<ReportNo>S1819478</ReportNo>
 			<Content>
 				<root>
 					<head>
@@ -24,8 +24,8 @@
 							<yzlb />
 							<czqf>1</czqf>
 							<bglx />
-							<jyrq>2016-12-15</jyrq>
-							<bgdh>FA320160224</bgdh>
+							<jyrq>2018-07-16</jyrq>
+							<bgdh>S1819478</bgdh>
 						</parameter>
 					</head>
 					<body>
@@ -34,30 +34,30 @@
 							<ROW>
 								<MZZYBZ>1</MZZYBZ>
 								<BRANCHNO />
-								<PATID></PATID>
+								<PATID>1000142988</PATID>
 								<BLH />
-								<BGDH>FA320160224</BGDH>
-								<BGRQ>2016-12-15</BGRQ>
+								<BGDH>S1819478</BGDH>
+								<BGRQ>2018-11-05</BGRQ>
 								<ADVID />
-								<KH>00020865</KH>
-								<BRXM>陈芳建</BRXM>
+								<KH>135403000000008</KH>
+								<BRXM>陈永姣</BRXM>
 								<BRXB />
 								<BRNL />
 								<NLDW>岁</NLDW>
 								<SQRGH />
 								<SQRXM />
-								<BGRGH>6459</BGRGH>
+								<BGRGH>3</BGRGH>
 								<BGRXM />
-								<SHRGH>6457</SHRGH>
+								<SHRGH />
 								<SHRXM />
 								<SQKS />
 								<BQ />
 								<CH />
 								<DYRQ />
-								<SQRQ>2016-12-11 11:17:50.0</SQRQ>
-								<CJRQ>2016-12-11 11:17:50.0</CJRQ>
-								<JYRQ>2016-12-15</JYRQ>
-								<HSRQ>2016-12-15</HSRQ>
+								<SQRQ>2018-07-12 12:13:51.0</SQRQ>
+								<CJRQ>2018-07-12</CJRQ>
+								<JYRQ>2018-07-16</JYRQ>
+								<HSRQ>2018-11-05</HSRQ>
 								<BBDM>血清</BBDM>
 								<BBMC>血清</BBMC>
 								<JZBZ />
@@ -66,7 +66,7 @@
 								<LCZD />
 								<REMARK_INFO />
 								<JGZT />
-								<REQNO>FA32016022ST4</REQNO>
+								<REQNO>20181105S1819478</REQNO>
 								<BGDMC>唐氏筛查单</BGDMC>
 							</ROW>
 							<ITEMS>
@@ -76,34 +76,16 @@
 									<JCZBDM>TSSC_NO</JCZBDM>
 									<JCFF />
 									<JCZBMC>唐氏筛查NO</JCZBMC>
-									<JCZBJG>SFA320160224</JCZBJG>
+									<JCZBJG>S1819478</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
 									<YCTS />
 									<SBBM />
 									<YQBM />
 									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>UE3浓度</JCZBDM>
-									<JCFF />
-									<JCZBMC>UE3浓度</JCZBMC>
-									<JCZBJG>6.83</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
 									<SEQNO />
 								</ROWS>
 								<ROWS>
@@ -111,395 +93,17 @@
 									<YBSFDM />
 									<JCZBDM>T18风险结果</JCZBDM>
 									<JCFF />
-									<JCZBMC>T18风险结果</JCZBMC>
-									<JCZBJG>低风险</JCZBJG>
+									<JCZBMC>T18风险���果</JCZBMC>
+									<JCZBJG>中间风险</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
 									<YCTS />
 									<SBBM />
 									<YQBM />
 									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>T21年龄风险</JCZBDM>
-									<JCFF />
-									<JCZBMC>T21年龄风险</JCZBMC>
-									<JCZBJG>1183</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>送检日期</JCZBDM>
-									<JCFF />
-									<JCZBMC>送检日期</JCZBMC>
-									<JCZBJG>2016-12-15</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>HCGB浓度</JCZBDM>
-									<JCFF />
-									<JCZBMC>HCGB浓度</JCZBMC>
-									<JCZBJG>0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>HCGB校正MOM值</JCZBDM>
-									<JCFF />
-									<JCZBMC>HCGB校正MOM值</JCZBMC>
-									<JCZBJG>0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>采样日期</JCZBDM>
-									<JCFF />
-									<JCZBMC>采样日期</JCZBMC>
-									<JCZBJG>2016-12-11</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>预产年龄</JCZBDM>
-									<JCFF />
-									<JCZBMC>预产年龄</JCZBMC>
-									<JCZBJG>27.81</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>UE3校正MOM值</JCZBDM>
-									<JCFF />
-									<JCZBMC>UE3校正MOM值</JCZBMC>
-									<JCZBJG>0.7</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>生日</JCZBDM>
-									<JCFF />
-									<JCZBMC>生日</JCZBMC>
-									<JCZBJG>1989-07-10</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>体重</JCZBDM>
-									<JCFF />
-									<JCZBMC>体重</JCZBMC>
-									<JCZBJG>60.0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>T21风险值</JCZBDM>
-									<JCFF />
-									<JCZBMC>T21风险值</JCZBMC>
-									<JCZBJG>6122</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>AFP浓度</JCZBDM>
-									<JCFF />
-									<JCZBMC>AFP浓度</JCZBMC>
-									<JCZBJG>45.0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>T21风险结果</JCZBDM>
-									<JCFF />
-									<JCZBMC>T21风险结果</JCZBMC>
-									<JCZBJG>低风险</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>NT值</JCZBDM>
-									<JCFF />
-									<JCZBMC>NT值</JCZBMC>
-									<JCZBJG>0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>AFP校正MOM值</JCZBDM>
-									<JCFF />
-									<JCZBMC>AFP校正MOM值</JCZBMC>
-									<JCZBJG>0.79</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>孕周</JCZBDM>
-									<JCFF />
-									<JCZBMC>孕周</JCZBMC>
-									<JCZBJG>19周6天</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>PAPP-A浓度</JCZBDM>
-									<JCFF />
-									<JCZBMC>PAPP-A浓度</JCZBMC>
-									<JCZBJG>0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>T18年龄风险</JCZBDM>
-									<JCFF />
-									<JCZBMC>T18年龄风险</JCZBMC>
-									<JCZBJG>10642</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>末次月经</JCZBDM>
-									<JCFF />
-									<JCZBMC>末次月经</JCZBMC>
-									<JCZBJG>2016-07-25</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>NT校正MOM值</JCZBDM>
-									<JCFF />
-									<JCZBMC>NT校正MOM值</JCZBMC>
-									<JCZBJG>0</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>NTD风险结果</JCZBDM>
-									<JCFF />
-									<JCZBMC>NTD风险结果</JCZBMC>
-									<JCZBJG>低风险</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
-									<SEQNO />
-								</ROWS>
-								<ROWS>
-									<YYSFDM />
-									<YBSFDM />
-									<JCZBDM>风险计算基于项</JCZBDM>
-									<JCFF />
-									<JCZBMC>风险计算基于项</JCZBMC>
-									<JCZBJG>lifecycle</JCZBJG>
-									<CKZ />
-									<JLCKZDW />
-									<YCTS />
-									<SBBM />
-									<YQBM />
-									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
 									<SEQNO />
 								</ROWS>
 								<ROWS>
@@ -515,9 +119,45 @@
 									<SBBM />
 									<YQBM />
 									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>UE3浓度</JCZBDM>
+									<JCFF />
+									<JCZBMC>UE3浓度</JCZBMC>
+									<JCZBJG>3.72</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>体重</JCZBDM>
+									<JCFF />
+									<JCZBMC>体重</JCZBMC>
+									<JCZBJG>58.0</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
 									<SEQNO />
 								</ROWS>
 								<ROWS>
@@ -526,16 +166,376 @@
 									<JCZBDM>T18风险值</JCZBDM>
 									<JCFF />
 									<JCZBMC>T18风险值</JCZBMC>
-									<JCZBJG>14151</JCZBJG>
+									<JCZBJG>600</JCZBJG>
 									<CKZ />
 									<JLCKZDW />
 									<YCTS />
 									<SBBM />
 									<YQBM />
 									<YQMC />
-									<JYRQ>2016-12-15</JYRQ>
-									<BGDH>FA320160224</BGDH>
-									<REQNO>FA32016022ST4</REQNO>
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>T21年龄风险</JCZBDM>
+									<JCFF />
+									<JCZBMC>T21年龄风险</JCZBMC>
+									<JCZBJG>1140</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>末次月经</JCZBDM>
+									<JCFF />
+									<JCZBMC>末次月经</JCZBMC>
+									<JCZBJG>2018-03-28</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>T21风险结果</JCZBDM>
+									<JCFF />
+									<JCZBMC>T21风险结果</JCZBMC>
+									<JCZBJG>中间风险</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>生日</JCZBDM>
+									<JCFF />
+									<JCZBMC>生日</JCZBMC>
+									<JCZBJG>1990-09-13</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>T21风险值</JCZBDM>
+									<JCFF />
+									<JCZBMC>T21风���值</JCZBMC>
+									<JCZBJG>500</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>T18年龄风险</JCZBDM>
+									<JCFF />
+									<JCZBMC>T18年���风险</JCZBMC>
+									<JCZBJG>3486</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>采样日期</JCZBDM>
+									<JCFF />
+									<JCZBMC>采样日期</JCZBMC>
+									<JCZBJG>2018-07-12</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>送检日期</JCZBDM>
+									<JCFF />
+									<JCZBMC>��检日期</JCZBMC>
+									<JCZBJG>2018-07-12</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>HCGB浓度</JCZBDM>
+									<JCFF />
+									<JCZBMC>HCGB浓度</JCZBMC>
+									<JCZBJG>31.3</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>HCGB校正MOM值</JCZBDM>
+									<JCFF />
+									<JCZBMC>HCGB校正MOM值</JCZBMC>
+									<JCZBJG>1.58</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>预产年龄</JCZBDM>
+									<JCFF />
+									<JCZBMC>预产年龄</JCZBMC>
+									<JCZBJG>28.29</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>UE3校正MOM值</JCZBDM>
+									<JCFF />
+									<JCZBMC>UE3校正MOM值</JCZBMC>
+									<JCZBJG>0.96</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>NT值</JCZBDM>
+									<JCFF />
+									<JCZBMC>NT值</JCZBMC>
+									<JCZBJG>0</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>NTD风险结果</JCZBDM>
+									<JCFF />
+									<JCZBMC>NTD风险��果</JCZBMC>
+									<JCZBJG>低风险</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>孕周</JCZBDM>
+									<JCFF />
+									<JCZBMC>孕周</JCZBMC>
+									<JCZBJG>16周0天</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>PAPP-A浓度</JCZBDM>
+									<JCFF />
+									<JCZBMC>PAPP-A浓度</JCZBMC>
+									<JCZBJG>0</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>风险计算基于项</JCZBDM>
+									<JCFF />
+									<JCZBMC>风险计算基于项</JCZBMC>
+									<JCZBJG>lifecycle</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>NT校正MOM值</JCZBDM>
+									<JCFF />
+									<JCZBMC>NT校正MOM值</JCZBMC>
+									<JCZBJG>0</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>AFP浓度</JCZBDM>
+									<JCFF />
+									<JCZBMC>AFP浓度</JCZBMC>
+									<JCZBJG>29.5</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
+									<SEQNO />
+								</ROWS>
+								<ROWS>
+									<YYSFDM />
+									<YBSFDM />
+									<JCZBDM>AFP校正MOM值</JCZBDM>
+									<JCFF />
+									<JCZBMC>AFP���正MOM值</JCZBMC>
+									<JCZBJG>0.93</JCZBJG>
+									<CKZ />
+									<JLCKZDW />
+									<YCTS />
+									<SBBM />
+									<YQBM />
+									<YQMC />
+									<JYRQ>2018-07-16</JYRQ>
+									<BGDH>S1819478</BGDH>
+									<REQNO>20181105S1819478</REQNO>
 									<SEQNO />
 								</ROWS>
 							</ITEMS>
@@ -543,15 +543,20 @@
 					</body>
 				</root>
 			</Content>
-			<FCD>2018-09-30 09:39:12</FCD>
-			<Reqno>FA32016022ST4</Reqno>
+			<FCD>2018-11-06 12:27:41</FCD>
+			<Reqno>20181105S1819478</Reqno>
 			<BarCode />
 			<czqf>1</czqf>
-			<PatName>陈芳建</PatName>
+			<PatName>陈永姣</PatName>
 			<PY />
 			<PrintDatetime />
 			<isPrint />
 		</parameter>
 	</head>
-	<body />
+	<body>
+		<result>OK</result>
+		<DataTable>
+			<Flag>1</Flag>
+		</DataTable>
+	</body>
 </root>

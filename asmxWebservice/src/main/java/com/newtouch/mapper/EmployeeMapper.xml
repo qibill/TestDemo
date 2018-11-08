@@ -9,7 +9,7 @@
 		ca.DIAGNOSE_STATE,
 		pa.RACE,pa.ADMISSIONNUM,
 		base.patientid,base.family_info,base.personalinfo,ca.CID,ca.PERSON_STATE,ca.labitem,
-		cd.patientid,sa.samplestring,cd.preg_realcycle,pa.PREGCARENUM,pa.weight,pa.domicile,decrypt(pa.telephone,'Bio-San#17')
+		cd.patientid,sa.labstring,cd.preg_realcycle,pa.PREGCARENUM,pa.weight,pa.domicile,decrypt(pa.telephone,'Bio-San#17')
 		telephone,
 		to_char(sa.collectedate,'yyyy-mm-dd') collectedate,cd.reserved1,pa.housetype,pa.household,cd.reserved12,
 		cd.reserved13,

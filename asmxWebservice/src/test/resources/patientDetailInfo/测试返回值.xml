@@ -2,22 +2,23 @@
 	<head>
 		<parameter>
 			<hashKey>16a839ed-b5f1-4148-b9a3-dab942a072e4</hashKey>
-			<CardNo>135403000800151</CardNo>
+			<CardNo>135403000000008</CardNo>
+			<IDCard>999999999999999999</IDCard>
 		</parameter>
 	</head>
 	<body>
 		<result>OK</result>
 		<DataTable>
 			<row>
-				<Patid>1000000108</Patid>
-				<OutPatiNo>YL00800151</OutPatiNo>
-				<PatName>测试151</PatName>
-				<SexName>女</SexName>
-				<LastMense>2017-12-01</LastMense>
-				<Age>8</Age>
-				<IdCardNo>310103198601235610</IdCardNo>
-				<Tel>13482345508</Tel>
-				<Mobile>13482345508</Mobile>
+				<Patid>1000142988</Patid>
+				<OutPatiNo>YL00000008</OutPatiNo>
+				<PatName>陈永姣</PatName>
+				<SexName>男</SexName>
+				<LastMense></LastMense>
+				<Age>29</Age>
+				<IdCardNo>411421198912165244</IdCardNo>
+				<Tel>18501755643</Tel>
+				<Mobile>18501755643</Mobile>
 				<Height></Height>
 				<Weight></Weight>
 				<ChildHistory></ChildHistory>

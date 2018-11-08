@@ -195,7 +195,7 @@
 					<version>2.2</version>
 					<configuration>
 						<!-- 通过maven tomcat7:run运行项目时，访问项目的端口号 -->
-						<port>8080</port>
+						<port>18080</port>
 						<!-- 项目访问路径 本例：localhost:8080, 如果配置的aa， 则访问路径为localhost:9090/aa -->
 						<path>/AsmxWebservice</path>
 						<uriEncoding>UTF-8</uriEncoding>

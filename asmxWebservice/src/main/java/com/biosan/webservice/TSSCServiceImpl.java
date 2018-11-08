@@ -1,8 +1,6 @@
 package com.biosan.webservice;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,12 +23,14 @@ import com.newtouch.pojo.Content;
 import com.newtouch.pojo.ContentBody;
 import com.newtouch.pojo.ContentHead;
 import com.newtouch.pojo.ContentItem;
+import com.newtouch.pojo.PatientDetailInfo;
+import com.newtouch.pojo.PatientDetailInfoRequest;
 import com.newtouch.pojo.PlatFormTSSCServiceRequest;
 
 @Service
 public class TSSCServiceImpl implements TSSCService {
 
-    private static final Logger logger = Logger.getLogger(TSSCServiceImpl.class);
+	private static final Logger logger = Logger.getLogger(TSSCServiceImpl.class);
 
 	@Autowired
 	private ContentHeadMapper contentHeadMapper;
@@ -44,12 +44,19 @@ public class TSSCServiceImpl implements TSSCService {
 	private NewTouchService newTouchService;
 	@Autowired
 	private NewtouchtsscresultMapper newtouchtsscresultMapper;
+	@Autowired
+	private NewTouchService newtouchservice;
 	@Value("${NUM}")
 	private String NUM;
-	
-	
+	@Value("${T21CUTOFF}")
+	private String T21CUTOFF;
+	@Value("${T18CUTOFF}")	
+	private String T18CUTOFF;
+
 	@Override
 	public PlatFormTSSCServiceRequest creator(Integer sampleid, Integer czqf) {
+		logger.debug("生成REQNO");
+		String reqno = selectReqno(sampleid, czqf);
 		logger.debug("生成ContentItem");
 		List<ContentItem> items = selectContentItemList(sampleid);
 		logger.debug("生成ContentBody");
@@ -64,9 +71,39 @@ public class TSSCServiceImpl implements TSSCService {
 		// 设置操作
 		request.setCzqf(czqf);
 		request.getContent().getContentHead().setCzqf(czqf);
+		
+		request.setReqno(reqno);
+		body.setREQNO(reqno);
+		for (ContentItem contentItem : items) {
+			contentItem.setREQNO(reqno);
+		}
+		logger.info("patid=====" + request.getPatid());
+		
+		if (request.getPatid() == null || "".equals(request.getPatid())) {
+			logger.info(sampleid + "=====没有patid");
+			PatientDetailInfoRequest patientDetailInfoRequest = new PatientDetailInfoRequest();
+			patientDetailInfoRequest.setCardNo(request.getCardNo());
+			String patientDetailInfo = newtouchservice.patientDetailInfo(patientDetailInfoRequest.toXml());
+			BiosanResult biosanResult = RequestUtil.getPatientDetailInfoRequest(patientDetailInfo);
+			if (biosanResult.getStatus() == 1) {
+				PatientDetailInfo patientDetailInfo1 = (PatientDetailInfo)biosanResult.getData();
+				request.setPatid(patientDetailInfo1.getPatid());
+				request.getContent().getContentBody().setPATID(patientDetailInfo1.getPatid());
+			}
+		}
 		return request;
 	}
 
+	private String selectReqno(Integer sampleid, Integer czqf) {
+		String reqno = "";
+		if (czqf == 1) {
+			reqno = tSSCServiceRequestMapper.selectReqnoForInsert(sampleid).get(0);
+		} else {
+			reqno = tSSCServiceRequestMapper.selectReqnoForDelete(sampleid).get(0);
+		}
+		return reqno;
+	}
+	
 	private List<ContentItem> selectContentItemList(Integer sampleid) {
 		List<ContentItem> ContentItems = new LinkedList<>();
 		logger.debug("搜索参数");
@@ -74,26 +111,49 @@ public class TSSCServiceImpl implements TSSCService {
 		logger.debug(map.size());
 		logger.debug(map.toString());
 		ContentItem TSSC = new ContentItem();
-		
+
 		TSSC.setJCZBMC("唐氏筛查NO");
 		TSSC.setJCZBDM("TSSC_NO");
 		TSSC.setJYRQ((Date) map.get("JYRQ"));
 		TSSC.setBGDH((String) map.get("BGDH"));
 		TSSC.setREQNO((String) map.get("REQNO"));
-		TSSC.setJCZBJG("S" + map.get("BGDH"));
+		TSSC.setJCZBJG(map.get("BGDH"));
 		ContentItems.add(TSSC);
-		
+
 		for (String key : map.keySet()) {
-			if ("JYRQ".equals(key) || "BGDH".equals(key) || "REQNO".equals(key)) {
+			if ("JYRQ".equals(key) || "BGDH".equals(key) ) {
 				continue;
 			}
 			ContentItem item = new ContentItem();
 			item.setJYRQ((Date) map.get("JYRQ"));
 			item.setBGDH((String) map.get("BGDH"));
-			item.setREQNO((String) map.get("REQNO"));
 			item.setJCZBMC(key);
 			item.setJCZBDM(key);
 			item.setJCZBJG(map.get(key) == null ? "0" : map.get(key));
+			//风险根据 配置文件 判断
+			if (key.equals("T21风险结果")) {
+				String[] cutoff = T21CUTOFF.split(",");
+				int analysis_t21 = (int)map.get("T21风险值");
+				if (analysis_t21 <= Integer.parseInt(cutoff[0])) {
+					item.setJCZBJG("高风险");
+				} else if (analysis_t21 > Integer.parseInt(cutoff[1])) {
+					item.setJCZBJG("低风险");
+				} else {
+					item.setJCZBJG("中间风险");
+				}
+			}
+			
+			if (key.equals("T18风险结果")) {
+				String[] cutoff = T18CUTOFF.split(",");
+				int analysis_t18 = (int)map.get("T21风险值");
+				if (analysis_t18 <= Integer.parseInt(cutoff[0])) {
+					item.setJCZBJG("高风险");
+				} else if (analysis_t18 > Integer.parseInt(cutoff[1])) {
+					item.setJCZBJG("低风险");
+				} else {
+					item.setJCZBJG("中间风险");
+				}
+			}
 			ContentItems.add(item);
 		}
 		return ContentItems;
@@ -124,7 +184,8 @@ public class TSSCServiceImpl implements TSSCService {
 	private PlatFormTSSCServiceRequest selectPlatFormTSSCServiceRequest(Integer sampleid) {
 		PlatFormTSSCServiceRequest request = new PlatFormTSSCServiceRequest();
 		logger.debug("搜索参数PlatFormTSSCServiceRequest");
-		List<PlatFormTSSCServiceRequest> list = tSSCServiceRequestMapper.selectPlatFormTSSCServiceRequest(sampleid);
+		List<PlatFormTSSCServiceRequest> list = tSSCServiceRequestMapper
+				.selectPlatFormTSSCServiceRequest(sampleid);
 		if (list.size() > 0) {
 			request = list.get(0);
 		} else {
@@ -141,7 +202,7 @@ public class TSSCServiceImpl implements TSSCService {
 	@Override
 	public BiosanResult sendPlatFormTSSCService(Newtouchtsscresult newtouchtsscresult) {
 		BiosanResult result = new BiosanResult();
-		//更新发送时间
+		// 更新发送时间
 		newtouchtsscresult.setSendattime(new Date());
 		logger.debug(newtouchtsscresult.toString());
 		// 未发过 表newtouchtsscresult没有数据
@@ -149,63 +210,71 @@ public class TSSCServiceImpl implements TSSCService {
 			logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "未发送过报告");
 			result = sendNum(newtouchtsscresult.getSampleid(), 1);
 			newtouchtsscresult.setTsscresult(result.getStatus());
+			//插入 表newtouchtsscresult
 			newtouchtsscresultMapper.insert(newtouchtsscresult);
 		} else {
 			// 表newtouchtsscresult有数据
 			// 更新 pdfdate报告日期
-			//tsscresult为2
-			// 成功发送
-			if (newtouchtsscresult.getTsscresult() == 1) {
-				logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "重新风险计算了，发送撤销命令");
+			// tsscresult为1 或 3
+			// 成功发送 或 发送撤销命令失败
+			if (newtouchtsscresult.getTsscresult() == 1 || newtouchtsscresult.getTsscresult() == 3) {
+				if (newtouchtsscresult.getTsscresult() == 1) {
+					logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "重新风险计算了，发送撤销命令");			
+				}else {
+					logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "之前发送撤销命令失败");
+				}
 				result = sendNum(newtouchtsscresult.getSampleid(), 3);
 
 				if (result.getStatus() == 1) {
+					logger.info("=======================================================");
+					logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "开始发送新报告");
 					result = sendNum(newtouchtsscresult.getSampleid(), 1);
-
+				} else {
+					//发送撤销命令失败不更新报告日期
+					newtouchtsscresult.setPdfdate(null);
 				}
 				newtouchtsscresult.setTsscresult(result.getStatus());
 				logger.debug(newtouchtsscresult.toString());
 				newtouchtsscresultMapper.updateByBean(newtouchtsscresult);
 			}
-			//tsscresult为2
-			//发送失败
+			// tsscresult为2
+			// 发送失败
 			if (newtouchtsscresult.getTsscresult() == 2) {
 				// 发送失败的 pdfdate报告日期在一天之内
 				logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "之前发送报告失败");
 				result = sendNum(newtouchtsscresult.getSampleid(), 1);
 				newtouchtsscresult.setTsscresult(result.getStatus());
 				newtouchtsscresultMapper.updateByBean(newtouchtsscresult);
-			} 
-			//tsscresult为3
-			//发送撤销命令失败
-			else {
+			}
+			// tsscresult为3
+			// 发送撤销命令失败
+/*			else {
 				logger.info("样品ID为" + newtouchtsscresult.getSampleid() + "之前发送撤销命令失败");
 				result = sendNum(newtouchtsscresult.getSampleid(), 3);
 
 				if (result.getStatus() == 1) {
 					result = sendNum(newtouchtsscresult.getSampleid(), 1);
-
+				}else {
+					//失败不更新报告日期
+					newtouchtsscresult.setPdfdate(null);
 				}
+				
 				newtouchtsscresult.setTsscresult(result.getStatus());
 				logger.debug(newtouchtsscresult.toString());
 				newtouchtsscresultMapper.updateByBean(newtouchtsscresult);
-			}
+			}*/
 
 		}
 		return result;
 	}
-	
-	
+
 	/**
-	 * 根据 参数NUM (resource.properties) 多次发送，成功则跳出，
-	 * 失败NUM次跳出
+	 * 根据 参数NUM (resource.properties) 多次发送，成功则跳出， 失败NUM次跳出
 	 * 
 	 * @param sampleid 样品ID
-	 * @param czqf 操作码	1 发送报告	2 撤销命令
-	 * @return 
-	 * 
-	 * @author qibill
-	 * 2018年6月7日上午9:05:55
+	 * @param czqf 操作码 1 发送报告 2 撤销命令
+	 * @return
+	 * @author qibill 2018年6月7日上午9:05:55
 	 */
 	private BiosanResult sendNum(Integer sampleid, Integer czqf) {
 		BiosanResult result = new BiosanResult();
@@ -218,35 +287,33 @@ public class TSSCServiceImpl implements TSSCService {
 			}
 		}
 		return result;
-	} 
+	}
 
 	/**
-	 * 根据sampleid和czqf生成PlatFormTSSCServiceRequest,	转化成xml格式调用webservice。
+	 * 根据sampleid和czqf生成PlatFormTSSCServiceRequest, 转化成xml格式调用webservice。
 	 * 根据返回的String提取结果BiosanResult，返回BiosanResult
 	 * 
 	 * @param sampleid 样品ID
-	 * @param czqf 操作码	1 发送报告	2 撤销命令
+	 * @param czqf 操作码 1 发送报告 2 撤销命令
 	 * @return
-	 * 
-	 * @author qibill
-	 * 2018年6月7日上午9:03:09
+	 * @author qibill 2018年6月7日上午9:03:09
 	 */
 	private BiosanResult doWebservice(Integer sampleid, Integer czqf) {
-        String report = czqf == 1 ? "报告信息" : "撤销命令";
-        logger.debug("生成报告样板");
-        PlatFormTSSCServiceRequest request = creator(sampleid, czqf);
-        logger.info("样品ID为" + sampleid + "开始发送" + report);
-        String tSSCReponse = newTouchService.platFormTSSCService(request.toXml());
-        BiosanResult biosanResult = RequestUtil.getTSSCRequest(tSSCReponse);
-        //判断
-        if (biosanResult.getStatus() == 1) {
-        	logger.info("样品ID为" + sampleid + report + "发送成功");
+		String report = czqf == 1 ? "报告信息" : "撤销命令";
+		logger.debug("生成报告样板");
+		PlatFormTSSCServiceRequest request = creator(sampleid, czqf);
+		logger.info("样品ID为" + sampleid + "开始发送" + report);
+		String tSSCReponse = newTouchService.platFormTSSCService(request.toXml());
+		BiosanResult biosanResult = RequestUtil.getTSSCRequest(tSSCReponse);
+		// 判断
+		if (biosanResult.getStatus() == 1) {
+			logger.info("样品ID为" + sampleid + report + "发送成功");
 		} else {
-			//失败
-			//以czqf判断是发送报告失败，还是发送撤销命令失败
+			// 失败
+			// 以czqf判断是发送报告失败，还是发送撤销命令失败
 			biosanResult.setStatus(czqf == 1 ? 2 : 3);
-	        logger.error("样品ID为" + sampleid + report + "发送失败");
+			logger.error("样品ID为" + sampleid + report + "发送失败");
 		}
-        return biosanResult;
+		return biosanResult;
 	}
 }

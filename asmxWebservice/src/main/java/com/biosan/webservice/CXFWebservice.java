@@ -20,7 +20,9 @@ public class CXFWebservice implements NewTouchService {
 
 	@Override
     public String patientDetailInfo(String request) {
+		logger.debug(request);
         String patientDetailInfo = patientBasicInfo.patientDetailInfo(request);
+        logger.info(patientDetailInfo);
 		return patientDetailInfo;
     }
 

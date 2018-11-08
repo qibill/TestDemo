@@ -35,29 +35,50 @@
 	<select id="selectPlatFormTSSCServiceRequest"
 		parameterType="java.lang.Integer" resultMap="BaseResultMap">
 		SELECT s.reserved2 Patid,
-		p.identitycard PatNo,
 		p.cardnum CardNo,
 		s.pdfdate PublishDate,
-		s.labdate
-		CheckDate,
-		s.samplestring ReportNo,
-		CONCAT(left(s.samplestring,LENGTH(s.samplestring)-1),'ST',right(s.samplestring,1))
-		REQNO,
+		s.labdate CheckDate,
+		s.labstring ReportNo,
 		p.patientname PatName,
 		(
 		CASE
-		WHEN departmentname = '上海市第一妇婴保健院西院'
+		WHEN
+		departmentname = '上海市第一妇婴保健院西院'
 		THEN 0
-		WHEN departmentname = '上海市第一妇婴保健院南院'
+		WHEN departmentname =
+		'上海市第一妇婴保健院南院'
 		THEN 1
 		WHEN departmentname = '上海市第一妇婴保健院东院'
 		THEN 2
 		END
-		) HospDiv
+		)
+		HospDiv
 		FROM sample s
 		LEFT JOIN patient p on s.patientid = p.patientid
 		LEFT JOIN employee e on s.doc = e.employeeid
-		LEFT JOIN department d on e.departmentid = d.departmentid
+		LEFT JOIN department d on
+		e.departmentid = d.departmentid
+		WHERE
+		s.sampleid = #{sampleid};
+	</select>
+
+	<select id="selectReqnoForInsert"
+		parameterType="java.lang.Integer" resultType="java.lang.String">
+		SELECT
+		CONCAT(date_format(s.pdfdate, '%Y%m%d'),s.labstring)
+		REQNO
+		FROM sample s
+		WHERE
+		s.sampleid = #{sampleid};
+	</select>
+
+	<select id="selectReqnoForDelete"
+		parameterType="java.lang.Integer" resultType="java.lang.String">
+		SELECT
+		CONCAT(date_format(n.pdfdate, '%Y%m%d'),s.labstring)
+		REQNO
+		FROM sample s
+		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
 		WHERE
 		s.sampleid = #{sampleid};
 	</select>

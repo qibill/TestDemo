@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.newtouch.mapper.NewtouchtsscresultMapper" >
-  <resultMap id="BaseResultMap" type="com.biosan.pojo.Newtouchtsscresult" >
-    <id column="tsscresultid" property="tsscresultid" jdbcType="INTEGER" />
-    <result column="sampleid" property="sampleid" jdbcType="INTEGER" />
-    <result column="tsscresult" property="tsscresult" jdbcType="INTEGER" />
-    <result column="pdfdate" property="pdfdate" jdbcType="TIMESTAMP" />
-    <result column="sendattime" property="sendattime" jdbcType="TIMESTAMP" />
-  </resultMap>
+<mapper namespace="com.newtouch.mapper.NewtouchtsscresultMapper">
+	<resultMap id="BaseResultMap"
+		type="com.biosan.pojo.Newtouchtsscresult">
+		<id column="tsscresultid" property="tsscresultid"
+			jdbcType="INTEGER" />
+		<result column="sampleid" property="sampleid"
+			jdbcType="INTEGER" />
+		<result column="tsscresult" property="tsscresult"
+			jdbcType="INTEGER" />
+		<result column="pdfdate" property="pdfdate"
+			jdbcType="TIMESTAMP" />
+		<result column="sendattime" property="sendattime"
+			jdbcType="TIMESTAMP" />
+	</resultMap>
   <!-- 只发送本院的报告，需添加关联 -->
-	<select id="selectNewSampleid"
-		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+	<select id="selectNewSampleid" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
 		SELECT
 		n.tsscresultid,
 		s.sampleid,
@@ -23,36 +29,70 @@
 		LEFT JOIN department d on e.departmentid = d.departmentid
 		WHERE DATEDIFF(s.pdfdate,NOW())>-#{days}
 		AND (s.pdfdate > n.pdfdate or n.pdfdate IS NULL)
-		AND departmentname in ('上海市第一妇婴保健院东院', '上海市第一妇婴保健院南院', '上海市第一妇婴保健院西院')
+		AND (n.tsscresult = 1 or n.tsscresult IS NULL)
+		AND s.isverify=1
+		AND d.departmentname in
+		('上海市第一妇婴保健院东院', '上海市第一妇婴保健院南院', '上海市第一妇婴保健院西院')
 	</select>
-	<insert id="insert" parameterType="com.biosan.pojo.Newtouchtsscresult" >
-	   insert into newtouchtsscresult (tsscresultid, sampleid,  
-	     tsscresult, pdfdate, sendattime
-	     )
-	   values (#{tsscresultid,jdbcType=INTEGER}, #{sampleid,jdbcType=INTEGER}, 
-	     #{tsscresult,jdbcType=INTEGER}, #{pdfdate,jdbcType=TIMESTAMP}, #{sendattime,jdbcType=TIMESTAMP}
-	     )
+
+	<insert id="insert"
+		parameterType="com.biosan.pojo.Newtouchtsscresult">
+		insert into newtouchtsscresult
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="tsscresultid != null">
+				tsscresultid,
+			</if>
+			<if test="sampleid != null">
+				sampleid,
+			</if>
+			<if test="tsscresult != null">
+				tsscresult,
+			</if>
+			<if test="pdfdate != null">
+				pdfdate,
+			</if>
+			<if test="sendattime != null">
+				sendattime,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="tsscresultid != null">
+				#{tsscresultid,jdbcType=INTEGER},
+			</if>
+			<if test="sampleid != null">
+				#{sampleid,jdbcType=INTEGER},
+			</if>
+			<if test="tsscresult != null">
+				#{tsscresult,jdbcType=INTEGER},
+			</if>
+			<if test="pdfdate != null">
+				#{pdfdate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sendattime != null">
+				#{sendattime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
 	</insert>
-	<update id="updateByBean" parameterType="com.biosan.pojo.Newtouchtsscresult" >
-    update newtouchtsscresult
-    <set >
-      <if test="sampleid != null" >
-        sampleid = #{sampleid,jdbcType=INTEGER},
-      </if>
-      <if test="tsscresult != null" >
-        tsscresult = #{tsscresult,jdbcType=INTEGER},
-      </if>
-      <if test="pdfdate != null" >
-        pdfdate = #{pdfdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="sendattime != null" >
-        sendattime = #{sendattime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where sampleid = #{sampleid,jdbcType=INTEGER}
+
+	<update id="updateByBean"
+		parameterType="com.biosan.pojo.Newtouchtsscresult">
+		update newtouchtsscresult
+		<set>
+			<if test="tsscresult != null">
+				tsscresult = #{tsscresult,jdbcType=INTEGER},
+			</if>
+			<if test="pdfdate != null">
+				pdfdate = #{pdfdate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sendattime != null">
+				sendattime = #{sendattime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where sampleid = #{sampleid,jdbcType=INTEGER}
 	</update>
-	<select id="selectErr"
-		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+	<select id="selectErr" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
 		SELECT
 		n.tsscresultid,
 		n.sampleid,
@@ -62,8 +102,9 @@
 		FROM newtouchtsscresult n
 		WHERE n.tsscresult > 1
 	</select>
-	<select id="selectBySampleid"
-		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+	<select id="selectBySampleid" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
 		SELECT
 		n.tsscresultid,
 		s.sampleid,
@@ -71,7 +112,8 @@
 		n.tsscresult,
 		n.sendattime,
 		FROM sample s
-		LEFT JOIN newtouchtsscresult n on s.sampleid = n.sampleid
+		LEFT JOIN newtouchtsscresult n on s.sampleid
+		= n.sampleid
 		WHERE s.sampleid = #{sampleid}
 	</select>
 </mapper>

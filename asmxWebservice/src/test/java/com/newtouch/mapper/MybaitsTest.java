@@ -55,7 +55,7 @@ public class MybaitsTest {
 	
 	@Test
 	public void serviceTest() {
-		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(1336429, 1);
+		PlatFormTSSCServiceRequest creatPlatFormTSSCServiceRequest = service.creator(52, 1);
 		System.out.println(creatPlatFormTSSCServiceRequest.toXml());
 	}
 
