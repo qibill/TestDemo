@@ -143,17 +143,6 @@ public class TSSCServiceImpl implements TSSCService {
 				}
 			}
 			
-			if (key.equals("T18风险结果")) {
-				String[] cutoff = T18CUTOFF.split(",");
-				int analysis_t18 = (int)map.get("T21风险值");
-				if (analysis_t18 <= Integer.parseInt(cutoff[0])) {
-					item.setJCZBJG("高风险");
-				} else if (analysis_t18 > Integer.parseInt(cutoff[1])) {
-					item.setJCZBJG("低风险");
-				} else {
-					item.setJCZBJG("中间风险");
-				}
-			}
 			ContentItems.add(item);
 		}
 		return ContentItems;

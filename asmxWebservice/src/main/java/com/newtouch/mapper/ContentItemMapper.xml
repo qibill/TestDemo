@@ -48,7 +48,7 @@
 		s.age_t18 T18年龄风险,
 		s.analysis_t18 T18风险值,
 		s.result_t18 T18风险结果,
-		s.result_ntd NTD风险结果,
+		IFNULL(s.result_ntd, '孕周太小，无法计算')  AS NTD风险结果,
 		s.labdate JYRQ,
 		s.labstring BGDH
 		FROM sample s
